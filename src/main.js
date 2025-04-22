@@ -138,7 +138,7 @@ mainWrapper.addEventListener('scroll', () => {
     // 延遲解除滾動鎖定，避免重複觸發
     setTimeout(() => {
         isScrolling = false;
-    }, 500); // 500ms 的延遲時間可以根據需要調整
+    }, 800);
 });
 
 function createLink(id, icon, target, url, linkName, description, onclick, isInBox = false) {
