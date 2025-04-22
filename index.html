@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="zh-TW" dark="">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description">
+    <meta name="darkreader-lock">
+    <meta name="google-site-verification" content="" />
+    <title></title>
+    <script src="https://kit.fontawesome.com/ba7cf5430a.js" crossorigin="anonymous"></script>
+    <!--Other Resources-->
+    <link rel="stylesheet" href="./src/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+HK:wght@100..900&family=Rampart+One&display=swap" rel="stylesheet">
+    <!--Web App Icon-->
+    <link rel="shortcut icon" type="image/ico" href="./favicon.png" />
+    <link rel="apple-touch-icon" href="./favicon.png" />
+    <!--Open Graph-->
+    <meta property="og:url" content="https://jerryis-strong.github.io/i-am/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="I AM - jerryis-strong">
+    <meta property="og:description" content="Hello World! HER!">
+    <meta property="og:image" content="https://jerryis-strong.github.io/i-am/src/img/jt_1280x720.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta property="twitter:domain" content="https://jerryis-strong.github.io/">
+    <meta property="twitter:url" content="https://jerryis-strong.github.io/i-am/">
+    <meta name="twitter:title" content="I AM - jerryis-strong">
+    <meta name="twitter:description" content="Hello World! HER!">
+    <meta name="twitter:image" content="https://jerryis-strong.github.io/i-am/src/img/jt_1280x720.png">
+    <!--Important plugins-->
+    <script src="./src/plugins/private/log.js"></script>
+    <script src="./src/plugins/private/debug.js"></script>
+    <script src="./src/plugins/private/update-alert.js"></script>
+    <script src="./src/plugins/private/fetcher.js" defer></script>
+</head>
+
+<body>
+    <noscript>You need to enable <strong>JavaScript</strong> for this site to work properly</noscript>
+    <div class="background" id="background"></div>
+    <div class="main" id="main">
+        <div class="page">
+            <img class="img" id="img">
+            <div class="text" id="text">
+                <h1 id="title"></h1>
+                <h2 id="description"></h2>
+            </div>
+        </div>
+        <div class="page">
+            <div class="mediaBtn" id="mediaBtn_wrapper"></div>
+        </div>
+    </div>
+    <div class="mediaBtn_box" id="mediaBtn_wrapper_box">
+    </div>
+    <div class="share" id="share">
+        <div class="music" id="music">
+            <div class="musicNameWrapper">
+                <i class="fa-solid fa-music musicIcon"></i>
+                <a target="_blank" class="MusicName" id="MusicName"></a>
+            </div>
+        </div>
+        <div class="github" id="github">
+            <i class="fa-brands fa-github githubIcon"></i>
+            <a target="_blank" title="Build your first webpage here!" class="githubProject" id="githubProject"
+                href="https://github.com/JerryIs-strong/Arona">JerryIs-strong/Arona</a>
+        </div>
+    </div>
+    <div class="page-indicator" id="pageIndicator"></div>
+    <div class="notification" id="notification"></div>
+    <div class="plugin-wrapper" id="plugin-wrapper"></div>
+    <!--Main JS Control file-->
+    <script src="./src/main.js"></script>
+    <!--JS Plugins inject-->
+    <script src="./src/plugins-manager.js"></script>
+</body>
+
+</html>
