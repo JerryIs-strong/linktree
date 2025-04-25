@@ -44,6 +44,8 @@ html {
     user-select: none;
     -webkit-user-select: none;
     -webkit-user-drag: none;
+    width: 100vw;
+    height: 100vh;
     overflow: hidden;
 }
 
@@ -63,7 +65,8 @@ html {
     position: absolute;
     width: 100vw;
     height: calc(100vh - 60px);
-    overflow: auto;
+    scroll-snap-type: y mandatory;
+    overflow-y: auto;
     scrollbar-width: none;
 }
 
@@ -81,7 +84,7 @@ html {
 }
 
 .page-indicator {
-    position: fixed;
+    position: absolute;
     top: 50%;
     right: 20px;
     transform: translateY(-50%);

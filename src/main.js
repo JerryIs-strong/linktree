@@ -1,8 +1,9 @@
 const shareElement = document.getElementById("share");
 const mainWrapper = document.getElementById("main");
 let shareCounter = 0;
-let ContainerAnimeDelay = 0.2;
-let LinkAnimeDelay = 0.2;
+let isScrolling = false; // 滾動鎖定標記
+let isProgrammaticScroll = false; // 新增程序滾動標記
+
 
 document.addEventListener('DOMContentLoaded', () => {
     const settings = JSON.parse(sessionStorage.getItem('setting'))[0];
@@ -64,81 +65,21 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     };
-
-    mainWrapper.addEventListener('scroll', () => {
-        const scrollPosition = mainWrapper.scrollTop + window.innerHeight / 2;
-
-        pages.forEach((page, index) => {
-            const pageTop = page.offsetTop;
-            const pageBottom = pageTop + page.offsetHeight;
-
-            if (scrollPosition >= pageTop && scrollPosition < pageBottom) {
-                updateIndicator(index); // 更新點指示列
+    
+    // 使用 Intersection Observer 優化頁面指示器
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting && entry.intersectionRatio >= 0.5) {
+                const activeIndex = Array.from(pages).indexOf(entry.target);
+                updateIndicator(activeIndex);
             }
         });
+    }, {
+        root: mainWrapper,
+        threshold: [0.5]
     });
 
-    const imgElement = document.getElementById('img');
-
-    // 為 img 添加點擊事件
-    imgElement.addEventListener('click', () => {
-        // 創建對話框元素
-        const dialog = document.createElement('div');
-        dialog.className = 'img-dialog';
-        dialog.textContent = '喵';
-
-        // 設置對話框位置
-        const imgRect = imgElement.getBoundingClientRect();
-        dialog.style.top = `${imgRect.top + 5}px`; // 調整對話框的垂直位置
-        dialog.style.left = `${imgRect.right - 30}px`; // 調整對話框的水平位置
-
-        // 添加對話框到文檔
-        document.body.appendChild(dialog);
-
-        // 自動隱藏對話框
-        setTimeout(() => {
-            dialog.remove();
-        }, 1000); // 2 秒後移除對話框
-    });
-});
-
-let isScrolling = false; // 防止滾動事件重複觸發
-
-mainWrapper.addEventListener('scroll', () => {
-    if (isScrolling) return; // 如果正在滾動，直接返回
-    isScrolling = true;
-
-    const pages = document.querySelectorAll('.page');
-    const scrollPosition = mainWrapper.scrollTop + window.innerHeight / 2;
-
-    pages.forEach((page, index) => {
-        const pageTop = page.offsetTop;
-        const pageBottom = pageTop + page.offsetHeight;
-
-        if (scrollPosition >= pageTop && scrollPosition < pageBottom) {
-            const nextPage = pages[index + 1];
-            const prevPage = pages[index - 1];
-
-            if (mainWrapper.scrollTop > pageTop && nextPage) {
-                // 滑動到下一頁
-                mainWrapper.scrollTo({
-                    top: nextPage.offsetTop,
-                    behavior: 'smooth'
-                });
-            } else if (mainWrapper.scrollTop < pageTop && prevPage) {
-                // 滑動到上一頁
-                mainWrapper.scrollTo({
-                    top: prevPage.offsetTop,
-                    behavior: 'smooth'
-                });
-            }
-        }
-    });
-
-    // 延遲解除滾動鎖定，避免重複觸發
-    setTimeout(() => {
-        isScrolling = false;
-    }, 800);
+    pages.forEach(page => observer.observe(page));
 });
 
 function createLink(id, icon, target, url, linkName, description, onclick, isInBox = false) {
@@ -153,9 +94,6 @@ function createLink(id, icon, target, url, linkName, description, onclick, isInB
     if (url != false) {
         LinkBtnWrapper.href = url;
     }
-
-    LinkBtnWrapper.style.animationDelay = `${LinkAnimeDelay}s`;
-    LinkAnimeDelay += 0.1;
 
     if (onclick) {
         LinkBtnWrapper.onclick = (e) => {
@@ -363,8 +301,6 @@ function createContainer(header) {
     btnWrapper.id = `${header}_category_btn_wrapper`;
     container.appendChild(headerElement);
     container.appendChild(btnWrapper);
-    container.style.animationDelay = `${ContainerAnimeDelay}s`;
-    ContainerAnimeDelay += 0.1;
     return container;
 }
 
@@ -372,41 +308,16 @@ function Links(linkSettings) {
     const urlParams = new URLSearchParams(window.location.search);
     const linkGroup = document.getElementById('mediaBtn_wrapper');
     const linkGroupMore = document.getElementById('mediaBtn_wrapper_box');
-    let linkNum = 0;
     let InvalidLink = [];
 
     if (linkSettings && Object.keys(linkSettings).length > 0) {
         Object.entries(linkSettings).forEach(([category, linkDB]) => {
-            if (!category.includes('link')) {
-                linkGroupMore.appendChild(createContainer(category));
-            } else {
-                InvalidLink.push(linkDB);
-            }
             Object.entries(linkDB).forEach(([key, link]) => {
                 if (link.enable && link.name != urlParams.get('media') && key.includes("link_")) {
                     linkGroup.appendChild(createLink(key, link.icon, link.target, link.url, link.name, link.description, false, true));
-                    linkNum++;
                 }
             });
         });
-
-        if (InvalidLink.length > 0) {
-            linkGroupMore.appendChild(createContainer("untitled"));
-            Object.entries(InvalidLink).forEach(([key, link]) => {
-                if (link.enable && link.name !== urlParams.get('media')) {
-                    if(InvalidLink.Ignore){
-                        document.getElementById(`${category}_category_btn_wrapper`).appendChild(createLink(key, link.icon, link.target, link.url, link.name, link.description, false, true));
-                    }else{
-                        if (linkNum < 2) {
-                            linkGroup.appendChild(createLink(key, link.icon, link.target, link.url, link.name, link.description));
-                        } else {
-                            document.getElementById(`untitled_category_btn_wrapper`).appendChild(createLink(key, link.icon, link.target, link.url, link.name, link.description, false, true));
-                        }
-                        linkNum++;
-                    }
-                }
-            });
-        }
     } else {
         debug("連結設置錯誤", "warn");
         linkGroup.remove();
