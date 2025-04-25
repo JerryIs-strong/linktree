@@ -6,7 +6,7 @@
             "icon": {
                 "method": "local",
                 "local": {
-                    "url": "./src/img/102097763_p0_master1200.jpg"
+                    "url": "./src/img/102097763_p0_master1200.webp"
                 }
             },
             "favicon": {
@@ -27,7 +27,7 @@
         },
         "display": {
             "background": {
-                "url": "./src/img/125435652_p0.png"
+                "url": "./src/img/125435652_p0.webp"
             },
             "title": {
                 "method": "greeting",
@@ -186,19 +186,6 @@
                     },
                     "description": "@jerry7818",
                     "url": "https://space.bilibili.com/3546846200859472",
-                    "target": "blank"
-                }
-            },
-            "contact Me 💻": {
-                "link_1": {
-                    "enable": true,
-                    "name": "Email",
-                    "icon": {
-                        "type": "fontawesome",
-                        "fontawesome": "fa-solid fa-envelope"
-                    },
-                    "description": false,
-                    "url": "mailto:heyajerry@gmail.com",
                     "target": "blank"
                 }
             }

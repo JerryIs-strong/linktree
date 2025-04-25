@@ -202,6 +202,12 @@ html {
     font-weight: bolder;
 }
 
+.link-info-tab{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .mediaBtn_box .link-info-tab .link-desc{
     font-size: 12px;
     font-weight: 400;

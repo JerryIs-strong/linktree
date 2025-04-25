@@ -28,4 +28,4 @@ const fetchAndCompareVersion = async () => {
     }
 };
 
-fetchAndCompareVersion();
+// fetchAndCompareVersion();

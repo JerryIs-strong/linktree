@@ -1,9 +1,6 @@
 const shareElement = document.getElementById("share");
 const mainWrapper = document.getElementById("main");
 let shareCounter = 0;
-let isScrolling = false; // 滾動鎖定標記
-let isProgrammaticScroll = false; // 新增程序滾動標記
-
 
 document.addEventListener('DOMContentLoaded', () => {
     const settings = JSON.parse(sessionStorage.getItem('setting'))[0];
@@ -104,8 +101,8 @@ function createLink(id, icon, target, url, linkName, description, onclick, isInB
 
     const LinkInfoTab = document.createElement('div');
     const LinkBtnIcon = document.createElement('i');
-    const LinkBtnTitle = document.createElement('a');
-    const LinkBtnDesc = document.createElement('a');
+    const LinkBtnTitle = document.createElement('div');
+    const LinkBtnDesc = document.createElement('div');
     LinkInfoTab.className = 'link-info-tab';
     LinkBtnWrapper.className = 'link-btn-box';
 
@@ -308,7 +305,6 @@ function Links(linkSettings) {
     const urlParams = new URLSearchParams(window.location.search);
     const linkGroup = document.getElementById('mediaBtn_wrapper');
     const linkGroupMore = document.getElementById('mediaBtn_wrapper_box');
-    let InvalidLink = [];
 
     if (linkSettings && Object.keys(linkSettings).length > 0) {
         Object.entries(linkSettings).forEach(([category, linkDB]) => {
