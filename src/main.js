@@ -18,9 +18,9 @@ document.addEventListener('DOMContentLoaded', () => {
         const unsafeMessage = "It seems that you are not browsing using the https protocol. Your connection may be not secure!"
         if (alert.https) {
             if (window.location.protocol === 'https:') {
-                showSnackbar("Security Guard", safeMessage, true, 8000, "fa-solid", "fa-lock");
+                showSnackbar("Security Guard", safeMessage, 8000, "fa-solid", "fa-lock");
             } else {
-                showSnackbar("Security Guard", unsafeMessage, true, 10000, "fa-solid", "fa-lock-open", "warn");
+                showSnackbar("Security Guard", unsafeMessage, 8000, "fa-solid", "fa-lock-open", "warn");
             }
         }
         initializeAlert(alert.data)
@@ -275,16 +275,6 @@ function GithubIcon(github_icon, margin = false) {
     }
 }
 
-function LinkBox(action) {
-    const box = document.getElementById('mediaBtn_wrapper_box');
-    const animation = action === "open" ? "box-in" : "box-out";
-    box.style.display = action === "open" ? "flex" : "none";
-    if (action === "open") {
-        box.scrollTop = 0;
-    }
-    box.style.animation = `${animation} 0.5s cubic-bezier(0.25, 0.04, 0, 0.89) forwards`;
-}
-
 function createContainer(header) {
     const container = document.createElement('div');
     container.className = "box_container";
@@ -324,7 +314,7 @@ function initializeAlert(alertSettings) {
     if (alertSettings && Object.keys(alertSettings).length > 0) {
         Object.keys(alertSettings).forEach(key => {
             const message = alertSettings[key];
-            showSnackbar("Site Messenger", message.content, message.scroll, message.duration, message.iconType, message.iconName, message.level);
+            showSnackbar("Site Messenger", message.content, message.duration * 1000, message.iconType, message.iconName, message.level);
         });
     }
 }

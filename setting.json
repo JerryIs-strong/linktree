@@ -196,9 +196,10 @@
             "configs": {}
         },
         "alert": {
-            "enable": true,
+            "enable": false,
             "https": false,
-            "data": {}
+            "data": {
+            }
         }
     }
 ]

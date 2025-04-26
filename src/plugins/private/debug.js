@@ -14,7 +14,7 @@ function debug(DebugMessage, action = 'info') {
     }
 }
 
-function showSnackbar(processName, message, scroll = true, duration = 3000, iconType = "fa-regular", iconName = "fa-bell", level = "info") {
+function showSnackbar(processName, message, duration = 3000, iconType = "fa-regular", iconName = "fa-bell", level = "info") {
     const wrapper = document.getElementById('notification');
 
     const main = document.createElement('div');
@@ -56,12 +56,6 @@ function showSnackbar(processName, message, scroll = true, duration = 3000, icon
     const contentDiv = document.createElement('div');
     contentDiv.className = 'notification_content';
     contentDiv.innerHTML = message;
-    contentDiv.style.setProperty('--scroll-time', (duration / 1000) - 1 + 's');
-    if (scroll) {
-        contentDiv.classList.add("mobile-scroll")
-    } else {
-        snackbar.classList.add("mobile-center")
-    }
 
     snackbar.appendChild(contentDiv);
     title.appendChild(iconElement);
