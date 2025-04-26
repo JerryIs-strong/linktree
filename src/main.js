@@ -1,18 +1,12 @@
-const shareElement = document.getElementById("share");
 const mainWrapper = document.getElementById("main");
-let shareCounter = 0;
 
 document.addEventListener('DOMContentLoaded', () => {
     const settings = JSON.parse(sessionStorage.getItem('setting'))[0];
     const { profile, SEO, links, display, alert } = settings;
-    const { github_icon, music } = display.share;
+    const { music } = display.share;
     const titleSettings = settings.display.title;
     Profile(profile, music, display, SEO, settings.plugins, titleSettings);
     Links(links);
-    GithubIcon(github_icon, true);
-    if (music.enable && github_icon.enable) {
-        infiniteLoop();
-    }
     if (alert.enable) {
         const safeMessage = "You're browsing with https protocol, the connection is safe!";
         const unsafeMessage = "It seems that you are not browsing using the https protocol. Your connection may be not secure!"
@@ -129,24 +123,10 @@ function createLink(id, icon, target, url, linkName, description, onclick, isInB
             LinkBtnIcon.className = "link-icon-text";
             LinkBtnIcon.innerText = linkName.charAt(0).toUpperCase()
         }
-    }else if(icon.type === "image"){
-        LinkBtnTitle.remove();
-        const LinkBtnImg = document.createElement('img');
-        LinkBtnWrapper.classList.add('link-image');
-        LinkBtnImg.src = icon.path;
-        LinkBtnWrapper.appendChild(LinkBtnImg);
     }
 
     LinkBtnWrapper.setAttribute('l-name', linkName);
     return LinkBtnWrapper;
-}
-
-function infiniteLoop() {
-    setTimeout(() => {
-        shareElement.scrollTop = shareCounter === 0 ? 100 : 0;
-        shareCounter = shareCounter === 0 ? 1 : 0;
-        infiniteLoop();
-    }, 6500);
 }
 
 function greetUser(settings) {
@@ -168,8 +148,6 @@ function greetUser(settings) {
         return greetings.night;
     }
 }
-
-
 
 function Profile(profile, music, display, SEO, plugins_list, titleSettings) {
     const { icon, favicon } = profile;
@@ -260,41 +238,9 @@ function HolderIcon(holderIcon) {
     }
 }
 
-function GithubIcon(github_icon, margin = false) {
-    const githubProject = document.getElementById("github");
-    if (github_icon.enable) {
-        if (margin) {
-            githubProject.classList.add("github-loop");
-        }
-        if (github_icon.github_user_name != "" && github_icon.github_repo_name != "") {
-            document.getElementById("githubProject").innerText = `${github_icon.github_user_name}/${github_icon.github_repo_name}`;
-        }
-    } else {
-        debug("Github Icon已禁用", "info");
-        document.getElementById("github").remove();
-    }
-}
-
-function createContainer(header) {
-    const container = document.createElement('div');
-    container.className = "box_container";
-    container.id = `${header}_category_container`;
-    const headerElement = document.createElement('div');
-    headerElement.className = "header";
-    headerElement.id = `${header}_category_header`;
-    headerElement.innerText = header;
-    const btnWrapper = document.createElement('div');
-    btnWrapper.className = "btn_wrapper";
-    btnWrapper.id = `${header}_category_btn_wrapper`;
-    container.appendChild(headerElement);
-    container.appendChild(btnWrapper);
-    return container;
-}
-
 function Links(linkSettings) {
     const urlParams = new URLSearchParams(window.location.search);
     const linkGroup = document.getElementById('mediaBtn_wrapper');
-    const linkGroupMore = document.getElementById('mediaBtn_wrapper_box');
 
     if (linkSettings && Object.keys(linkSettings).length > 0) {
         Object.entries(linkSettings).forEach(([category, linkDB]) => {

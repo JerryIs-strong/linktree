@@ -474,61 +474,6 @@ a.githubProject:-webkit-any-link {
 }
 
 /* Animation */
-
-@keyframes in {
-
-    0%,
-    40% {
-        width: 0;
-        scale: 0.6;
-    }
-
-    100% {
-        width: 46vh;
-        scale: 1;
-    }
-}
-
-@keyframes rotate-word {
-    0% {
-        transform: translateY(120%);
-    }
-
-    50%,
-    70% {
-        transform: translateY(0);
-    }
-
-    100% {
-        transform: translateY(-120%);
-    }
-}
-
-@keyframes rotate-word-first {
-    0% {
-        transform: translateY(0);
-    }
-
-    100% {
-        transform: translateY(-120%);
-    }
-}
-
-@keyframes in-lite {
-
-    0%,
-    40% {
-        height: 0;
-        scale: 0.6;
-    }
-
-    100% {
-        height: 29vh;
-        scale: 1;
-    }
-}
-
-
 @keyframes bgFadeIn {
     0% {
         transform: scale(1.6);
@@ -536,42 +481,6 @@ a.githubProject:-webkit-any-link {
 
     100% {
         transform: scale(1.1);
-    }
-}
-
-@keyframes bgFootFadeIn {
-    0% {
-        transform: scale(2.6);
-    }
-
-    100% {
-        transform: scale(2.1);
-    }
-}
-
-@keyframes skill-in {
-    0% {
-        margin: 90px 0 10px 0;
-        padding: 8px 50px;
-    }
-
-    100% {
-        margin: 0 0 10px 0;
-        padding: 8px 18px;
-    }
-}
-
-@keyframes breath {
-    0% {
-        opacity: 1;
-    }
-
-    50% {
-        opacity: 0.4;
-    }
-
-    100% {
-        opacity: 1;
     }
 }
 
@@ -596,50 +505,6 @@ a.githubProject:-webkit-any-link {
     100% {
         opacity: 0;
         transform: translateY(200%);
-    }
-}
-
-@keyframes scrollText {
-    0% {
-        transform: translateX(0);
-    }
-
-    100% {
-        transform: translateX(calc(-100% - 50px));
-    }
-}
-
-@keyframes snackInMobile {
-    0% {
-        width: 10px;
-        opacity: 0;
-    }
-
-    100% {
-        width: 250px;
-        opacity: 1;
-    }
-}
-
-@keyframes snackOutMobile {
-    0% {
-        width: 250px;
-        opacity: 1;
-    }
-
-    100% {
-        width: 10px;
-        opacity: 0;
-    }
-}
-
-@keyframes containerFade-In {
-    0% {
-        transform: translateX(120%);
-    }
-
-    100% {
-        transform: translateX(0);
     }
 }
 
