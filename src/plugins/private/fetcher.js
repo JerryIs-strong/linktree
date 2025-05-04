@@ -13,6 +13,6 @@
             window.location.reload();
         }
     } catch (error) {
-        showSnackbar("The dataset may be corrupted", 10000, "fa-solid", "fa-bomb");
+        console.error('Error fetching setting.json or version.txt:', error);
     }
 })();

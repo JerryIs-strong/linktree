@@ -1,5 +1,6 @@
 [dark="true"] {
     --background-color: #101010b0;
+    --nav-background-color: #b17373a1;
     --background-color-fill: #101010;
     --font-color: #fff;
     --font-secondary-color: #d6d6d6;
@@ -8,16 +9,20 @@
     --mainBtn-color: #4040402b;
     --theme-color: #ffb0c5;
     --theme-background-color: #2d1f1f7d;
+    --btn-hover-color: #352222a6;
 }
 
 [dark="false"] {
     --background-color: #ffffffa3;
+    --nav-background-color: #ea9d9dbe;
     --background-color-fill: #ffffff;
-    --font-color: #000;
-    --font-secondary-color: #252525;
+    --font-color: #fff;
+    --font-secondary-color: #ffffff9a;
     --font-hover-color: #fff;
     --font-sign-color: #50505021;
-    --theme-color: #ffb0c5;
+    --theme-color: #f1bec8;
+    --theme-background-color: #90616185;
+    --btn-hover-color: #724444a6;
 }
 
 :root {
@@ -86,7 +91,7 @@ html {
 }
 
 .page-title{
-    margin: 0 0 20px 0;
+    margin: 90px 0 20px 0;
     color: var(--font-color);
     font-size: 25px;
     font-weight: 900;
@@ -189,7 +194,7 @@ html {
 }
 
 .link-btn-box:hover {
-    background-color: #352222a6 !important;
+    background-color: var(--btn-hover-color) !important;
 }
 
 .link-info-tab{
@@ -479,6 +484,8 @@ a.githubProject:-webkit-any-link {
     flex-direction: column;
     align-items: center;
     flex: 1 1 auto;
+    backdrop-filter: var(--global-blur);
+    -webkit-backdrop-filter: var(--global-blur);
 }
 
 .dcount-card-title{
@@ -491,8 +498,41 @@ a.githubProject:-webkit-any-link {
     padding-bottom: 10px;
 }
 
-.dcount-card-birthday{
-    background-color: var(--theme-background-color);
+.dcount-card[data-today="true"]{
+    order: -1;
+    flex: 1 1 100%;
+    background-image: linear-gradient(45deg, #4413db70, #eb369969);
+}
+
+nav{
+    position: fixed;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    z-index: 999;
+}
+
+nav .nav{
+    display: flex;
+    background-color: var(--background-color);
+    margin: 20px;
+    border-radius: 30px;
+    padding: 0 10px;
+    color: var(--font-color);
+    backdrop-filter: var(--global-blur);
+    -webkit-backdrop-filter: var(--global-blur);
+}
+
+nav .nav > *{
+    margin: 10px;
+    cursor: pointer;
+    padding: 5px 10px;
+}
+
+nav .nav > *:hover{
+    background-color: var(--nav-background-color);
+    padding: 5px 10px;
+    border-radius: 30px;
 }
 
 /* Optimize for mobile */
@@ -514,6 +554,15 @@ a.githubProject:-webkit-any-link {
     #dcount-container{
         width: 100%;
         padding: 0 35px;
+    }
+
+    .page-indicator {
+        right: 10px;
+    }
+
+    .page-indicator .dot {
+        width: 8px;
+        height: 8px;
     }
 }
 

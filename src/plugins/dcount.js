@@ -13,12 +13,10 @@ function calculateDayCount(startDate, isAnnual) {
     } else {
         eventDate = new Date(startDate);
         eventDate.setHours(0, 0, 0, 0);
-        console.log(eventDate, today);
     }
 
     const diffTime = eventDate - today;
     const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
-    console.log(diffDays, eventDate, today);
     
 
     return diffDays;
@@ -39,7 +37,7 @@ function createCard(name, startDay, dayCount) {
     const dayCountElement = document.createElement('div');
     if (dayCount === 0) {
         dayCountElement.textContent = "Is Today!";
-        card.style.backgroundImage = "linear-gradient(45deg, #4413db70, #eb369969)";
+        card.setAttribute('data-today', true);
     } else {
         dayCountElement.textContent = dayCount > 0 ? `D-${dayCount}` : `D+${Math.abs(dayCount)}`;
     }

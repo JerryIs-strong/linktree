@@ -2,26 +2,11 @@ const mainWrapper = document.getElementById("main");
 const settings = JSON.parse(sessionStorage.getItem('setting'));
 
 document.addEventListener('DOMContentLoaded', () => {
-    const { profile, SEO, links, display, alert } = settings;
+    const { profile, SEO, links, display } = settings;
     const { music } = display.share;
     const titleSettings = settings.display.title;
     Profile(profile, music, display, SEO, settings.plugins, titleSettings);
     Links(links);
-    if (alert.enable) {
-        const safeMessage = "You're browsing with https protocol, the connection is safe!";
-        const unsafeMessage = "It seems that you are not browsing using the https protocol. Your connection may be not secure!"
-        if (alert.https) {
-            if (window.location.protocol === 'https:') {
-                showSnackbar("Security Guard", safeMessage, 8000, "fa-solid", "fa-lock");
-            } else {
-                showSnackbar("Security Guard", unsafeMessage, 8000, "fa-solid", "fa-lock-open", "warn");
-            }
-        }
-        initializeAlert(alert.data)
-    } else {
-        debug("彈幕通知已禁用", "info");
-        document.getElementById('notification').remove();
-    }
     if (!display.blur) {
         document.body.style.setProperty('--global-blur', 'blur(0)');
     }
@@ -29,17 +14,17 @@ document.addEventListener('DOMContentLoaded', () => {
     const pages = document.querySelectorAll('.page');
     const pageIndicator = document.getElementById('pageIndicator');
 
-    // 初始化點指示列
+    pageIndicator.innerHTML = '';
+
     pages.forEach((page, index) => {
         const dot = document.createElement('div');
         dot.classList.add('dot');
-        if (index === 0) dot.classList.add('active'); // 第一頁默認為激活狀態
+        if (index === 0) dot.classList.add('active');
 
-        // 點擊事件：跳轉到對應頁面
         dot.addEventListener('click', () => {
             mainWrapper.scrollTo({
-                top: page.offsetTop,
-                behavior: 'smooth'
+                top: page.offsetTop - mainWrapper.offsetTop, 
+                behavior: 'smooth',
             });
         });
 
@@ -56,27 +41,28 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     };
-    
-    // 使用 Intersection Observer 優化頁面指示器
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting && entry.intersectionRatio >= 0.5) {
-                const activeIndex = Array.from(pages).indexOf(entry.target);
-                updateIndicator(activeIndex);
 
-                // 更新標題為 "{sitename} | {page_name}"
-                const pageName = entry.target.getAttribute('p-name');
-                if (pageName) {
-                    document.title = `${pageName} | ${settings.profile.website_name}`;
+    const observer = new IntersectionObserver(
+        (entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    const activeIndex = Array.from(pages).indexOf(entry.target);
+                    updateIndicator(activeIndex);
+
+                    const pageName = entry.target.getAttribute('p-name');
+                    if (pageName) {
+                        document.title = `${pageName} | ${settings.profile.website_name}`;
+                    }
                 }
-            }
-        });
-    }, {
-        root: mainWrapper,
-        threshold: [0.5]
-    });
+            });
+        },
+        {
+            root: mainWrapper,
+            threshold: [0.3],
+        }
+    );
 
-    pages.forEach(page => observer.observe(page));
+    pages.forEach((page) => observer.observe(page));
 });
 
 function createLink(id, icon, target, url, linkName, description, onclick, isInBox = false) {
@@ -262,11 +248,16 @@ function Links(linkSettings) {
     }
 }
 
-function initializeAlert(alertSettings) {
-    if (alertSettings && Object.keys(alertSettings).length > 0) {
-        Object.keys(alertSettings).forEach(key => {
-            const message = alertSettings[key];
-            showSnackbar("Site Messenger", message.content, message.duration * 1000, message.iconType, message.iconName, message.level);
+function navigateTo(pageName) {
+    const mainWrapper = document.getElementById('main');
+    const targetPage = document.querySelector(`.page[p-name="${pageName}"]`);
+
+    if (targetPage) {
+        mainWrapper.scrollTo({
+            top: targetPage.offsetTop - mainWrapper.offsetTop, // Adjust for wrapper offset
+            behavior: 'smooth',
         });
+    } else {
+        console.error(`Page with name "${pageName}" not found.`);
     }
 }
