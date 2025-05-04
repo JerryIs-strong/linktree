@@ -1,4 +1,4 @@
-const setting = JSON.parse(sessionStorage.getItem("setting"))[0];
+const setting = JSON.parse(sessionStorage.getItem("setting"));
 const version = JSON.parse(sessionStorage.getItem("setting")).version;
 
 console.log(

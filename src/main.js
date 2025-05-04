@@ -1,7 +1,7 @@
 const mainWrapper = document.getElementById("main");
+const settings = JSON.parse(sessionStorage.getItem('setting'));
 
 document.addEventListener('DOMContentLoaded', () => {
-    const settings = JSON.parse(sessionStorage.getItem('setting'))[0];
     const { profile, SEO, links, display, alert } = settings;
     const { music } = display.share;
     const titleSettings = settings.display.title;
@@ -63,6 +63,12 @@ document.addEventListener('DOMContentLoaded', () => {
             if (entry.isIntersecting && entry.intersectionRatio >= 0.5) {
                 const activeIndex = Array.from(pages).indexOf(entry.target);
                 updateIndicator(activeIndex);
+
+                // 更新標題為 "{sitename} | {page_name}"
+                const pageName = entry.target.getAttribute('p-name');
+                if (pageName) {
+                    document.title = `${pageName} | ${settings.profile.website_name}`;
+                }
             }
         });
     }, {
