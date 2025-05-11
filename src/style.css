@@ -35,6 +35,7 @@
     user-select: none;
     -moz-user-select: none;
     -webkit-user-drag: none;
+    overflow: hidden;
 }
 
 body,
@@ -295,7 +296,7 @@ html {
     scroll-behavior: smooth;
     width: 100%;
     right: 0;
-    height: 55px;
+    height: fit-content;
     bottom: 0;
 }
 
