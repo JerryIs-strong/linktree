@@ -165,7 +165,7 @@ function Profile(profile, music, display, SEO, plugins_list, titleSettings) {
 
     Music(music, musicSetting);
     Background(background.url);
-    Theme(darkMode, favicon.dark_mode);
+    Theme(darkMode);
     HolderIcon(icon, plugins_list);
 }
 
@@ -207,17 +207,10 @@ function Background(backgroundUrl) {
     }
 }
 
-function Theme(darkMode, favicon) {
+function Theme(darkMode) {
     document.documentElement.setAttribute("dark", darkMode ? "true" : "false");
-    if (favicon.enable != false) {
-        if (!darkMode) {
-            document.querySelector("link[rel='shortcut icon']").href = favicon.path.light;
-            document.querySelector("link[rel='apple-touch-icon']").href = favicon.path.light;
-        } else {
-            document.querySelector("link[rel='shortcut icon']").href = favicon.path.dark;
-            document.querySelector("link[rel='apple-touch-icon']").href = favicon.path.dark;
-        }
-    }
+    document.getElementById('dlBtn').innerHTML = darkMode ? `<span class="material-symbols-outlined nav-icon" id="dlBtnIcon"></span>Dark Mode` : `<span class="material-symbols-outlined nav-icon" id="dlBtnIcon"></span>Light Mode`;
+    document.getElementById('dlBtnIcon').innerText = darkMode ? "dark_mode" : "light_mode";
 }
 
 function HolderIcon(holderIcon) {

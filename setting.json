@@ -9,14 +9,7 @@
             }
         },
         "favicon": {
-            "default": "./src/img/33a3af0456db6757ff0fe195b33b5f20.jpg",
-            "dark_mode": {
-                "enable": false,
-                "path": {
-                    "light": "/favicon-light.png",
-                    "dark": "/favicon-dark.png"
-                }
-            }
+            "default": "./src/img/33a3af0456db6757ff0fe195b33b5f20.jpg"
         }
     },
     "SEO": {
