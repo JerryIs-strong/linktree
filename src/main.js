@@ -261,3 +261,12 @@ function navigateTo(pageName) {
         console.error(`Page with name "${pageName}" not found.`);
     }
 }
+
+function toggleNav(isOpen) {
+    const nav = document.getElementById('nav');
+    if (isOpen) {
+        nav.classList.add('open');
+    } else {
+        nav.classList.remove('open');
+    }
+}

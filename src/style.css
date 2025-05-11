@@ -49,9 +49,9 @@ html {
     user-select: none;
     -webkit-user-select: none;
     -webkit-user-drag: none;
+    overflow: hidden;
     width: 100vw;
     height: 100vh;
-    overflow: hidden;
 }
 
 .background {
@@ -68,7 +68,7 @@ html {
 
 .main {
     position: absolute;
-    width: 100vw;
+    width: 100%;
     height: calc(100vh - 60px);
     scroll-snap-type: y mandatory;
     overflow-y: auto;
@@ -87,11 +87,11 @@ html {
     height: fit-content;
     min-height: calc(100vh - 90px);
     justify-content: center;
-    margin-bottom: 90px;
+    margin-bottom: 50px;
 }
 
 .page-title{
-    margin: 90px 0 20px 0;
+    margin: 50px 0 20px 0;
     color: var(--font-color);
     font-size: 25px;
     font-weight: 900;
@@ -529,10 +529,14 @@ nav .nav > *{
     padding: 5px 10px;
 }
 
-nav .nav > *:hover{
+nav .nav > *:hover, .navBtnActive{
     background-color: var(--nav-background-color);
     padding: 5px 10px;
     border-radius: 30px;
+}
+
+nav .nav-icon, .nav-toggle{
+    display: none;
 }
 
 /* Optimize for mobile */
@@ -564,6 +568,80 @@ nav .nav > *:hover{
         width: 8px;
         height: 8px;
     }
+
+    nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 999;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        transition: transform 0.3s ease-in-out;
+    }
+
+    nav .nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: fit-content;
+        background-color: var(--theme-background-color);
+        box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        overflow: hidden;
+        transition: all 0.3s ease-in-out; 
+        padding-bottom: 0;
+        margin: 0;
+        border-radius: 0;
+        max-height: 0;
+    }
+    
+    .nav.open {
+        max-height: 100%;
+        transition: all 0.3s ease-in-out; 
+    }
+
+    nav .nav-icon{
+        font-size: 20px;
+        vertical-align: middle;
+        margin-right: 5px;
+    }
+
+    nav .nav > *{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    nav .nav-icon, .nav-toggle{
+        display: block;
+    }
+
+    nav .nav-item{
+        width: 100%;
+        ;
+    }
+
+    nav .nav-item:nth-last-child(1) {
+        margin-bottom: 20px;
+    }
+
+    .nav-toggle {
+        background: none;
+        border: none;
+        color: var(--theme-color);
+        font-size: 24px;
+        cursor: pointer;
+        margin: 10px;
+    }
+
+    .nav-toggle.close-btn {
+        align-self: flex-end;
+    }    
 }
 
 /* Animation */
