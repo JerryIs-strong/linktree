@@ -87,11 +87,10 @@ html {
     height: fit-content;
     min-height: calc(100vh - 90px);
     justify-content: center;
-    margin-bottom: 50px;
 }
 
 .page-title{
-    margin: 50px 0 20px 0;
+    margin: 0 0 20px 140px;
     color: var(--font-color);
     font-size: 25px;
     font-weight: 900;
@@ -99,13 +98,13 @@ html {
     max-width: 650px;
 }
 
-.page-title::after{
+.page-title::before{
     content: '';
     width: 70px;
     height: 36px;
     background-color: var(--font-color);
     position: absolute;
-    margin-left: -2px;
+    margin-left: -70px;
 }
 
 .page-indicator {
@@ -529,13 +528,17 @@ nav .nav > *{
     padding: 5px 10px;
 }
 
-nav .nav > *:hover, .navBtnActive{
+nav .nav > *:hover{
     background-color: var(--nav-background-color);
     padding: 5px 10px;
     border-radius: 30px;
 }
 
 nav .nav-icon, .nav-toggle{
+    display: none;
+}    
+
+nav .nav-item[n-hide="true"] {
     display: none;
 }
 
@@ -609,6 +612,7 @@ nav .nav-icon, .nav-toggle{
         font-size: 20px;
         vertical-align: middle;
         margin-right: 5px;
+        padding: 0;
     }
 
     nav .nav > *{
@@ -617,13 +621,16 @@ nav .nav-icon, .nav-toggle{
         align-items: center;
     }
 
+    nav .nav > *:hover{
+    border-radius: 12px;
+   }
+
     nav .nav-icon, .nav-toggle{
         display: block;
     }
 
     nav .nav-item{
         width: 100%;
-        ;
     }
 
     nav .nav-item:nth-last-child(1) {
@@ -642,6 +649,10 @@ nav .nav-icon, .nav-toggle{
     .nav-toggle.close-btn {
         align-self: flex-end;
     }    
+
+    nav .nav-item[n-hide="true"] {
+        display: flex;
+    }
 }
 
 /* Animation */
