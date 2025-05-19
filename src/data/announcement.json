@@ -3,7 +3,7 @@
         "expireDate": "2025-05-26",
         "title": "📢 Announcement",
         "picture": "./src/data/img/mini8.webp",
-        "content": "I-DLE comeback with their new album [WE ARE]. Now it available on various streaming music platforms.",
+        "content": "I-DLE comeback with their new album [WE ARE]. Now available on various streaming music platforms.",
         "button": {
             "text": "Listen Now",
             "color": "#1DB954",
