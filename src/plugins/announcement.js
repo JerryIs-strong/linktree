@@ -46,11 +46,22 @@ function showAnnouncement(AnnouncementData) {
 
   if(AnnouncementData.button){
     const announcement_button = document.createElement('a');
+    const buttonData = AnnouncementData.button;
     announcement_button.className = 'announcement-button';
     announcement_button.innerText = AnnouncementData.button.text;
-    announcement_button.href = AnnouncementData.button.url;
     announcement_button.style.backgroundColor = AnnouncementData.button.color;
-    announcement_button.target = '_blank';
+    
+    announcement_button.onclick = (e) => {
+      if(buttonData.onclickAction.includes("page: ")){
+        targetPage =buttonData.onclickAction.split("page: ")[1];
+        closeAnnouncement();
+        navigateTo(targetPage);
+      } else if(buttonData.onclickAction.includes("link: ")){
+        const link = buttonData.onclickAction.split("link: ")[1];
+        closeAnnouncement();
+        window.open(link, '_blank');
+      }      
+    }
     announcement_wrapper.appendChild(announcement_button);
   }
 

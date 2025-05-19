@@ -607,6 +607,10 @@ nav .nav-item[n-hide="true"] {
     nav .nav-item[n-hide="true"] {
         display: flex;
     }
+
+    .page[p-name="We are"] iframe{
+        padding: 0 30px;
+    }
 }
 
 /* Animation */
