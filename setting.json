@@ -19,7 +19,7 @@
     },
     "display": {
         "background": {
-            "url": "./src/img/125435652_p0.webp"
+            "url": "./src/img/94943159_p0.webp"
         },
         "title": {
             "method": "greeting",
@@ -184,7 +184,7 @@
     },
     "debug": false,
     "plugins": {
-        "list": ["dcount"],
+        "list": ["dcount", "announcement"],
         "configs": {}
     },
     "alert": {

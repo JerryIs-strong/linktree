@@ -1,28 +1,26 @@
 [dark="true"] {
     --background-color: #101010b0;
-    --nav-background-color: #b17373a1;
     --background-color-fill: #101010;
     --font-color: #fff;
     --font-secondary-color: #d6d6d6;
     --font-hover-color: #000;
     --font-sign-color: #ffffff15;
     --mainBtn-color: #4040402b;
-    --theme-color: #ffb0c5;
-    --theme-background-color: #2d1f1f7d;
-    --btn-hover-color: #352222a6;
+    --theme-color: #c2daf8;
+    --theme-background-color: #425f7a99;
+    --btn-hover-color: #2356708c;
 }
 
 [dark="false"] {
     --background-color: #ffffffa3;
-    --nav-background-color: #ea9d9dbe;
     --background-color-fill: #ffffff;
     --font-color: #fff;
     --font-secondary-color: #ffffff9a;
     --font-hover-color: #fff;
     --font-sign-color: #50505021;
-    --theme-color: #f1bec8;
-    --theme-background-color: #90616185;
-    --btn-hover-color: #724444a6;
+    --theme-color: #bedaf1;
+    --theme-background-color: #61779085;
+    --btn-hover-color: #445872a6;
 }
 
 :root {
@@ -116,7 +114,7 @@ html {
     display: flex;
     flex-direction: column;
     gap: 10px;
-    z-index: 1000;
+    z-index: 997;
 }
 
 .page-indicator .dot {
@@ -322,7 +320,6 @@ html {
     margin: 20px 15px;
 }
 
-.githubProject,
 .MusicName {
     color: #fff !important;
     text-decoration: none !important;
@@ -346,121 +343,10 @@ html {
     text-align: end;
 }
 
-.github-loop {
-    margin-top: 10px;
-}
-
-a.MusicName:-webkit-any-link,
-a.githubProject:-webkit-any-link {
+a.MusicName:-webkit-any-link {
     color: unset;
     cursor: pointer;
     text-decoration: none;
-}
-
-.notification {
-    z-index: 999;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    align-items: flex-end;
-}
-
-.notification_wrapper {
-    position: relative;
-    width: fit-content;
-    color: #fff;
-    background-color: var(--background-color-fill) !important;
-    margin: 10px;
-    border-radius: 16px;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    backdrop-filter: var(--global-blur);
-    -webkit-backdrop-filter: var(--global-blur);
-    z-index: 998;
-}
-
-.notification_main {
-    display: flex;
-    flex-direction: row;
-}
-
-.notification_content {
-    font-size: 15px;
-    text-align: left;
-    font-weight: 500;
-}
-
-.notification_close {
-    margin: 0 -10px 0 10px;
-    transform: translateY(1px);
-    cursor: pointer;
-}
-
-.snackbar_title {
-    font-size: 10px;
-    color: var(--font-secondary-color);
-    display: flex;
-    flex-direction: row;
-    background-color: var(--background-color);
-    padding: 15px 28px 0 20px;
-    border-radius: 16px 16px 0 0;
-    justify-content: space-between;
-}
-
-.snackbar_title_sub {
-    display: flex;
-    flex-direction: row;
-    margin-top: 2px;
-}
-
-.notification_function_kit {
-    display: flex;
-}
-
-.notification_icon {
-    margin-right: 10px;
-}
-
-.notification_title {
-    margin-top: -2px;
-}
-
-.notification_level {
-    padding: 2px 10px;
-    margin: -3px 0 0 10px;
-    border-radius: 20px;
-    color: #fff;
-}
-
-.notification_main {
-    padding: 8px 15px 15px 20px;
-}
-
-.notification_content {
-    width: 350px;
-    color: var(--font-color);
-}
-
-.snackbar-show {
-    animation: snackIn 0.5s cubic-bezier(0.25, 0.04, 0, 0.89) forwards;
-}
-
-.snackbar-hide {
-    animation: snackOut 0.5s cubic-bezier(0.25, 0.04, 0, 0.89) forwards;
-}
-
-.img-dialog {
-    position: absolute;
-    background-color: #333;
-    color: #fff;
-    padding: 5px 10px;
-    border-radius: 5px;
-    font-size: 14px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-    z-index: 1000;
-    animation: fadeInOut 2s ease;
 }
 
 #dcount-container{
@@ -509,12 +395,12 @@ nav{
     width: 100%;
     display: flex;
     justify-content: center;
-    z-index: 999;
+    z-index: 997;
 }
 
 nav .nav{
     display: flex;
-    background-color: var(--background-color);
+    background-color: var(--theme-background-color);
     margin: 20px;
     border-radius: 30px;
     padding: 0 10px;
@@ -531,7 +417,7 @@ nav .nav > *{
 }
 
 nav .nav > *:hover{
-    background-color: var(--nav-background-color);
+    background-color: var(--btn-hover-color);
     padding: 5px 10px;
     border-radius: 30px;
 }
@@ -542,6 +428,72 @@ nav .nav-icon, .nav-toggle{
 
 nav .nav-item[n-hide="true"] {
     display: none;
+}
+
+.announcement-wrapper{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--background-color);
+    backdrop-filter: var(--global-blur);
+    color: var(--font-color);
+    padding: 40px;
+    border-radius: 20px;
+    z-index: 999;
+    text-align: center;
+}
+
+.announcement-mask{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--background-color);
+    backdrop-filter: var(--global-blur);
+    z-index: 998;
+}
+
+.announcement-wrapper .announcement-close{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: var(--font-color);
+    cursor: pointer;
+}
+
+.announcement-wrapper .announcement-title{
+    font-size: 25px;
+    font-weight: bolder;
+    margin-bottom: 20px;
+}
+
+.announcement-wrapper img{
+    border-radius: 20px;
+    width: 250px;
+}
+
+.announcement-wrapper .announcement-content{
+    font-size: 15px;
+    margin: 20px 0 0 0;
+}
+
+.announcement-wrapper .announcement-button{
+    background-color: #1ed760;
+    color: #000;
+    text-decoration: none;
+    border-radius: 30px;
+    padding: 10px 15px;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+.announcement-hashtag{
+    font-size: 15px;
 }
 
 /* Optimize for mobile */
@@ -579,7 +531,7 @@ nav .nav-item[n-hide="true"] {
         top: 0;
         left: 0;
         width: 100%;
-        z-index: 999;
+        z-index: 997;
         display: flex;
         justify-content: flex-end;
         align-items: center;
