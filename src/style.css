@@ -114,7 +114,7 @@ html {
     display: flex;
     flex-direction: column;
     gap: 10px;
-    z-index: 997;
+    z-index: 996;
 }
 
 .page-indicator .dot {
@@ -490,6 +490,7 @@ nav .nav-item[n-hide="true"] {
     padding: 10px 15px;
     font-weight: bold;
     margin-top: 20px;
+    cursor: pointer;
 }
 
 .announcement-hashtag{
