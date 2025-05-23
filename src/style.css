@@ -53,6 +53,12 @@ html {
     height: 100vh;
 }
 
+a{
+    color: var(--font-color);
+    text-decoration: none;
+    cursor: pointer;
+}
+
 .background {
     background-position: center;
     background-repeat: no-repeat;
@@ -473,8 +479,8 @@ nav .nav-item[n-hide="true"] {
 }
 
 .announcement-wrapper img{
-    border-radius: 20px;
-    width: 250px;
+    width: 220px;
+    margin: 10px 20px;
 }
 
 .announcement-wrapper .announcement-content{

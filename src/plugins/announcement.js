@@ -9,7 +9,7 @@ function closeAnnouncement() {
   }
 }
 
-function showAnnouncement(AnnouncementData) {
+function showAnnouncement(AnnouncementData, noExpireDate = false) {
   const announcement_wrapper = document.createElement('div');
   const announcement_title = document.createElement('div');
   const announcement_content = document.createElement('div');
@@ -23,8 +23,10 @@ function showAnnouncement(AnnouncementData) {
   announcement_mask.className = 'announcement-mask';
 
   announcement_title.innerText = AnnouncementData.title;
-  announcement_title.innerHTML += `<div class="announcement-hashtag">#有期限: ${AnnouncementData.expireDate}</div>`;
-  announcement_content.innerText = AnnouncementData.content;
+  if(!noExpireDate){
+    announcement_title.innerHTML += `<div class="announcement-hashtag">#有期限: ${AnnouncementData.expireDate}</div>`;
+  }
+  announcement_content.innerHTML = AnnouncementData.content;
   announcement_close.innerHTML = '<span class="material-symbols-outlined"> close </span>';
   announcement_close.onclick = () => {
     closeAnnouncement();
@@ -80,10 +82,14 @@ fetch('./src/data/announcement.json')
         const today = {
             date: new Date().toISOString().split('T')[0]
         };
-        
-        if(today.date <= data.announce.expireDate){
+
+        if(data.announce.expireDate === "/"){
+            showAnnouncement(data.announce, true);
+            console.log("No Expire Date");
+        }else if(today.date <= data.announce.expireDate){
             showAnnouncement(data.announce);
         }else{
-          console.log("Expired Announcement");
+            console.log("Expired Announcement");
         }
+        
     })
