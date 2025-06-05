@@ -39,166 +39,167 @@
             },
             "music": {
                 "enable": true,
-                "music_data": {
-                    "music_1": {
+                "music_data": [
+                    {
                         "name": "I Do",
                         "artist": "(G)I-DLE",
                         "album": "HEAT",
                         "url": "https://music.youtube.com/watch?v=NH3hQTFLgR4"
                     },
-                    "music_2": {
+                    {
                         "name": "Klaxon",
                         "artist": "(G)I-DLE",
                         "album": "I SWAY",
                         "url": "https://music.youtube.com/watch?v=-hUX3-eXmUE"
                     },
-                    "music_3": {
+                    {
                         "name": "Neverland",
                         "artist": "(G)I-DLE",
                         "album": "I SWAY",
                         "url": "https://music.youtube.com/watch?v=t0Dox99MAIc"
                     },
-                    "music_4": {
+                    {
                         "name": "Last Forever",
                         "artist": "(G)I-DLE",
                         "album": "I SWAY",
                         "url": "https://music.youtube.com/watch?v=docmg0oGpXY"
                     },
-                    "music_5": {
+                    {
                         "name": "Allergy",
                         "artist": "(G)I-DLE",
                         "album": "I feel",
                         "url": "https://music.youtube.com/watch?v=Gcp87-ZegRA"
                     },
-                    "music_6": {
+                    {
                         "name": "Really Like You",
                         "artist": "BABYMONSTER",
                         "album": "DRIP",
                         "url": "https://music.youtube.com/watch?v=yrfnj9Q54m4"
                     },
-                    "music_7": {
+                    {
                         "name": "假使世界原來不像你預期",
                         "artist": "方皓玟",
                         "album": "LOST n FOUND",
                         "url": "https://music.youtube.com/watch?v=xtBfeHvjhq0"
                     },
-                    "music_8": {
+                    {
                         "name": "凡星",
                         "artist": "陳蕾",
                         "album": "念",
                         "url": "https://music.youtube.com/watch?v=vER4DPlhXXI"
                     },
-                    "music_9": {
+                    {
                         "name": "高山低谷",
                         "artist": "林奕匡",
                         "album": "3",
                         "url": "https://music.youtube.com/watch?v=whVgChFNYkg"
                     }
-                }
+                ]
             }
         },
         "blur": true
     },
-    "links": {
-        "social 🎠": {
-            "link_1": {
-                "enable": true,
-                "name": "Facebook",
-                "icon": {
-                    "type": "fontawesome",
-                    "fontawesome": "fa-brands fa-facebook-f"
-                },
-                "description": "@heyajerry07",
-                "url": "https://www.facebook.com/heyajerry07",
-                "target": "blank"
+    "links": [
+        {
+            "enable": true,
+            "name": "Facebook",
+            "icon": {
+                "type": "fontawesome",
+                "fontawesome": "fa-brands fa-facebook-f"
             },
-            "link_2": {
-                "enable": true,
-                "name": "Instagram",
-                "icon": {
-                    "type": "fontawesome",
-                    "fontawesome": "fa fa-instagram"
-                },
-                "description": "@hwj7818_ynz",
-                "url": "https://www.instagram.com/hwj7818_ynz/",
-                "target": "blank"
-            },
-            "link_3": {
-                "enable": true,
-                "name": "X(Twitter)",
-                "icon": {
-                    "type": "fontawesome",
-                    "fontawesome": "fa-brands fa-x-twitter"
-                },
-                "description": "@jerryis_strong",
-                "url": "https://x.com/jerryis_strong",
-                "target": "blank"
-            },
-            "link_4": {
-                "enable": false,
-                "name": "Blog",
-                "icon": {
-                    "type": "fontawesome",
-                    "fontawesome": "fa-solid fa-blog"
-                },
-                "description": "Official blog page",
-                "url": "https://jerryis-strong.github.io/",
-                "target": "blank"
-            },
-            "link_5": {
-                "enable": true,
-                "name": "Github",
-                "icon": {
-                    "type": "fontawesome",
-                    "fontawesome": "fa-brands fa-github"
-                },
-            "link_6": {
-                "enable": true,
-                "name": "Threads",
-                "icon": {
-                    "type": "fontawesome",
-                    "fontawesome": "fa-brands fa-threads"
-                },
-                "description": "@JerryIs-strong",
-                "url": "https://www.threads.net/@hwj7818_ynz",
-                "target": "blank"
-                }
-            }
+            "description": "@heyajerry07",
+            "url": "https://www.facebook.com/heyajerry07",
+            "target": "blank"
         },
-        "Creator 🔧": {
-            "link_1": {
-                "enable": true,
-                "name": "YouTube",
-                "icon": {
-                    "type": "fontawesome",
-                    "fontawesome": "fa fa-youtube"
-                },
-                "description": "@jerryis-strong",
-                "url": "https://www.youtube.com/channel/UCb4AAgayzeNgj01ULpDDzjg",
-                "target": "blank"
+        {
+            "enable": true,
+            "name": "Instagram",
+            "icon": {
+                "type": "fontawesome",
+                "fontawesome": "fa fa-instagram"
             },
-            "link_2": {
-                "enable": true,
-                "name": "Bilibili",
-                "icon": {
-                    "type": "fontawesome",
-                    "fontawesome": "fa-brands fa-bilibili"
-                },
-                "description": "@jerry7818",
-                "url": "https://space.bilibili.com/3546846200859472",
-                "target": "blank"
-            }
+            "description": "@hwj7818_ynz",
+            "url": "https://www.instagram.com/hwj7818_ynz/",
+            "target": "blank"
+        },
+        {
+            "enable": true,
+            "name": "X(Twitter)",
+            "icon": {
+                "type": "fontawesome",
+                "fontawesome": "fa-brands fa-x-twitter"
+            },
+            "description": "@jerryis_strong",
+            "url": "https://x.com/jerryis_strong",
+            "target": "blank"
+        },
+        {
+            "enable": false,
+            "name": "Blog",
+            "icon": {
+                "type": "fontawesome",
+                "fontawesome": "fa-solid fa-blog"
+            },
+            "description": "Official blog page",
+            "url": "https://jerryis-strong.github.io/",
+            "target": "blank"
+        },
+        {
+            "enable": true,
+            "name": "Github",
+            "icon": {
+                "type": "fontawesome",
+                "fontawesome": "fa-brands fa-github"
+            },
+            "description": "@JerryIs-strong",
+            "url": "https://github.com/JerryIs-strong",
+            "target": "blank"
+        },
+        {
+            "enable": true,
+            "name": "Threads",
+            "icon": {
+                "type": "fontawesome",
+                "fontawesome": "fa-brands fa-threads"
+            },
+            "description": "@hwj7818_ynz",
+            "url": "https://www.threads.net/@hwj7818_ynz",
+            "target": "blank"
+        },
+        {
+            "enable": true,
+            "name": "YouTube",
+            "icon": {
+                "type": "fontawesome",
+                "fontawesome": "fa fa-youtube"
+            },
+            "description": "@jerryis-strong",
+            "url": "https://www.youtube.com/channel/UCb4AAgayzeNgj01ULpDDzjg",
+            "target": "blank"
+        },
+        {
+            "enable": true,
+            "name": "Bilibili",
+            "icon": {
+                "type": "fontawesome",
+                "fontawesome": "fa-brands fa-bilibili"
+            },
+            "description": "@jerry7818",
+            "url": "https://space.bilibili.com/3546846200859472",
+            "target": "blank"
         }
-    },
+    ],
     "debug": false,
     "plugins": {
-        "list": ["dcount", "announcement"],
+        "list": [
+            "dcount",
+            "announcement"
+        ],
         "configs": {}
     },
     "alert": {
         "enable": false,
         "https": false,
-        "data": {
-        }
+        "data": {}
     }
 }

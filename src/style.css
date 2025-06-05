@@ -40,17 +40,8 @@ body,
 html {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-    font-family: "Microsoft Yahei", "Helvetica Neue", Helvetica, "Segoe UI", Arial, sans-serif;
-    font-weight: 400;
-    font-style: normal;
     background-color: var(--font-hover-color);
-    user-select: none;
-    -webkit-user-select: none;
-    -webkit-user-drag: none;
     overflow: hidden;
-    width: 100vw;
-    height: 100vh;
 }
 
 a{
@@ -74,7 +65,7 @@ a{
 .main {
     position: absolute;
     width: 100%;
-    height: calc(100vh - 60px);
+    height: calc(100% - 60px);
     scroll-snap-type: y mandatory;
     overflow-y: auto;
     scrollbar-width: none;
@@ -451,6 +442,7 @@ nav .nav-item[n-hide="true"] {
     border-radius: 20px;
     z-index: 999;
     text-align: center;
+    animation: announcementIn 0.5s cubic-bezier(0.75, 0.15, 0.16, 0.99) forwards
 }
 
 .announcement-mask{
@@ -671,5 +663,16 @@ nav .nav-item[n-hide="true"] {
     100% {
         opacity: 0;
         transform: translateY(10px);
+    }
+}
+
+@keyframes announcementIn {
+    0% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0.8);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
     }
 }

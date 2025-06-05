@@ -1,5 +1,6 @@
 const mainWrapper = document.getElementById("main");
 const settings = JSON.parse(sessionStorage.getItem('setting'));
+LinkBtnNum = 1;
 
 document.addEventListener('DOMContentLoaded', () => {
     const { profile, SEO, links, display } = settings;
@@ -7,6 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const titleSettings = settings.display.title;
     Profile(profile, music, display, SEO, settings.plugins, titleSettings);
     Links(links);
+
     if (!display.blur) {
         document.body.style.setProperty('--global-blur', 'blur(0)');
     }
@@ -23,7 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         dot.addEventListener('click', () => {
             mainWrapper.scrollTo({
-                top: page.offsetTop - mainWrapper.offsetTop, 
+                top: page.offsetTop - mainWrapper.offsetTop,
                 behavior: 'smooth',
             });
         });
@@ -65,14 +67,12 @@ document.addEventListener('DOMContentLoaded', () => {
     pages.forEach((page) => observer.observe(page));
 });
 
-function createLink(id, icon, target, url, linkName, description, onclick, isInBox = false) {
+function createLink(icon, target, url, linkName, description, onclick, isInBox = false) {
     const LinkBtnWrapper = document.createElement('a');
 
-    Object.assign(LinkBtnWrapper, {
-        id,
-        target,
-        title: linkName
-    });
+    LinkBtnWrapper.id = `link_${LinkBtnNum++}`;
+    LinkBtnWrapper.target = target;
+    LinkBtnWrapper.title = linkName;
 
     if (url != false) {
         LinkBtnWrapper.href = url;
@@ -106,12 +106,12 @@ function createLink(id, icon, target, url, linkName, description, onclick, isInB
         LinkBtnDesc.remove();
     }
 
-    if(icon.type === "fontawesome") {
+    if (icon.type === "fontawesome") {
         LinkBtnIcon.className = `link-icon ${icon.fontawesome}`;
-    }else if(icon.type === "auto") {
-        if(icon.fontawesome){
+    } else if (icon.type === "auto") {
+        if (icon.fontawesome) {
             LinkBtnIcon.className = `link-icon ${icon.fontawesome}`;
-        }else{
+        } else {
             LinkBtnIcon.className = "link-icon-text";
             LinkBtnIcon.innerText = linkName.charAt(0).toUpperCase()
         }
@@ -173,8 +173,8 @@ function Music(music, musicSetting) {
     const musicElement = document.getElementById('MusicName');
     if (music.enable) {
         const musicNumber = Object.keys(musicSetting).length;
-        const musicRandom = Math.floor(Math.random() * musicNumber) + 1;
-        const musicKey = musicSetting[`music_${musicRandom}`];
+        const musicRandom = Math.floor(Math.random() * musicNumber);
+        const musicKey = musicSetting[musicRandom];
         musicElement.innerText = musicKey.name;
         musicElement.href = musicKey.url;
         if (musicKey.album || musicKey.artist) {
@@ -228,12 +228,11 @@ function Links(linkSettings) {
     const linkGroup = document.getElementById('mediaBtn_wrapper');
 
     if (linkSettings && Object.keys(linkSettings).length > 0) {
-        Object.entries(linkSettings).forEach(([category, linkDB]) => {
-            Object.entries(linkDB).forEach(([key, link]) => {
-                if (link.enable && link.name != urlParams.get('media') && key.includes("link_")) {
-                    linkGroup.appendChild(createLink(key, link.icon, link.target, link.url, link.name, link.description, false, true));
-                }
-            });
+        Object.entries(linkSettings).forEach(([linkDB]) => {
+            link = linkSettings[linkDB];
+            if (link.enable && link.name != urlParams.get('media')) {
+                linkGroup.appendChild(createLink(link.icon, link.target, link.url, link.name, link.description, false, true));
+            }
         });
     } else {
         debug("連結設置錯誤", "warn");
