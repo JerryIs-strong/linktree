@@ -152,8 +152,15 @@
                     "type": "fontawesome",
                     "fontawesome": "fa-brands fa-github"
                 },
+            "link_6": {
+                "enable": true,
+                "name": "Threads",
+                "icon": {
+                    "type": "fontawesome",
+                    "fontawesome": "fa-brands fa-threads"
+                },
                 "description": "@JerryIs-strong",
-                "url": "https://github.com/JerryIs-strong",
+                "url": "https://www.threads.net/@hwj7818_ynz",
                 "target": "blank"
             }
         },
