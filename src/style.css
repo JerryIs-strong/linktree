@@ -27,7 +27,7 @@
     --global-blur: blur(20px);
 }
 
-*{
+* {
     font-family: "Noto Sans HK", serif;
     box-sizing: border-box;
     user-select: none;
@@ -44,7 +44,7 @@ html {
     overflow: hidden;
 }
 
-a{
+a {
     color: var(--font-color);
     text-decoration: none;
     cursor: pointer;
@@ -75,7 +75,7 @@ a{
     display: none;
 }
 
-.page{
+.page {
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -85,7 +85,7 @@ a{
     justify-content: center;
 }
 
-.page-title{
+.page-title {
     margin: 0 0 20px 140px;
     color: var(--font-color);
     font-size: 25px;
@@ -94,7 +94,7 @@ a{
     max-width: 650px;
 }
 
-.page-title::before{
+.page-title::before {
     content: '';
     width: 70px;
     height: 36px;
@@ -192,7 +192,7 @@ a{
     background-color: var(--btn-hover-color) !important;
 }
 
-.link-info-tab{
+.link-info-tab {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -222,7 +222,7 @@ a{
     justify-content: space-between;
 }
 
-.link-desc{
+.link-desc {
     background-color: var(--theme-background-color);
     border-radius: 30px;
     padding: 5px 15px;
@@ -258,11 +258,11 @@ a{
     margin: 10px 0;
 }
 
-.link-icon{
+.link-icon {
     padding: 0 15px;
 }
 
-.link-icon-text{
+.link-icon-text {
     font-style: normal;
     font-weight: bolder;
     font-family: "Rampart One", serif;
@@ -285,7 +285,7 @@ a{
     opacity: 0.8;
     display: flex;
     flex-direction: column;
-    align-items: flex-end;    
+    align-items: flex-end;
     justify-content: flex-end;
     overflow: auto;
     scroll-behavior: smooth;
@@ -295,7 +295,7 @@ a{
     bottom: 0;
 }
 
-.share_footer{
+.share_footer {
     width: 100%;
     height: 100%;
     background-size: cover;
@@ -313,7 +313,7 @@ a{
     display: none;
 }
 
-.music{
+.music {
     margin: 20px 15px;
 }
 
@@ -346,7 +346,7 @@ a.MusicName:-webkit-any-link {
     text-decoration: none;
 }
 
-#dcount-container{
+#dcount-container {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -356,7 +356,7 @@ a.MusicName:-webkit-any-link {
     max-width: 650px;
 }
 
-.dcount-card{
+.dcount-card {
     background-color: var(--theme-background-color);
     color: var(--theme-color);
     padding: 30px 40px;
@@ -371,7 +371,7 @@ a.MusicName:-webkit-any-link {
     -webkit-backdrop-filter: var(--global-blur);
 }
 
-.dcount-card-title{
+.dcount-card-title {
     font-size: 20px;
     font-weight: bolder;
     margin-bottom: 10px;
@@ -381,13 +381,13 @@ a.MusicName:-webkit-any-link {
     padding-bottom: 10px;
 }
 
-.dcount-card[data-today="true"]{
+.dcount-card[data-today="true"] {
     order: -1;
     flex: 1 1 100%;
     background-image: linear-gradient(45deg, #4413db70, #eb369969);
 }
 
-nav{
+nav {
     position: fixed;
     width: 100%;
     display: flex;
@@ -395,7 +395,7 @@ nav{
     z-index: 997;
 }
 
-nav .nav{
+nav .nav {
     display: flex;
     background-color: var(--theme-background-color);
     margin: 20px;
@@ -404,30 +404,31 @@ nav .nav{
     color: var(--font-color);
     backdrop-filter: var(--global-blur);
     -webkit-backdrop-filter: var(--global-blur);
-    transition: all 0.3s ease-in-out; 
+    transition: all 0.3s ease-in-out;
 }
 
-nav .nav > *{
+nav .nav>* {
     margin: 10px;
     cursor: pointer;
     padding: 5px 10px;
 }
 
-nav .nav > *:hover{
+nav .nav>*:hover {
     background-color: var(--btn-hover-color);
     padding: 5px 10px;
     border-radius: 30px;
 }
 
-nav .nav-icon, .nav-toggle{
+nav .nav-icon,
+.nav-toggle {
     display: none;
-}    
+}
 
 nav .nav-item[n-hide="true"] {
     display: none;
 }
 
-.announcement-wrapper{
+.announcement-wrapper {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -445,7 +446,7 @@ nav .nav-item[n-hide="true"] {
     animation: announcementIn 0.5s cubic-bezier(0.75, 0.15, 0.16, 0.99) forwards
 }
 
-.announcement-mask{
+.announcement-mask {
     position: absolute;
     top: 0;
     left: 0;
@@ -456,7 +457,7 @@ nav .nav-item[n-hide="true"] {
     z-index: 998;
 }
 
-.announcement-wrapper .announcement-close{
+.announcement-wrapper .announcement-close {
     position: absolute;
     top: 10px;
     right: 10px;
@@ -464,23 +465,23 @@ nav .nav-item[n-hide="true"] {
     cursor: pointer;
 }
 
-.announcement-wrapper .announcement-title{
+.announcement-wrapper .announcement-title {
     font-size: 25px;
     font-weight: bolder;
     margin-bottom: 20px;
 }
 
-.announcement-wrapper img{
+.announcement-wrapper img {
     width: 220px;
     margin: 10px 20px;
 }
 
-.announcement-wrapper .announcement-content{
+.announcement-wrapper .announcement-content {
     font-size: 15px;
     margin: 20px 0 0 0;
 }
 
-.announcement-wrapper .announcement-button{
+.announcement-wrapper .announcement-button {
     background-color: #1ed760;
     color: #000;
     text-decoration: none;
@@ -491,27 +492,86 @@ nav .nav-item[n-hide="true"] {
     cursor: pointer;
 }
 
-.announcement-hashtag{
+.announcement-hashtag {
     font-size: 15px;
 }
+
+#rot13-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 650px;
+}
+
+#rot13-input {
+    width: 100%;
+    background-color: var(--theme-background-color);
+    color: var(--theme-color);
+    border: none;
+    border-radius: 20px;
+    padding: 10px 20px;
+    min-height: 150px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#rot13-input::placeholder{
+    color: var(--theme-color);
+}
+
+#rot13-input:focus {
+    outline: none;
+}
+
+#rot13-decrypt-btn {
+    width: 100%;
+    background-color: var(--theme-background-color);
+    color: var(--theme-color);
+    border: none;
+    border-radius: 20px;
+    padding: 30px 20px;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+.rot13-output {
+    width: 100%;
+    background-color: var(--theme-background-color);
+    color: var(--theme-color);
+    border: none;
+    border-radius: 20px;
+    padding: 10px 20px;
+    min-height: 150px;
+    text-align: center;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
 
 /* Optimize for mobile */
 
 @media screen and (max-width: 750px) {
-    .mediaBtn, .page-title{
+
+    .mediaBtn,
+    .page-title {
         padding: 0 35px;
     }
 
-    .link-desc{
+    .link-desc {
         display: none;
     }
 
-    .link-btn-box{
+    .link-btn-box {
         justify-content: center !important;
 
     }
 
-    #dcount-container{
+    #dcount-container {
         width: 100%;
         padding: 0 35px;
     }
@@ -549,40 +609,41 @@ nav .nav-item[n-hide="true"] {
         flex-direction: column;
         align-items: center;
         overflow: hidden;
-        transition: all 0.3s ease-in-out; 
+        transition: all 0.3s ease-in-out;
         padding-bottom: 0;
         margin: 0;
         border-radius: 0;
         max-height: 0;
     }
-    
+
     .nav.open {
         max-height: 100%;
-        transition: all 0.3s ease-in-out; 
+        transition: all 0.3s ease-in-out;
     }
 
-    nav .nav-icon{
+    nav .nav-icon {
         font-size: 20px;
         vertical-align: middle;
         margin-right: 5px;
         padding: 0;
     }
 
-    nav .nav > *{
+    nav .nav>* {
         display: flex;
         justify-content: center;
         align-items: center;
     }
 
-    nav .nav > *:hover{
-    border-radius: 12px;
-   }
+    nav .nav>*:hover {
+        border-radius: 12px;
+    }
 
-    nav .nav-icon, .nav-toggle{
+    nav .nav-icon,
+    .nav-toggle {
         display: block;
     }
 
-    nav .nav-item{
+    nav .nav-item {
         width: 100%;
     }
 
@@ -601,14 +662,18 @@ nav .nav-item[n-hide="true"] {
 
     .nav-toggle.close-btn {
         align-self: flex-end;
-    }    
+    }
 
     nav .nav-item[n-hide="true"] {
         display: flex;
     }
 
-    .page[p-name="We are"] iframe{
-        padding: 0 30px;
+    .page[p-name="We are"] iframe {
+        padding: 0 35px;
+    }
+
+    #rot13-container{
+        padding: 0 35px;
     }
 }
 
@@ -652,14 +717,17 @@ nav .nav-item[n-hide="true"] {
         opacity: 0;
         transform: translateY(10px);
     }
+
     10% {
         opacity: 1;
         transform: translateY(0);
     }
+
     90% {
         opacity: 1;
         transform: translateY(0);
     }
+
     100% {
         opacity: 0;
         transform: translateY(10px);
@@ -671,6 +739,7 @@ nav .nav-item[n-hide="true"] {
         opacity: 0;
         transform: translate(-50%, -50%) scale(0.8);
     }
+
     100% {
         opacity: 1;
         transform: translate(-50%, -50%) scale(1);
