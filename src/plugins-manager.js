@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', async () => {
                 script.src = `./src/plugins/${pluginName}.js`;
                 document.body.appendChild(script);
             });
-            styleInfo("已安裝的組件:", pluginsList, "#f39898", "#fff");
+            styleInfo("Installed plugins:", pluginsList, "#f39898", "#fff");
         }
     } catch (error) {
         console.error('Error fetching or parsing the setting.json file:', error);

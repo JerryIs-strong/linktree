@@ -14,7 +14,7 @@ function debug(DebugMessage, action = 'info') {
     }
 }
 
-styleInfo("Arona version", version, "#4d6491", "#fff");
+styleInfo("Version", version, "#4d6491", "#fff");
 if (!debugInfo) {
     styleInfo("Log process:", "disabled", `#d280e5`, "#fff");
 }
