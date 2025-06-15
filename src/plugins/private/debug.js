@@ -1,6 +1,13 @@
 const debugInfo = setting.debug;
 
 function styleInfo(message1, message2, primary_color, second_color) {
+    if (second_color === "auto") {
+        if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+            second_color = "#2f2f2f";
+        } else {
+            second_color = "#fff";
+        }
+    }
     console.log(
         `%c${message1}%c${message2}`,
         `background-color: ${primary_color}; color: ${second_color}; padding: 5px; border-radius: 15px 0 0 15px`,
@@ -14,7 +21,6 @@ function debug(DebugMessage, action = 'info') {
     }
 }
 
-styleInfo("Version", version, "#4d6491", "#fff");
-if (!debugInfo) {
-    styleInfo("Log process:", "disabled", `#d280e5`, "#fff");
-}
+styleInfo("Version", version, "#7fa3e9", "auto");
+LogState = debugInfo ? "Running" : "Disabled"; 
+styleInfo("Log Process:", LogState, `#d280e5`, "auto");
