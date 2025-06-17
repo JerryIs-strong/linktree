@@ -9,6 +9,7 @@
     --theme-color: #c2daf8;
     --theme-background-color: #425f7a99;
     --btn-hover-color: #2356708c;
+    --announcement-font-color: #fff;
 }
 
 [dark="false"] {
@@ -21,6 +22,7 @@
     --theme-color: #bedaf1;
     --theme-background-color: #61779085;
     --btn-hover-color: #445872a6;
+    --announcement-font-color: #2c2c2c;
 }
 
 :root {
@@ -438,7 +440,7 @@ nav .nav-item[n-hide="true"] {
     align-items: center;
     background-color: var(--background-color);
     backdrop-filter: var(--global-blur);
-    color: var(--font-color);
+    color: var(--announcement-font-color);
     padding: 40px;
     border-radius: 20px;
     z-index: 999;
@@ -461,7 +463,7 @@ nav .nav-item[n-hide="true"] {
     position: absolute;
     top: 10px;
     right: 10px;
-    color: var(--font-color);
+    color: var(--announcement-font-color);
     cursor: pointer;
 }
 
@@ -479,6 +481,10 @@ nav .nav-item[n-hide="true"] {
 .announcement-wrapper .announcement-content {
     font-size: 15px;
     margin: 20px 0 0 0;
+}
+
+.announcement-content a{
+    color: var(--announcement-font-color)
 }
 
 .announcement-wrapper .announcement-button {
