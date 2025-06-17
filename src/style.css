@@ -1,7 +1,6 @@
 [dark="true"] {
     --background-color: #101010b0;
     --background-color-fill: #101010;
-    --font-color: #fff;
     --font-secondary-color: #d6d6d6;
     --font-hover-color: #000;
     --font-sign-color: #ffffff15;
@@ -15,9 +14,7 @@
 [dark="false"] {
     --background-color: #ffffffa3;
     --background-color-fill: #ffffff;
-    --font-color: #fff;
     --font-secondary-color: #ffffff9a;
-    --font-hover-color: #fff;
     --font-sign-color: #50505021;
     --theme-color: #bedaf1;
     --theme-background-color: #61779085;
@@ -27,6 +24,7 @@
 
 :root {
     --global-blur: blur(20px);
+    --font-color: #fff;
 }
 
 * {
