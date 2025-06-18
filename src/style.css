@@ -36,14 +36,6 @@
     overflow: hidden;
 }
 
-body,
-html {
-    margin: 0;
-    padding: 0;
-    background-color: var(--font-hover-color);
-    overflow: hidden;
-}
-
 a {
     color: var(--font-color);
     text-decoration: none;
