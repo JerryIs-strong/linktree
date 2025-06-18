@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const { profile, SEO, links, display } = settings;
     const { music } = display.share;
     const titleSettings = settings.display.title;
-    Profile(profile, music, display, SEO, settings.plugins, titleSettings);
+    Profile(profile, music, display, SEO, titleSettings);
     Links(links);
 
     if (!display.blur) {
@@ -132,7 +132,7 @@ function greetUser(settings) {
     }
 }
 
-function Profile(profile, music, display, SEO, plugins_list, titleSettings) {
+function Profile(profile, music, display, SEO, titleSettings) {
     const { icon, favicon } = profile;
     const { background } = display;
     const { language, description, google_verification } = SEO;
@@ -157,7 +157,7 @@ function Profile(profile, music, display, SEO, plugins_list, titleSettings) {
     Music(music, musicSetting);
     Background(background.url);
     Theme(darkMode);
-    HolderIcon(icon, plugins_list);
+    HolderIcon(icon);
 }
 
 function Music(music, musicSetting) {
@@ -206,8 +206,8 @@ function Theme(darkMode) {
 
 function HolderIcon(holderIcon) {
     const imgElement = document.getElementById('img');
-    if (holderIcon.method === "local") {
-        imgElement.src = holderIcon.local.url;
+    if (holderIcon.url) {
+        imgElement.src = holderIcon.url;
     } else {
         debug("頭像設置錯誤", "warn");
         document.getElementById('img').remove();
