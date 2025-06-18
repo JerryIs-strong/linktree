@@ -103,7 +103,7 @@ a {
     margin-left: -70px;
 }
 
-.page-indicator {
+.page_indicator {
     position: absolute;
     top: 50%;
     right: 20px;
@@ -114,7 +114,7 @@ a {
     z-index: 996;
 }
 
-.page-indicator .dot {
+.page_indicator .dot {
     width: 10px;
     height: 10px;
     border-radius: 50%;
@@ -123,7 +123,7 @@ a {
     cursor: pointer;
 }
 
-.page-indicator .dot.active {
+.page_indicator .dot.active {
     background-color: #ffffff;
 }
 
@@ -428,7 +428,7 @@ nav .nav-item[n-hide="true"] {
     display: none;
 }
 
-.announcement-wrapper {
+.announcement_wrapper {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -443,10 +443,10 @@ nav .nav-item[n-hide="true"] {
     border-radius: 20px;
     z-index: 999;
     text-align: center;
-    animation: announcementIn 0.5s cubic-bezier(0.75, 0.15, 0.16, 0.99) forwards
+    animation: announcementIn 0.8s cubic-bezier(0.75, 0.15, 0.16, 0.99) forwards
 }
 
-.announcement-mask {
+.announcement_mask {
     position: absolute;
     top: 0;
     left: 0;
@@ -457,7 +457,7 @@ nav .nav-item[n-hide="true"] {
     z-index: 998;
 }
 
-.announcement-wrapper .announcement-close {
+.announcement_wrapper .announcement-close {
     position: absolute;
     top: 10px;
     right: 10px;
@@ -465,18 +465,18 @@ nav .nav-item[n-hide="true"] {
     cursor: pointer;
 }
 
-.announcement-wrapper .announcement-title {
+.announcement_wrapper .announcement-title {
     font-size: 25px;
     font-weight: bolder;
     margin-bottom: 20px;
 }
 
-.announcement-wrapper img {
+.announcement_wrapper img {
     width: 220px;
     margin: 10px 20px;
 }
 
-.announcement-wrapper .announcement-content {
+.announcement_wrapper .announcement-content {
     font-size: 15px;
     margin: 20px 0 0 0;
 }
@@ -485,7 +485,7 @@ nav .nav-item[n-hide="true"] {
     color: var(--announcement-font-color)
 }
 
-.announcement-wrapper .announcement-button {
+.announcement_wrapper .announcement-button {
     background-color: #1ed760;
     color: #000;
     text-decoration: none;
@@ -580,11 +580,11 @@ nav .nav-item[n-hide="true"] {
         padding: 0 35px;
     }
 
-    .page-indicator {
+    .page_indicator {
         right: 10px;
     }
 
-    .page-indicator .dot {
+    .page_indicator .dot {
         width: 8px;
         height: 8px;
     }

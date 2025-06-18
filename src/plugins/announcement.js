@@ -1,29 +1,23 @@
 function closeAnnouncement() {
-  const announcement_wrapper = document.querySelector('.announcement-wrapper');
-  const announcement_mask = document.querySelector('.announcement-mask');
-  if (announcement_wrapper) {
-    announcement_wrapper.remove();
-  }
-  if (announcement_mask) {
-    announcement_mask.remove();
-  }
+  const announcement_wrapper = document.querySelector('.announcement_wrapper');
+  const announcement_mask = document.querySelector('.announcement_mask');
+  announcement_wrapper.remove();
+  announcement_mask.remove();
 }
 
 function showAnnouncement(AnnouncementData, noExpireDate = false) {
-  const announcement_wrapper = document.createElement('div');
+  const announcement_wrapper = document.getElementById('announcement_wrapper');
   const announcement_title = document.createElement('div');
   const announcement_content = document.createElement('div');
   const announcement_close = document.createElement('div');
-  const announcement_mask = document.createElement('div');
+  const announcement_mask = document.getElementById('announcement_mask');
 
-  announcement_wrapper.className = 'announcement-wrapper';
   announcement_title.className = 'announcement-title';
   announcement_content.className = 'announcement-content';
   announcement_close.className = 'announcement-close';
-  announcement_mask.className = 'announcement-mask';
 
   announcement_title.innerText = AnnouncementData.title;
-  if(!noExpireDate){
+  if (!noExpireDate) {
     announcement_title.innerHTML += `<div class="announcement-hashtag">#有期限: ${AnnouncementData.expireDate}</div>`;
   }
   announcement_content.innerHTML = AnnouncementData.content;
@@ -46,50 +40,47 @@ function showAnnouncement(AnnouncementData, noExpireDate = false) {
   announcement_wrapper.appendChild(announcement_content);
   announcement_wrapper.appendChild(announcement_close);
 
-  if(AnnouncementData.button){
+  if (AnnouncementData.button) {
     const announcement_button = document.createElement('a');
     const buttonData = AnnouncementData.button;
     announcement_button.className = 'announcement-button';
     announcement_button.innerText = AnnouncementData.button.text;
     announcement_button.style.backgroundColor = AnnouncementData.button.color;
-    
+
     announcement_button.onclick = (e) => {
-      if(buttonData.onclickAction.includes("page: ")){
-        targetPage =buttonData.onclickAction.split("page: ")[1];
+      if (buttonData.onclickAction.includes("page: ")) {
+        targetPage = buttonData.onclickAction.split("page: ")[1];
         closeAnnouncement();
         navigateTo(targetPage);
-      } else if(buttonData.onclickAction.includes("link: ")){
+      } else if (buttonData.onclickAction.includes("link: ")) {
         const link = buttonData.onclickAction.split("link: ")[1];
         closeAnnouncement();
         window.open(link, '_blank');
-      }      
+      }
     }
     announcement_wrapper.appendChild(announcement_button);
   }
-
-  document.body.appendChild(announcement_mask);
-  document.body.appendChild(announcement_wrapper);
 }
 
 fetch('./src/data/announcement.json')
- .then((response) => {
-      if (!response.ok) {
-          throw new Error('Network response was not ok');
-      }
-      return response.json();
+  .then((response) => {
+    if (!response.ok) {
+      throw new Error('Network response was not ok');
+    }
+    return response.json();
   })
   .then((data) => {
-        const today = {
-            date: new Date().toISOString().split('T')[0]
-        };
+    const today = {
+      date: new Date().toISOString().split('T')[0]
+    };
 
-        if(data.announce.expireDate === "/"){
-            showAnnouncement(data.announce, true);
-            console.log("No Expire Date");
-        }else if(today.date <= data.announce.expireDate){
-            showAnnouncement(data.announce);
-        }else{
-            console.log("Expired Announcement");
-        }
-        
-    })
+    if (data.announce.expireDate === "/") {
+      showAnnouncement(data.announce, true);
+      console.log("No Expire Date");
+    } else if (today.date <= data.announce.expireDate) {
+      showAnnouncement(data.announce);
+    } else {
+      console.log("Expired Announcement");
+    }
+
+  })

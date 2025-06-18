@@ -16,8 +16,10 @@
     <link rel="stylesheet" href="./src/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+HK:wght@100..900&family=Rampart+One&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+HK:wght@100..900&family=Rampart+One&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <!--Web App Icon-->
     <link rel="shortcut icon" type="image/ico" href="./favicon.png" />
     <link rel="apple-touch-icon" href="./favicon.png" />
@@ -37,7 +39,6 @@
     <script src="./src/plugins/private/log.js"></script>
     <script src="./src/plugins/private/debug.js"></script>
     <script src="./src/plugins/private/update-alert.js"></script>
-    <script src="./src/plugins/private/announcement.js"></script>
     <script src="./src/plugins/private/fetcher.js" defer></script>
 </head>
 
@@ -53,11 +54,18 @@
                 <button class="nav-toggle close-btn" id="navCloseBtn" onclick="toggleNav(false)">
                     <span class="material-symbols-outlined">close</span>
                 </button>
-                <div class="nav-item" id="homeBtn" onclick="navigateTo('Home')" n-name="Home"><span class="material-symbols-outlined nav-icon">home</span>Home</div>
-                <div class="nav-item" id="linksBtn" onclick="navigateTo('Links')" n-name="Links"><span class="material-symbols-outlined nav-icon">link</span>Links</div>
-                <div class="nav-item" id="dcountBtn" onclick="navigateTo('Day Counter')" n-name="Day Counter"><span class="material-symbols-outlined nav-icon">event</span>Day Counter</div>
-                <div class="nav-item" id="dlBtn" onclick="if (document.documentElement.getAttribute('dark') === 'true') { Theme(false); } else { Theme(true); }" n-name="Day Counter">Toggle D/L</div>
-                <div class="nav-item" id="idleBtn" onclick='window.location="https\://www.instagram.com/i_dle_official/"' n-name="I-DLE">I-DLE<img src="./src/img/1000009888.webp" style="width: 15px; margin-left: 10px;" /></div>
+                <div class="nav-item" id="homeBtn" onclick="navigateTo('Home')" n-name="Home"><span
+                        class="material-symbols-outlined nav-icon">home</span>Home</div>
+                <div class="nav-item" id="linksBtn" onclick="navigateTo('Links')" n-name="Links"><span
+                        class="material-symbols-outlined nav-icon">link</span>Links</div>
+                <div class="nav-item" id="dcountBtn" onclick="navigateTo('Day Counter')" n-name="Day Counter"><span
+                        class="material-symbols-outlined nav-icon">event</span>Day Counter</div>
+                <div class="nav-item" id="dlBtn"
+                    onclick="if (document.documentElement.getAttribute('dark') === 'true') { Theme(false); } else { Theme(true); }"
+                    n-name="Day Counter">Toggle D/L</div>
+                <div class="nav-item" id="idleBtn"
+                    onclick='window.location="https\://www.instagram.com/i_dle_official/"' n-name="I-DLE">I-DLE<img
+                        src="./src/img/1000009888.webp" style="width: 15px; margin-left: 10px;" /></div>
             </div>
         </nav>
         <div class="page" p-name="Home">
@@ -78,15 +86,21 @@
         <div class="page" p-name="ROT13">
             <div class="page-title">ROT13</div>
             <div id="rot13-container">
-                <input type="text" id="rot13-input" placeholder="Enter 3 characters to encrypt or decrypt" maxlength="3" />
+                <input type="text" id="rot13-input" placeholder="Enter 3 characters to encrypt or decrypt"
+                    maxlength="3" />
                 <button id="rot13-decrypt-btn" onclick="decryptRot13InElement()">Encrypt / Decrypt</button>
                 <div id="rot13-output" class="rot13-output">###</div>
             </div>
         </div>
         <div class="page" p-name="We are">
             <div class="page-title">We are</div>
-            <iframe style="border-radius:12px; max-width: 650px;" src="https://open.spotify.com/embed/album/4vj008nVDYfO4m75ZT1VBu?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-            <div style="font-size: 10px; opacity: 0.4; color: var(--font-color); text-align: center; padding: 0 20px;">You are using service provided by Spotify Ltd. Please refer to their privacy policy.</div>
+            <iframe style="border-radius:12px; max-width: 650px;"
+                src="https://open.spotify.com/embed/album/4vj008nVDYfO4m75ZT1VBu?utm_source=generator" width="100%"
+                height="352" frameBorder="0" allowfullscreen=""
+                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                loading="lazy"></iframe>
+            <div style="font-size: 10px; opacity: 0.4; color: var(--font-color); text-align: center; padding: 0 20px;">
+                You are using service provided by Spotify Ltd. Please refer to their privacy policy.</div>
         </div>
     </div>
     <div class="share" id="share">
@@ -97,9 +111,9 @@
             </div>
         </div>
     </div>
-    <div class="page-indicator" id="pageIndicator"></div>
-    <div class="notification" id="notification"></div>
-    <div class="plugin-wrapper" id="plugin-wrapper"></div>
+    <div class="page_indicator" id="pageIndicator"></div>
+    <div class="announcement_wrapper" id="announcement_wrapper"></div>
+    <div class="announcement_mask" id="announcement_mask"></div>
     <!--Main JS Control file-->
     <script src="./src/main.js"></script>
     <!--JS Plugins inject-->
