@@ -25,18 +25,8 @@
             "method": "greeting",
             "advanced_settings": {}
         },
-        "signature": {
-            "enable": false,
-            "content": "",
-            "auto_hide": true
-        },
         "share": {
             "enable": true,
-            "github_icon": {
-                "enable": false,
-                "github_user_name": "",
-                "github_repo_name": ""
-            },
             "music": {
                 "enable": true,
                 "music_data": [
@@ -186,12 +176,6 @@
         "list": [
             "dcount",
             "announcement"
-        ],
-        "configs": {}
-    },
-    "alert": {
-        "enable": false,
-        "https": false,
-        "data": {}
+        ]
     }
 }
