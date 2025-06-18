@@ -193,8 +193,7 @@
     "plugins": {
         "list": [
             "dcount",
-            "announcement",
-            "rot13"
+            "announcement"
         ],
         "configs": {}
     },

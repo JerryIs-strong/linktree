@@ -16,7 +16,8 @@
     <link rel="stylesheet" href="./src/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+HK:wght@100..900&family=Rampart+One&display=swap"
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+HK:wght@100..900&family=Rampart+One&family=Rubik+Glitch&display=swap"
         rel="stylesheet">
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
@@ -60,12 +61,14 @@
                         class="material-symbols-outlined nav-icon">link</span>Links</div>
                 <div class="nav-item" id="dcountBtn" onclick="navigateTo('Day Counter')" n-name="Day Counter"><span
                         class="material-symbols-outlined nav-icon">event</span>Day Counter</div>
-                <div class="nav-item" id="dlBtn"
-                    onclick="if (document.documentElement.getAttribute('dark') === 'true') { Theme(false); } else { Theme(true); }"
-                    n-name="Day Counter">Toggle D/L</div>
                 <div class="nav-item" id="idleBtn"
                     onclick='window.location="https\://www.instagram.com/i_dle_official/"' n-name="I-DLE">I-DLE<img
                         src="./src/img/1000009888.webp" style="width: 15px; margin-left: 10px;" /></div>
+                <div class="nav-item" id="dlBtn"
+                    onclick="if (document.documentElement.getAttribute('dark') === 'true') { Theme(false); } else { Theme(true); }"
+                    n-name="Day Counter"><div class="dl-icon" id="dl-icon"></div><div class="dl-state" id="dl-state">Toggle D/L</div></div>
+                <div class="nav-item" id="problemBtn" onclick='window.open("https\://github.com/JerryIs-strong/linktree/issues", "_blank")' n-name="Home" n-hide="true"><span
+                        class="material-symbols-outlined nav-icon">report</span>在使用時遇到困難?</div>
             </div>
         </nav>
         <div class="page" p-name="Home">
@@ -83,24 +86,9 @@
             <div class="page-title">Day Counter</div>
             <div id="dcount-container"></div>
         </div>
-        <div class="page" p-name="ROT13">
-            <div class="page-title">ROT13</div>
-            <div id="rot13-container">
-                <input type="text" id="rot13-input" placeholder="Enter 3 characters to encrypt or decrypt"
-                    maxlength="3" />
-                <button id="rot13-decrypt-btn" onclick="decryptRot13InElement()">Encrypt / Decrypt</button>
-                <div id="rot13-output" class="rot13-output">###</div>
-            </div>
-        </div>
-        <div class="page" p-name="We are">
-            <div class="page-title">We are</div>
-            <iframe style="border-radius:12px; max-width: 650px;"
-                src="https://open.spotify.com/embed/album/4vj008nVDYfO4m75ZT1VBu?utm_source=generator" width="100%"
-                height="352" frameBorder="0" allowfullscreen=""
-                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-                loading="lazy"></iframe>
-            <div style="font-size: 10px; opacity: 0.4; color: var(--font-color); text-align: center; padding: 0 20px;">
-                You are using service provided by Spotify Ltd. Please refer to their privacy policy.</div>
+        <div class="page" p-name="End">
+            <p style='color: var(--theme-color); font-family: "Rubik Glitch", system-ui;'>A free and better alternative
+                of Linktree.</p>
         </div>
     </div>
     <div class="share" id="share">
@@ -111,7 +99,7 @@
             </div>
         </div>
     </div>
-    <div class="page_indicator" id="pageIndicator"></div>
+    <div class="page-indicator" id="pageIndicator"></div>
     <div class="announcement_wrapper" id="announcement_wrapper"></div>
     <div class="announcement_mask" id="announcement_mask"></div>
     <!--Main JS Control file-->

@@ -67,7 +67,7 @@ document.addEventListener('DOMContentLoaded', () => {
     pages.forEach((page) => observer.observe(page));
 });
 
-function createLink(icon, target, url, linkName, description, onclick, isInBox = false) {
+function createLink(icon, target, url, linkName, onclick) {
     const LinkBtnWrapper = document.createElement('a');
 
     LinkBtnWrapper.id = `link_${LinkBtnNum++}`;
@@ -88,7 +88,6 @@ function createLink(icon, target, url, linkName, description, onclick, isInBox =
     const LinkInfoTab = document.createElement('div');
     const LinkBtnIcon = document.createElement('i');
     const LinkBtnTitle = document.createElement('div');
-    const LinkBtnDesc = document.createElement('div');
     LinkInfoTab.className = 'link-info-tab';
     LinkBtnWrapper.className = 'link-btn-box';
 
@@ -97,14 +96,6 @@ function createLink(icon, target, url, linkName, description, onclick, isInBox =
     LinkInfoTab.appendChild(LinkBtnIcon);
     LinkInfoTab.appendChild(LinkBtnTitle);
     LinkBtnWrapper.appendChild(LinkInfoTab);
-
-    if (description) {
-        LinkBtnDesc.innerText = description;
-        LinkBtnDesc.className = 'link-desc';
-        LinkBtnWrapper.appendChild(LinkBtnDesc);
-    } else {
-        LinkBtnDesc.remove();
-    }
 
     if (icon.type === "fontawesome") {
         LinkBtnIcon.className = `link-icon ${icon.fontawesome}`;
@@ -209,8 +200,8 @@ function Background(backgroundUrl) {
 
 function Theme(darkMode) {
     document.documentElement.setAttribute("dark", darkMode ? "true" : "false");
-    document.getElementById('dlBtn').innerHTML = darkMode ? `<span class="material-symbols-outlined nav-icon" id="dlBtnIcon"></span>Dark Mode` : `<span class="material-symbols-outlined nav-icon" id="dlBtnIcon"></span>Light Mode`;
-    document.getElementById('dlBtnIcon').innerText = darkMode ? "dark_mode" : "light_mode";
+    document.getElementById('dl-icon').innerHTML = darkMode ? `<span class="material-symbols-outlined">dark_mode</span>` : `<span class="material-symbols-outlined">light_mode</span>`;
+    document.getElementById('dl-state').innerText = darkMode ? "Dark Mode" : "Light Mode";
 }
 
 function HolderIcon(holderIcon) {
@@ -231,7 +222,7 @@ function Links(linkSettings) {
         Object.entries(linkSettings).forEach(([linkDB]) => {
             link = linkSettings[linkDB];
             if (link.enable && link.name != urlParams.get('media')) {
-                linkGroup.appendChild(createLink(link.icon, link.target, link.url, link.name, link.description, false, true));
+                linkGroup.appendChild(createLink(link.icon, link.target, link.url, link.name, false));
             }
         });
     } else {
