@@ -66,9 +66,15 @@
                         src="./src/img/1000009888.webp" style="width: 15px; margin-left: 10px;" /></div>
                 <div class="nav-item" id="dlBtn"
                     onclick="if (document.documentElement.getAttribute('dark') === 'true') { Theme(false); } else { Theme(true); }"
-                    n-name="Day Counter"><div class="dl-icon" id="dl-icon"></div><div class="dl-state" id="dl-state">Toggle D/L</div></div>
-                <div class="nav-item" id="problemBtn" onclick='window.open("https\://github.com/JerryIs-strong/linktree/issues", "_blank")' n-name="Home" n-hide="true"><span
-                        class="material-symbols-outlined nav-icon">report</span>在使用時遇到困難?</div>
+                    n-name="Day Counter">
+                    <div class="nav-iconSE" id="dl-icon"></div>
+                    <div class="nav-stateSE" id="dl-state">Toggle D/L</div>
+                </div>
+                <div class="nav-item" id="problemBtn"
+                    onclick='window.open("https\://github.com/JerryIs-strong/linktree/issues", "_blank")' n-name="Home">
+                    <div class="nav-iconSE"><span class="material-symbols-outlined">report</span></div>
+                    <div class="nav-stateSE" id="dl-state">在使用時遇到困難?</div>
+                </div>
             </div>
         </nav>
         <div class="page" p-name="Home">

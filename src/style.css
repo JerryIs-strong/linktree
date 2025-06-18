@@ -422,11 +422,11 @@ nav .nav-icon,
     display: none;
 }
 
-.dl-icon{
+.nav-iconSE{
     line-height: 1;
 }
 
-.dl-state {
+.nav-stateSE {
     display: none;
 }
 
@@ -588,11 +588,11 @@ nav .nav-item[n-hide="true"] {
         display: block;
     }
 
-    nav .dl-icon{
+    nav .nav-iconSE{
         margin-right: 5px;
     }
 
-    nav .dl-state{
+    nav .nav-stateSE{
         display: block;
     }
 
