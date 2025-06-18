@@ -107,7 +107,6 @@
                 "type": "fontawesome",
                 "fontawesome": "fa-brands fa-facebook-f"
             },
-            "description": "@heyajerry07",
             "url": "https://www.facebook.com/heyajerry07",
             "target": "blank"
         },
@@ -118,18 +117,16 @@
                 "type": "fontawesome",
                 "fontawesome": "fa fa-instagram"
             },
-            "description": "@hwj7818_ynz",
             "url": "https://www.instagram.com/hwj7818_ynz/",
             "target": "blank"
         },
         {
             "enable": true,
-            "name": "X(Twitter)",
+            "name": "Twitter",
             "icon": {
                 "type": "fontawesome",
                 "fontawesome": "fa-brands fa-x-twitter"
             },
-            "description": "@jerryis_strong",
             "url": "https://x.com/jerryis_strong",
             "target": "blank"
         },
@@ -140,7 +137,6 @@
                 "type": "fontawesome",
                 "fontawesome": "fa-solid fa-blog"
             },
-            "description": "Official blog page",
             "url": "https://jerryis-strong.github.io/",
             "target": "blank"
         },
@@ -151,7 +147,6 @@
                 "type": "fontawesome",
                 "fontawesome": "fa-brands fa-github"
             },
-            "description": "@JerryIs-strong",
             "url": "https://github.com/JerryIs-strong",
             "target": "blank"
         },
@@ -162,7 +157,6 @@
                 "type": "fontawesome",
                 "fontawesome": "fa-brands fa-threads"
             },
-            "description": "@hwj7818_ynz",
             "url": "https://www.threads.net/@hwj7818_ynz",
             "target": "blank"
         },
@@ -173,7 +167,6 @@
                 "type": "fontawesome",
                 "fontawesome": "fa fa-youtube"
             },
-            "description": "@jerryis-strong",
             "url": "https://www.youtube.com/channel/UCb4AAgayzeNgj01ULpDDzjg",
             "target": "blank"
         },
@@ -184,7 +177,6 @@
                 "type": "fontawesome",
                 "fontawesome": "fa-brands fa-bilibili"
             },
-            "description": "@jerry7818",
             "url": "https://space.bilibili.com/3546846200859472",
             "target": "blank"
         }
