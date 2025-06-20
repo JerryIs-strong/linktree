@@ -20,7 +20,7 @@
         },
         "title": {
             "method": "greeting",
-            "advanced_settings": {}
+            "advanced_setting": {}
         },
         "share": {
             "enable": true,

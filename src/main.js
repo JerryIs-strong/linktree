@@ -1,12 +1,27 @@
 const mainWrapper = document.getElementById("main");
-const settings = JSON.parse(sessionStorage.getItem('setting'));
 LinkBtnNum = 1;
+let loadCount = 0;
+let loaded = false;
+const loadingElement = document.getElementById('preLoaderText');
+loadingElement.innerText = "Loading";
+
+setInterval(() => {
+    if (!loaded) {
+        if (loadCount < 3) {
+            loadingElement.innerText = "Loading" + '.'.repeat(loadCount + 1);
+            loadCount++;
+        } else {
+            loadingElement.innerText = "Loading";
+            loadCount = 0;
+        }
+    }
+}, 500);
 
 document.addEventListener('DOMContentLoaded', () => {
-    const { profile, SEO, links, display } = settings;
+    const { profile, SEO, links, display } = setting;
     const { music } = display.share;
-    const titleSettings = settings.display.title;
-    Profile(profile, music, display, SEO, titleSettings);
+    const titlesetting = setting.display.title;
+    Profile(profile, music, display, SEO, titlesetting);
     Links(links);
 
     if (!display.blur) {
@@ -14,46 +29,13 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     const pages = document.querySelectorAll('.page');
-    const pageIndicator = document.getElementById('pageIndicator');
-
-    pageIndicator.innerHTML = '';
-
-    pages.forEach((page, index) => {
-        const dot = document.createElement('div');
-        dot.classList.add('dot');
-        if (index === 0) dot.classList.add('active');
-
-        dot.addEventListener('click', () => {
-            mainWrapper.scrollTo({
-                top: page.offsetTop - mainWrapper.offsetTop,
-                behavior: 'smooth',
-            });
-        });
-
-        pageIndicator.appendChild(dot);
-    });
-
-    const updateIndicator = (activeIndex) => {
-        const dots = document.querySelectorAll('.page-indicator .dot');
-        dots.forEach((dot, index) => {
-            if (index === activeIndex) {
-                dot.classList.add('active');
-            } else {
-                dot.classList.remove('active');
-            }
-        });
-    };
-
     const observer = new IntersectionObserver(
         (entries) => {
             entries.forEach((entry) => {
                 if (entry.isIntersecting) {
-                    const activeIndex = Array.from(pages).indexOf(entry.target);
-                    updateIndicator(activeIndex);
-
                     const pageName = entry.target.getAttribute('p-name');
                     if (pageName) {
-                        document.title = `${pageName} | ${settings.profile.website_name}`;
+                        document.title = `${pageName} | ${setting.profile.website_name}`;
                     }
                 }
             });
@@ -63,6 +45,16 @@ document.addEventListener('DOMContentLoaded', () => {
             threshold: [0.3],
         }
     );
+
+    setTimeout(() => {
+        loaded = true;
+        document.getElementById('preloader').style.animation = "fadeOut 0.8s cubic-bezier(0.75, 0.15, 0.16, 0.99) forwards";
+        document.getElementById('background').style.animation = "bgFadeIn 1.9s cubic-bezier(0.25, 0.04, 0, 0.89) forwards";
+        document.getElementById('announcement_wrapper').style.animation = "announcementIn 0.8s cubic-bezier(0.75, 0.15, 0.16, 0.99) forwards";
+        setTimeout(() => {
+        document.getElementById('preloader').remove();
+        }, 1000); 
+    }, 1000);
 
     pages.forEach((page) => observer.observe(page));
 });
@@ -112,13 +104,13 @@ function createLink(icon, target, url, linkName, onclick) {
     return LinkBtnWrapper;
 }
 
-function greetUser(settings) {
+function greetUser(greet) {
     const currentHour = new Date().getHours();
     const greetings = {
-        morning: settings.morning || "Good morning!",
-        afternoon: settings.afternoon || "Good afternoon!",
-        evening: settings.evening || "Good evening!",
-        night: settings.night || "Good night!"
+        morning: greet.morning || "Good morning!",
+        afternoon: greet.afternoon || "Good afternoon!",
+        evening: greet.evening || "Good evening!",
+        night: greet.night || "Good night!"
     };
 
     if (currentHour >= 6 && currentHour < 12) {
@@ -132,7 +124,7 @@ function greetUser(settings) {
     }
 }
 
-function Profile(profile, music, display, SEO, titleSettings) {
+function Profile(profile, music, display, SEO, titlesetting) {
     const { icon, favicon } = profile;
     const { background } = display;
     const { language, description, google_verification } = SEO;
@@ -143,7 +135,7 @@ function Profile(profile, music, display, SEO, titleSettings) {
     /* Basic HTML Elements */
     document.documentElement.lang = language || 'zh-TW';
     document.title = profile.website_name;
-    document.getElementById('title').innerText = titleSettings.method === "greeting" ? greetUser(titleSettings.advanced_settings) : `HEY! ${profile.name}`;
+    document.getElementById('title').innerText = titlesetting.method === "greeting" ? greetUser(titlesetting.advanced_setting) : `HEY! ${profile.name}`;
     document.getElementById('description').innerText = profile.subtitle;
 
     /* Meta Tags */
@@ -214,13 +206,13 @@ function HolderIcon(holderIcon) {
     }
 }
 
-function Links(linkSettings) {
+function Links(linksetting) {
     const urlParams = new URLSearchParams(window.location.search);
     const linkGroup = document.getElementById('mediaBtn_wrapper');
 
-    if (linkSettings && Object.keys(linkSettings).length > 0) {
-        Object.entries(linkSettings).forEach(([linkDB]) => {
-            link = linkSettings[linkDB];
+    if (linksetting && Object.keys(linksetting).length > 0) {
+        Object.entries(linksetting).forEach(([linkDB]) => {
+            link = linksetting[linkDB];
             if (link.enable && link.name != urlParams.get('media')) {
                 linkGroup.appendChild(createLink(link.icon, link.target, link.url, link.name, false));
             }

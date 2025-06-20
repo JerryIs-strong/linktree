@@ -12,8 +12,10 @@
     <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#425f7a99" />
     <title></title>
     <script src="https://kit.fontawesome.com/ba7cf5430a.js" crossorigin="anonymous"></script>
+    <link rel="preload" href="./src/style.css" as="style"/>
+    <link rel="preload" href="./src/main.js" as="script"/>
     <!--Other Resources-->
-    <link rel="stylesheet" href="./src/style.css">
+    <link rel="stylesheet" href="./src/style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -36,11 +38,6 @@
     <meta name="twitter:title" content="I AM - jerryis-strong">
     <meta name="twitter:description" content="Hello World! HER!">
     <meta name="twitter:image" content="https://jerryis-strong.github.io/i-am/src/img/jt_1280x720.png">
-    <!--Important plugins-->
-    <script src="./src/plugins/private/log.js"></script>
-    <script src="./src/plugins/private/debug.js"></script>
-    <script src="./src/plugins/private/update-alert.js"></script>
-    <script src="./src/plugins/private/fetcher.js" defer></script>
 </head>
 
 <body>
@@ -92,10 +89,6 @@
             <div class="page-title">Day Counter</div>
             <div id="dcount-container"></div>
         </div>
-        <div class="page" p-name="End">
-            <p style='color: var(--theme-color); font-family: "Rubik Glitch", system-ui;'>A free and better alternative
-                of Linktree.</p>
-        </div>
     </div>
     <div class="share" id="share">
         <div class="music" id="music">
@@ -105,13 +98,25 @@
             </div>
         </div>
     </div>
-    <div class="page-indicator" id="pageIndicator"></div>
     <div class="announcement_wrapper" id="announcement_wrapper"></div>
     <div class="announcement_mask" id="announcement_mask"></div>
+    <div class="preloader" id="preloader">
+        <div class="preloader-inner">
+            <div class="preloader-logo">
+                <img src="./src/img/33a3af0456db6757ff0fe195b33b5f20.jpg" alt="Logo">
+            </div>
+            <div class="loader"></div>
+            <div class="preloader-text" id="preLoaderText">Loading...</div>
+        </div>
+    </div>
+    <!--Important plugins-->
+    <script src="./src/plugins/private/log.js"></script>
+    <script src="./src/plugins/private/debug.js"></script>
+    <script src="./src/plugins/private/update-alert.js"></script>
+    <script src="./src/plugins/private/fetcher.js"></script>
     <!--Main JS Control file-->
     <script src="./src/main.js"></script>
     <!--JS Plugins inject-->
     <script src="./src/plugins-manager.js"></script>
 </body>
-
 </html>
