@@ -376,6 +376,27 @@ nav .nav-icon,
     display: none;
 }
 
+nav {
+    display: flex;
+}
+
+nav #warning_sign {
+    display: flex;
+    align-items: center;
+    margin: 20px 14px;
+    border-radius: 30px;
+    padding: 10px 20px;
+    backdrop-filter: var(--global-blur);
+    -webkit-backdrop-filter: var(--global-blur);
+    background-color: var(--theme-background-color);
+}
+
+nav #warning_sign img{
+    width: 30px;
+    height: 30px;
+    margin: 0 5px;
+}
+
 .nav-iconSE {
     line-height: 1;
 }
@@ -529,6 +550,7 @@ nav .nav-item[n-hide="true"] {
         justify-content: flex-end;
         align-items: center;
         transition: transform 0.3s ease-in-out;
+        background-color: var(--theme-background-color);
     }
 
     nav .nav {
@@ -560,6 +582,15 @@ nav .nav-item[n-hide="true"] {
         vertical-align: middle;
         margin-right: 5px;
         padding: 0;
+    }
+
+    nav #warning_sign{
+        margin: 0;
+        padding: 0;
+        border-radius: 0;
+        background-color: transparent;
+        backdrop-filter: none;
+        -webkit-backdrop-filter: none;
     }
 
     nav .nav>* {

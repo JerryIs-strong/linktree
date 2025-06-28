@@ -12,8 +12,8 @@
     <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#425f7a99" />
     <title></title>
     <script src="https://kit.fontawesome.com/ba7cf5430a.js" crossorigin="anonymous"></script>
-    <link rel="preload" href="./src/style.css" as="style"/>
-    <link rel="preload" href="./src/main.js" as="script"/>
+    <link rel="preload" href="./src/style.css" as="style" />
+    <link rel="preload" href="./src/main.js" as="script" />
     <!--Other Resources-->
     <link rel="stylesheet" href="./src/style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -45,6 +45,7 @@
     <div class="background" id="background"></div>
     <div class="main" id="main">
         <nav>
+            <div id="warning_sign"></div>
             <button class="nav-toggle" id="navOpenBtn" onclick="toggleNav(true)">
                 <span class="material-symbols-outlined">menu</span>
             </button>
@@ -119,4 +120,5 @@
     <!--JS Plugins inject-->
     <script src="./src/plugins-manager.js"></script>
 </body>
+
 </html>

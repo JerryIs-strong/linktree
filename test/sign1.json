@@ -1,0 +1,10 @@
+{
+    "WTCSGNL": {
+        "name": "熱帶氣旋警告信號",
+        "code": "TC3",
+        "actionCode": "ISSUE",
+        "type": "三號強風信號",
+        "issueTime": "2020-09-24T11:15:00+08:00",
+        "updateTime": "2020-09-24T11:15:00+08:00"
+    }
+}
