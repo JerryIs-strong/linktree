@@ -11,7 +11,7 @@ async function getData() {
                     warningElement.className = 'warning_sign';
                     warningElement.alt = warning.code;
                     warningElement.title = `${warning.name}現正生效 - 資訊來自data.gov.hk`;
-                    warningElement.src = `/src/data/warning_sign/${warning.code}.gif`;
+                    warningElement.src = `../data/warning_sign/${warning.code}.gif`;
                     container.appendChild(warningElement);
                 }
             });
