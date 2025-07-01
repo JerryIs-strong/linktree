@@ -50,7 +50,6 @@ document.addEventListener('DOMContentLoaded', () => {
         loaded = true;
         document.getElementById('preloader').style.animation = "fadeOut 0.8s cubic-bezier(0.75, 0.15, 0.16, 0.99) forwards";
         document.getElementById('background').style.animation = "bgFadeIn 1.9s cubic-bezier(0.25, 0.04, 0, 0.89) forwards";
-        document.getElementById('announcement_wrapper').style.animation = "announcementIn 0.8s cubic-bezier(0.75, 0.15, 0.16, 0.99) forwards";
         setTimeout(() => {
         document.getElementById('preloader').remove();
         }, 1000); 
