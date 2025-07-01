@@ -172,7 +172,6 @@
     "plugins": {
         "list": [
             "dcount",
-            "announcement",
             "hko_warning"
         ]
     }
