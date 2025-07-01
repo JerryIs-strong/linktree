@@ -61,7 +61,8 @@ a {
     position: absolute;
     width: 100%;
     height: calc(100% - 60px);
-    scroll-snap-type: y mandatory;
+    top: 0;
+    left: 0;
     overflow-y: auto;
     scrollbar-width: none;
 }
@@ -78,6 +79,15 @@ a {
     height: fit-content;
     min-height: calc(100vh - 90px);
     justify-content: center;
+    margin: 20vh 0;
+}
+
+.page:first-of-type {
+    margin-top: 0;
+}
+
+.page:last-of-type {
+    margin-bottom: 0;
 }
 
 .page-title {

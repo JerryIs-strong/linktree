@@ -1,4 +1,4 @@
-function function closeAnnouncement() { {
+function closeAnnouncement() {
   const announcement_wrapper = document.querySelector('.announcement_wrapper');
   const announcement_mask = document.querySelector('.announcement_mask');
   announcement_wrapper.remove();
@@ -80,7 +80,7 @@ fetch('./src/data/announcement.json')
     } else if (today.date <= data.announce.expireDate) {
       showAnnouncement(data.announce);
     } else {
-      closeAnnouncement() {
+      closeAnnouncement();
     }
 
   })
