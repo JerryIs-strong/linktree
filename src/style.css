@@ -99,7 +99,6 @@ a {
     font-weight: 900;
     width: 100%;
     max-width: 650px;
-    z-index: 3;
 }
 
 .page-title::first-letter {
@@ -112,7 +111,6 @@ a {
 .page-title img{
     width: 20px;
 }
-
 
 .img {
     width: 135px;

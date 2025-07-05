@@ -53,7 +53,7 @@ document.addEventListener('DOMContentLoaded', () => {
         setTimeout(() => {
         document.getElementById('preloader').remove();
         }, 1000); 
-    }, 1000);
+    }, 1500);
 
     pages.forEach((page) => observer.observe(page));
 });

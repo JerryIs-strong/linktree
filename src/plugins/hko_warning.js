@@ -1,5 +1,5 @@
 async function getData() {
-    const url = 'https://data.weather.gov.hk/weatherAPI/opendata/weather.php?dataType=warnsum&lang=en';
+    const url = 'https://data.weather.gov.hk/weatherAPI/opendata/weather.php?dataType=warnsum&lang=tc';
     try {
         const response = await fetch(url);
         const json = await response.json();
