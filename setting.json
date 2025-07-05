@@ -16,7 +16,7 @@
     },
     "display": {
         "background": {
-            "url": "./src/img/e0d5a8c370081446950de12b0a127689.webp"
+            "url": "./src/img/94943159_p0.webp"
         },
         "title": {
             "method": "greeting",
@@ -124,16 +124,6 @@
             "target": "blank"
         },
         {
-            "enable": false,
-            "name": "Blog",
-            "icon": {
-                "type": "fontawesome",
-                "fontawesome": "fa-solid fa-blog"
-            },
-            "url": "https://jerryis-strong.github.io/",
-            "target": "blank"
-        },
-        {
             "enable": true,
             "name": "Github",
             "icon": {
@@ -161,16 +151,6 @@
                 "fontawesome": "fa fa-youtube"
             },
             "url": "https://www.youtube.com/channel/UCb4AAgayzeNgj01ULpDDzjg",
-            "target": "blank"
-        },
-        {
-            "enable": true,
-            "name": "Bilibili",
-            "icon": {
-                "type": "fontawesome",
-                "fontawesome": "fa-brands fa-bilibili"
-            },
-            "url": "https://space.bilibili.com/3546846200859472",
             "target": "blank"
         }
     ],
