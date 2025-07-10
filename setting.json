@@ -96,16 +96,6 @@
     "links": [
         {
             "enable": true,
-            "name": "Facebook",
-            "icon": {
-                "type": "fontawesome",
-                "fontawesome": "fa-brands fa-facebook-f"
-            },
-            "url": "https://www.facebook.com/heyajerry07",
-            "target": "blank"
-        },
-        {
-            "enable": true,
             "name": "Instagram",
             "icon": {
                 "type": "fontawesome",
@@ -142,16 +132,6 @@
                 "fontawesome": "fa-brands fa-threads"
             },
             "url": "https://www.threads.net/@hwj7818_ynz",
-            "target": "blank"
-        },
-        {
-            "enable": true,
-            "name": "YouTube",
-            "icon": {
-                "type": "fontawesome",
-                "fontawesome": "fa fa-youtube"
-            },
-            "url": "https://www.youtube.com/channel/UCb4AAgayzeNgj01ULpDDzjg",
             "target": "blank"
         }
     ],
