@@ -28,6 +28,8 @@ document.addEventListener('DOMContentLoaded', () => {
         document.body.style.setProperty('--global-blur', 'blur(0)');
     }
 
+    document.documentElement.setAttribute('theme', display.theme || 'classic');
+
     const pages = document.querySelectorAll('.page');
     const observer = new IntersectionObserver(
         (entries) => {

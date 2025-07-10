@@ -90,7 +90,8 @@
                 ]
             }
         },
-        "blur": true
+        "blur": true,
+        "theme": "classic"
     },
     "links": [
         {

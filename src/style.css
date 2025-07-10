@@ -1,33 +1,3 @@
-[dark="true"] {
-    --background-color: #101010b0;
-    --background-color-fill: #101010;
-    --font-secondary-color: #d6d6d6;
-    --font-hover-color: #000;
-    --font-sign-color: #ffffff;
-    --mainBtn-color: #4040402b;
-    --theme-color: #c2daf8;
-    --theme-background-color: #425f7a99;
-    --btn-hover-color: #2356708c;
-    --announcement-font-color: #fff;
-    --loader-background-color: #ffffff;
-    --loader-color: #4d4e4e;
-    --title-gradient: linear-gradient(308deg, #adcef7, #c195f1);
-}
-
-[dark="false"] {
-    --background-color: #ffffffa3;
-    --background-color-fill: #7c7c7c;
-    --font-secondary-color: #ffffff9a;
-    --font-sign-color: #141414;
-    --theme-color: #bedaf1;
-    --theme-background-color: #61779085;
-    --btn-hover-color: #445872a6;
-    --announcement-font-color: #2c2c2c;
-    --loader-background-color: #555454;
-    --loader-color: #a3a3a3;
-    --title-gradient: linear-gradient(308deg, #adcef7, #c195f1);
-}
-
 :root {
     --global-blur: blur(20px);
     --font-color: #fff;
@@ -99,13 +69,6 @@ a {
     font-weight: 900;
     width: 100%;
     max-width: 650px;
-}
-
-.page-title::first-letter {
-    background-clip: text;
-    -webkit-background-clip: text;
-    color: transparent;
-    background-image: var(--title-gradient);
 }
 
 .page-title img{
@@ -189,33 +152,6 @@ a {
     justify-content: space-between;
 }
 
-.link-desc {
-    background-color: var(--theme-background-color);
-    border-radius: 30px;
-    padding: 5px 15px;
-}
-
-.box_container {
-    display: flex;
-    flex-direction: column;
-    background-color: var(--background-color);
-    padding: 20px;
-    border-radius: 20px;
-    margin: 20px;
-    width: 100%;
-    max-width: 950px;
-}
-
-.box_container .header {
-    color: var(--font-color);
-    font-weight: bolder;
-    text-transform: uppercase;
-    border-radius: 30px;
-    width: fit-content;
-    padding: 5px 10px;
-    font-size: 18px;
-}
-
 .btn_wrapper {
     display: flex;
     flex-wrap: wrap;
@@ -227,18 +163,6 @@ a {
 
 .link-icon {
     padding: 0 15px;
-}
-
-.link-icon-text {
-    font-style: normal;
-    font-weight: bolder;
-    font-family: "Rampart One", serif;
-}
-
-.musicIcon,
-.githubIcon {
-    font-size: 20px;
-    margin-right: 5px;
 }
 
 .share {
@@ -260,24 +184,6 @@ a {
     right: 0;
     height: fit-content;
     bottom: 0;
-}
-
-.share_footer {
-    width: 100%;
-    height: 100%;
-    background-size: cover;
-    background-position: bottom;
-    right: 0;
-    bottom: 0;
-    width: 100%;
-    height: 55px;
-    position: absolute;
-    filter: blur(10px);
-    animation: bgFootFadeIn 1.9s cubic-bezier(0.25, 0.04, 0, 0.89) forwards;
-}
-
-.share::-webkit-scrollbar {
-    display: none;
 }
 
 .music {
@@ -368,7 +274,7 @@ nav .nav {
     margin: 20px;
     border-radius: 30px;
     padding: 0 10px;
-    color: var(--font-color);
+    color: var(--theme-color);
     backdrop-filter: var(--global-blur);
     -webkit-backdrop-filter: var(--global-blur);
     transition: all 0.3s ease-in-out;
@@ -538,7 +444,6 @@ nav .nav-item[n-hide="true"] {
 /* Optimize for mobile */
 
 @media screen and (max-width: 750px) {
-
     .mediaBtn,
     .page-title {
         padding: 0 35px;

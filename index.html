@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-TW" dark="">
+<html lang="zh-TW" dark="" theme="">
 
 <head>
     <meta charset="UTF-8">
@@ -16,6 +16,7 @@
     <link rel="preload" href="./src/main.js" as="script" />
     <!--Other Resources-->
     <link rel="stylesheet" href="./src/style.css" />
+    <link rel="stylesheet" href="./src/theme.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -60,8 +61,7 @@
                 <div class="nav-item" id="dcountBtn" onclick="navigateTo('Day Counter')" n-name="Day Counter"><span
                         class="material-symbols-outlined nav-icon">event</span>Day Counter</div>
                 <div class="nav-item" id="idleBtn"
-                    onclick='window.location="https\://www.instagram.com/i_dle_official/"' n-name="I-DLE">I-DLE<img
-                        src="./src/img/1000009888.webp" style="width: 15px; margin-left: 10px;" alt=""/></div>
+                    onclick='window.location="https\://www.instagram.com/i_dle_official/"' n-name="I-DLE">I-DLE</div>
                 <div class="nav-item" id="dlBtn"
                     onclick="if (document.documentElement.getAttribute('dark') === 'true') { Theme(false); } else { Theme(true); }"
                     n-name="Day Counter">
