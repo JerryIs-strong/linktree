@@ -260,6 +260,17 @@ a.MusicName:-webkit-any-link {
     background-image: linear-gradient(45deg, #4413db70, #eb369969);
 }
 
+.dcount-card[data-today="true"]::after {
+    content: 'Today!';
+    position: absolute;
+    bottom: 5px;
+    right: 10px;
+    font-weight: 700;
+    opacity: 0.2;
+    font-size: 40px;
+    color: #fff;
+}
+
 nav {
     position: fixed;
     width: 100%;
