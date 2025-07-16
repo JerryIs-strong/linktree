@@ -4,6 +4,8 @@ let loadCount = 0;
 let loaded = false;
 const loadingElement = document.getElementById('preLoaderText');
 loadingElement.innerText = "Loading";
+let lastScrollTop = 0;
+const nav = document.getElementById('nav-toolbar');
 
 setInterval(() => {
     if (!loaded) {
@@ -60,6 +62,16 @@ document.addEventListener('DOMContentLoaded', () => {
     );
 
     pages.forEach((page) => observer.observe(page));
+});
+
+mainWrapper.addEventListener('scroll', () => {
+    const currentScroll = mainWrapper.scrollTop;
+    if (currentScroll > lastScrollTop || currentScroll == 0) {
+        nav.className = 'nav-hide';
+    } else {
+        nav.className = '';
+    }
+    lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // For Mobile or negative scrolling
 });
 
 function createLink(icon, target, url, linkName, onclick) {

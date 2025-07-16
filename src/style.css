@@ -296,6 +296,14 @@ nav .nav {
     transition: all 0.3s ease-in-out;
 }
 
+#nav-toolbar {
+    transition: all 0.3s ease-in-out;
+}
+
+.nav-hide {
+    transform: translateY(-100%);
+}
+
 nav .nav>* {
     margin: 10px;
     cursor: pointer;
@@ -557,7 +565,7 @@ nav .nav-item[n-hide="true"] {
         border-radius: 12px;
     }
 
-    nav .nav::after{
+    nav .nav::after {
         content: 'MENU';
         position: absolute;
         font-weight: bolder;
@@ -609,6 +617,10 @@ nav .nav-item[n-hide="true"] {
 
     .page[p-name="We are"] iframe {
         padding: 0 35px;
+    }
+
+    .nav-hide {
+        transform: translateX(100%);
     }
 }
 
