@@ -66,7 +66,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
 mainWrapper.addEventListener('scroll', () => {
     const currentScroll = mainWrapper.scrollTop;
-    if (currentScroll > lastScrollTop || currentScroll == 0) {
+    if (
+        currentScroll > lastScrollTop ||
+        (currentScroll == 0 && !document.getElementById('nav').classList.contains('open'))
+    ) {
         nav.className = 'nav-hide';
     } else {
         nav.className = '';
