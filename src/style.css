@@ -71,7 +71,7 @@ a {
     max-width: 650px;
 }
 
-.page-title img{
+.page-title img {
     width: 20px;
 }
 
@@ -219,6 +219,11 @@ a.MusicName:-webkit-any-link {
     text-decoration: none;
 }
 
+.musicIcon {
+    align-content: center;
+    margin-right: 5px;
+}
+
 #dcount-container {
     display: flex;
     flex-direction: row;
@@ -341,6 +346,10 @@ nav .nav-item[n-hide="true"] {
     display: none;
 }
 
+#warning_sign img {
+    border-radius: 30px;
+}
+
 .announcement_wrapper {
     position: absolute;
     top: 50%;
@@ -455,6 +464,7 @@ nav .nav-item[n-hide="true"] {
 /* Optimize for mobile */
 
 @media screen and (max-width: 750px) {
+
     .mediaBtn,
     .page-title {
         padding: 0 35px;
@@ -484,7 +494,7 @@ nav .nav-item[n-hide="true"] {
         justify-content: flex-end;
         align-items: center;
         transition: transform 0.3s ease-in-out;
-        background-color: var(--theme-background-color);
+        background-color: transparent;
     }
 
     nav .nav {
@@ -504,6 +514,16 @@ nav .nav-item[n-hide="true"] {
         margin: 0;
         border-radius: 0;
         max-height: 0;
+    }
+
+    nav .key {
+        display: flex;
+        background-color: var(--theme-background-color);
+        border-radius: 35px;
+        padding: 0 15px;
+        margin: 10px 10px 0 0;
+        backdrop-filter: var(--global-blur);
+        -webkit-backdrop-filter: var(--global-blur);
     }
 
     .nav.open {
@@ -535,6 +555,18 @@ nav .nav-item[n-hide="true"] {
 
     nav .nav>*:hover {
         border-radius: 12px;
+    }
+
+    nav .nav::after{
+        content: 'MENU';
+        position: absolute;
+        font-weight: bolder;
+        transform: rotate(90deg);
+        font-size: 70px;
+        bottom: 70px;
+        left: -50px;
+        opacity: 0.1;
+        z-index: -1;
     }
 
     nav .nav-icon,
