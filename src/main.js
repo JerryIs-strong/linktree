@@ -17,7 +17,7 @@ setInterval(() => {
     }
 }, 500);
 
-document.addEventListener('DOMContentLoaded', () => {
+window.addEventListener('load', () => {
     const { profile, SEO, links, display } = setting;
     const { music } = display.share;
     const titlesetting = setting.display.title;
@@ -29,6 +29,17 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     document.documentElement.setAttribute('theme', display.theme || 'classic');
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+    setTimeout(() => {
+        loaded = true;
+        document.getElementById('preloader').style.animation = "fadeOut 0.8s cubic-bezier(0.75, 0.15, 0.16, 0.99) forwards";
+        document.getElementById('background').style.animation = "bgFadeIn 1.9s cubic-bezier(0.25, 0.04, 0, 0.89) forwards";
+        setTimeout(() => {
+            document.getElementById('preloader').remove();
+        }, 1000);
+    }, 1500);
 
     const pages = document.querySelectorAll('.page');
     const observer = new IntersectionObserver(
@@ -47,15 +58,6 @@ document.addEventListener('DOMContentLoaded', () => {
             threshold: [0.3],
         }
     );
-
-    setTimeout(() => {
-        loaded = true;
-        document.getElementById('preloader').style.animation = "fadeOut 0.8s cubic-bezier(0.75, 0.15, 0.16, 0.99) forwards";
-        document.getElementById('background').style.animation = "bgFadeIn 1.9s cubic-bezier(0.25, 0.04, 0, 0.89) forwards";
-        setTimeout(() => {
-        document.getElementById('preloader').remove();
-        }, 1000); 
-    }, 1500);
 
     pages.forEach((page) => observer.observe(page));
 });
