@@ -64,19 +64,6 @@ document.addEventListener('DOMContentLoaded', () => {
     pages.forEach((page) => observer.observe(page));
 });
 
-mainWrapper.addEventListener('scroll', () => {
-    const currentScroll = mainWrapper.scrollTop;
-    if (
-        currentScroll > lastScrollTop ||
-        (currentScroll == 0 && !document.getElementById('nav').classList.contains('open'))
-    ) {
-        nav.className = 'nav-hide';
-    } else {
-        nav.className = '';
-    }
-    lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // For Mobile or negative scrolling
-});
-
 function createLink(icon, target, url, linkName, onclick) {
     const LinkBtnWrapper = document.createElement('a');
 
@@ -253,6 +240,8 @@ function navigateTo(pageName) {
     } else {
         console.error(`Page with name "${pageName}" not found.`);
     }
+
+    document.getElementById('nav').classList.remove('open');
 }
 
 function toggleNav(isOpen) {
