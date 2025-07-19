@@ -19,7 +19,7 @@ setInterval(() => {
     }
 }, 500);
 
-window.addEventListener('load', () => {
+document.addEventListener('DOMContentLoaded', () => {
     const { profile, SEO, links, display } = setting;
     const { music } = display.share;
     const titlesetting = setting.display.title;
@@ -31,9 +31,7 @@ window.addEventListener('load', () => {
     }
 
     document.documentElement.setAttribute('theme', display.theme || 'classic');
-});
 
-document.addEventListener('DOMContentLoaded', () => {
     setTimeout(() => {
         loaded = true;
         document.getElementById('preloader').style.animation = "fadeOut 0.8s cubic-bezier(0.75, 0.15, 0.16, 0.99) forwards";

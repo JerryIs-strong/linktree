@@ -317,10 +317,6 @@ nav .nav-icon,
     display: none;
 }
 
-nav {
-    display: flex;
-}
-
 nav #warning_sign {
     display: flex;
     align-items: center;
@@ -464,6 +460,20 @@ nav .nav-item[n-hide="true"] {
     animation: spin 2s linear infinite;
 }
 
+.comments-frame{
+    width: 100%;
+    max-width: 650px;
+    margin-top: 15px;
+}
+
+#comments-container{
+    background-color: var(--theme-background-color);
+    backdrop-filter: var(--global-blur);
+    -webkit-backdrop-filter: var(--global-blur);
+    padding: 20px 30px;
+    border-radius: 30px;
+}
+
 
 /* Optimize for mobile */
 
@@ -474,7 +484,7 @@ nav .nav-item[n-hide="true"] {
         padding: 0 35px;
     }
 
-    #dcount-container {
+    #dcount-container, .comments-frame {
         width: 100%;
         padding: 0 35px;
     }
