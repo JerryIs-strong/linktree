@@ -520,10 +520,13 @@ nav .nav-item[n-hide="true"] {
         display: flex;
         background-color: var(--theme-background-color);
         border-radius: 35px;
-        padding: 0 5px 0 15px;
         margin: 10px 10px 0 0;
         backdrop-filter: var(--global-blur);
         -webkit-backdrop-filter: var(--global-blur);
+    }
+
+    nav #warning_sign img{
+        margin-left: 15px;
     }
 
     .nav.open {
