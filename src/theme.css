@@ -1,7 +1,8 @@
 [theme="classic"][dark="false"] {
     --background-color: #ffffffa3;
     --background-color-fill: #7c7c7c;
-    --font-secondary-color: #ffffff9a;
+    --font-color: #4b4b4b;
+    --font-secondary-color: #292929cb;
     --font-sign-color: #141414;
     --theme-color: #383838;
     --theme-background-color: #ebebeb7c;
@@ -14,7 +15,8 @@
 [theme="classic"][dark="true"] {
     --background-color: #101010b0;
     --background-color-fill: #101010;
-    --font-secondary-color: #d6d6d6;
+    --font-color: #4b4b4b;
+    --font-secondary-color: #292929cb;
     --font-hover-color: #000;
     --font-sign-color: #ffffff;
     --mainBtn-color: #4040402b;

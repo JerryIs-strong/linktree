@@ -63,7 +63,13 @@
                 <div class="nav-item" id="dcountBtn" onclick="navigateTo('Day Counter')" n-name="Day Counter"><span
                         class="material-symbols-outlined nav-icon">event</span>Day Counter</div>
                 <div class="nav-item" id="idleBtn"
-                    onclick='window.location="https\://www.instagram.com/i_dle_official/"' n-name="I-DLE">I-DLE</div>
+                    onclick='window.location="https\://www.instagram.com/i_dle_official/"' n-name="I-DLE">
+                    <img class="nav-icon img-icon" src="" alt="IDLE Icon" data-dark-src="/src/img/1000009888_dark.webp" data-light-src="/src/img/1000009888_light.webp" style="width: 18px;">
+                    I-DLE
+                </div>
+                <div class="nav-item" id="idleBtn"
+                    onclick='window.location="https\://equal-love.jp/"' n-name="=Love"><span
+                        class="material-symbols-outlined nav-icon">favorite</span>=Love</div>
                 <div class="nav-item" id="dlBtn"
                     onclick="if (document.documentElement.getAttribute('dark') === 'true') { Theme(false); } else { Theme(true); }"
                     n-name="Day Counter">
@@ -78,18 +84,18 @@
             </div>
         </nav>
         <div class="page" p-name="Home">
-            <img class="img" id="img" alt="">
+            <img class="img" id="img" alt="Avatar">
             <div class="text" id="text">
                 <h1 id="title"></h1>
                 <h2 id="description"></h2>
             </div>
         </div>
         <div class="page" p-name="Links">
-            <div class="page-title">Links <img src="./src/img/arrow.webp" alt=""></div>
+            <div class="page-title">Links</div>
             <div class="mediaBtn" id="mediaBtn_wrapper"></div>
         </div>
         <div class="page" p-name="Day Counter">
-            <div class="page-title">Day Counter <img src="./src/img/arrow.webp" alt=""></div>
+            <div class="page-title">Day Counter</div>
             <div id="dcount-container"></div>
         </div>
     </div>
@@ -106,7 +112,7 @@
     <div class="preloader" id="preloader">
         <div class="preloader-inner">
             <div class="preloader-logo">
-                <img src="./src/img/33a3af0456db6757ff0fe195b33b5f20.jpg" alt="Logo">
+                <img src="./src/img/33a3af0456db6757ff0fe195b33b5f20.jpg" alt="Website Logo">
             </div>
             <div class="loader"></div>
             <div class="preloader-text" id="preLoaderText">Loading...</div>

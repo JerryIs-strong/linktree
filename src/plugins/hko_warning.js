@@ -8,10 +8,16 @@ async function getData() {
             Object.values(json).forEach(warning => {
                 if (warning.code) {
                     const warningElement = document.createElement('img');
-                    warningElement.className = 'warning_sign';
+                    warningElement.className = 'warning_sign img-icon';
                     warningElement.alt = warning.code;
                     warningElement.title = `${warning.name}現正生效 - 資訊來自data.gov.hk`;
-                    warningElement.src = `./src/data/warning_sign/original/${warning.code}.gif`;
+                    if (matchMedia('(prefers-color-scheme: dark)').matches) {
+                        warningElement.src = `./src/data/warning_sign/morden/dark/${warning.code}.png`;
+                    } else {
+                        warningElement.src = `./src/data/warning_sign/morden/light/${warning.code}.png`;
+                    }
+                    warningElement.setAttribute('data-dark-src', `./src/data/warning_sign/morden/dark/${warning.code}.png`);
+                    warningElement.setAttribute('data-light-src', `./src/data/warning_sign/morden/light/${warning.code}.png`);
                     container.appendChild(warningElement);
                 }
             });

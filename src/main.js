@@ -197,6 +197,9 @@ function Theme(darkMode) {
     document.documentElement.setAttribute("dark", darkMode ? "true" : "false");
     document.getElementById('dl-icon').innerHTML = darkMode ? `<span class="material-symbols-outlined">dark_mode</span>` : `<span class="material-symbols-outlined">light_mode</span>`;
     document.getElementById('dl-state').innerText = darkMode ? "Dark Mode" : "Light Mode";
+    document.querySelectorAll('.img-icon').forEach((img) => {
+        img.src = darkMode ? img.getAttribute('data-dark-src') : img.getAttribute('data-light-src');
+    }); 
 }
 
 function HolderIcon(holderIcon) {
