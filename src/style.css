@@ -194,11 +194,6 @@ a {
 }
 
 .MusicName {
-    color: #fff !important;
-    text-decoration: none !important;
-}
-
-.MusicName {
     cursor: pointer;
     max-width: 70vw;
     height: 23px;
@@ -206,6 +201,8 @@ a {
     display: block;
     text-overflow: ellipsis;
     white-space: nowrap;
+    text-decoration: none !important;
+    color: var(--font-color) !important;
 }
 
 .musicNameWrapper {
@@ -225,6 +222,7 @@ a.MusicName:-webkit-any-link {
 .musicIcon {
     align-content: center;
     margin-right: 5px;
+    color: var(--font-color);
 }
 
 #dcount-container {
