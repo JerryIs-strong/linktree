@@ -1,0 +1,19 @@
+{
+    "data": [
+        {
+            "name": "💜(G)I-DLE",
+            "type": "DC", 
+            "start_date": "2024-12-04"
+        },
+        {
+            "name": "I-DLE",
+            "type": "DC",
+            "start_date": "2025-05-02"
+        },
+        {
+            "name": "I-DLE' Birthday",
+            "type": "Annually",
+            "start_date": "05-02"
+        }
+    ]
+}

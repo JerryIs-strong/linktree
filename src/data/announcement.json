@@ -1,0 +1,9 @@
+{
+    "announce": {
+        "expireDate": "2025-06-30",
+        "title": "📢 Announcement",
+        "picture": "./src/data/img/mini8_icon_title.webp",
+        "content": "I-DLE全員美麗回歸！快啲去欣賞佢地美麗嘅舞臺！！！！😍<br/><br/><div style=\"text-align: left;\"><a href=\"https://www.youtube.com/watch?v=R1scY6RBHlo\" target=\"_blank\">▶Girlfriend | KBS WORLD TV [點擊前往]</a><br/><br/><a href=\"https://www.youtube.com/watch?v=UrG_K91ZLJA\" target=\"_blank\">▶Good Thing | K-Choreo [點擊前往]</a><br/><br/><a href=\"https://www.youtube.com/watch?v=8jvEbfNYpSI\" target=\"_blank\">▶Good Thing | M COUNTDOWN [點擊前往]</a></div>",
+        "button": false
+    }
+}

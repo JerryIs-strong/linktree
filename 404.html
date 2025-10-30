@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Page Not Found</title>
+    <script src="https://kit.fontawesome.com/ba7cf5430a.js" crossorigin="anonymous"></script>
+    <style>
+        /* Reset styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inconsolata', monospace;
+            background-color: #1e1e1e;
+            color: #c8c8c8;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            padding: 2rem;
+        }
+
+        .terminal-container {
+            background-color: #1e1e1e;
+            border: 1px solid #4e4e4e;
+            border-radius: 5px;
+            padding: 2rem;
+            max-width: 600px;
+            width: 100%;
+        }
+
+        .terminal-header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .terminal-header h2 {
+            font-size: 2rem;
+            font-weight: 400;
+            color: #c8c8c8;
+        }
+
+        .terminal-output {
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        .terminal-input {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .terminal-input span {
+            font-size: 1rem;
+            margin-right: 0.5rem;
+        }
+
+        .terminal-input input {
+            flex-grow: 1;
+            background-color: transparent;
+            border: none;
+            color: #c8c8c8;
+            font-family: 'Inconsolata', monospace;
+            font-size: 1rem;
+            outline: none;
+        }
+
+        .tips-btn {
+            display: block;
+            text-align: center;
+            color: #c8c8c8;
+            text-decoration: none;
+            transition: color 0.3s;
+            animation: bounce 2s infinite;
+            border: 1px solid;
+            border-radius: 30px;
+            width: fit-content;
+            padding: 5px 15px;
+            margin: 16px 10px 10px 0;
+        }
+
+        .tips-btn:last-child {
+            margin-right: 0;
+        }
+        
+        .tips-btn:hover {
+            color: #fafafa;
+        }
+
+        .tips {
+            display: flex;
+        }
+
+        @media screen and (max-width: 600px) {
+            .tips-btn:not(:first-child) {
+                display: none;
+            }
+        }
+
+        @keyframes bounce {
+            0%,
+            20%,
+            50%,
+            80%,
+            100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-8px);
+            }
+            60% {
+                transform: translateY(-5px);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="terminal-container">
+        <div class="terminal-header">
+            <h2>ERROR 404 - Page Not Found</h2>
+        </div>
+        <div class="terminal-output">
+            Oops, it looks like the page you're looking for doesn't exist. Can I help you find what you're looking for?
+        </div>
+        <div class="tips">
+            <a href="/" class="tips-btn"><i class="fa-regular fa-lightbulb"></i> Back to Home</a>
+            <a href="https://developer.mozilla.org/zh-TW/docs/Web/HTTP/Status/404" class="tips-btn"><i class="fa-regular fa-lightbulb"></i> What happened</a>
+        </div>
+        <div class="terminal-input">
+            <span>$</span>
+            <input type="text" placeholder="Type your command..." />
+        </div>
+    </div>
+
+    <script>
+        const input = document.querySelector('.terminal-input input');
+        input.addEventListener('keypress', function(e) {
+            const total = input.value.length;
+            if (e.key === 'Enter') {
+                let interval = setInterval(() => {
+                    if (input.value.length > 0) {
+                        input.value = input.value.slice(0, -1);
+                    } else {
+                        clearInterval(interval);
+                    }
+                }, 100);
+            }
+        });
+    </script>
+</body>
+
+</html>

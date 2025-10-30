@@ -1,0 +1,146 @@
+{
+    "profile": {
+        "website_name": "I AM",
+        "subtitle": "哈嘍 很高興遇見你！",
+        "icon": {
+            "url": "./src/img/IMG_20250511_205702.webp"
+        },
+        "favicon": {
+            "default": "./src/img/33a3af0456db6757ff0fe195b33b5f20.jpg"
+        }
+    },
+    "SEO": {
+        "description": "",
+        "language": "zh-TW",
+        "google_verification": false
+    },
+    "display": {
+        "background": {
+            "url": "./src/img/b5bc7299b30a67bd1cf036202b1b2804.webp"
+        },
+        "title": {
+            "method": "greeting",
+            "advanced_setting": {}
+        },
+        "share": {
+            "enable": true,
+            "music": {
+                "enable": true,
+                "music_data": [
+                    {
+                        "name": "I Do",
+                        "artist": "(G)I-DLE",
+                        "album": "HEAT",
+                        "url": "https://music.youtube.com/watch?v=NH3hQTFLgR4"
+                    },
+                    {
+                        "name": "Klaxon",
+                        "artist": "(G)I-DLE",
+                        "album": "I SWAY",
+                        "url": "https://music.youtube.com/watch?v=-hUX3-eXmUE"
+                    },
+                    {
+                        "name": "Neverland",
+                        "artist": "(G)I-DLE",
+                        "album": "I SWAY",
+                        "url": "https://music.youtube.com/watch?v=t0Dox99MAIc"
+                    },
+                    {
+                        "name": "Last Forever",
+                        "artist": "(G)I-DLE",
+                        "album": "I SWAY",
+                        "url": "https://music.youtube.com/watch?v=docmg0oGpXY"
+                    },
+                    {
+                        "name": "Allergy",
+                        "artist": "(G)I-DLE",
+                        "album": "I feel",
+                        "url": "https://music.youtube.com/watch?v=Gcp87-ZegRA"
+                    },
+                    {
+                        "name": "Really Like You",
+                        "artist": "BABYMONSTER",
+                        "album": "DRIP",
+                        "url": "https://music.youtube.com/watch?v=yrfnj9Q54m4"
+                    },
+                    {
+                        "name": "假使世界原來不像你預期",
+                        "artist": "方皓玟",
+                        "album": "LOST n FOUND",
+                        "url": "https://music.youtube.com/watch?v=xtBfeHvjhq0"
+                    },
+                    {
+                        "name": "凡星",
+                        "artist": "陳蕾",
+                        "album": "念",
+                        "url": "https://music.youtube.com/watch?v=vER4DPlhXXI"
+                    },
+                    {
+                        "name": "高山低谷",
+                        "artist": "林奕匡",
+                        "album": "3",
+                        "url": "https://music.youtube.com/watch?v=whVgChFNYkg"
+                    },
+                    {
+                        "name": "用背脊唱情歌",
+                        "artist": "Gareth.T",
+                        "album": "用背脊唱情歌",
+                        "url": "https://music.youtube.com/watch?v=hzHWXQtwBa4"
+                    }
+                ]
+            }
+        },
+        "blur": true,
+        "theme": "classic"
+    },
+    "links": [
+        {
+            "enable": true,
+            "name": "Instagram",
+            "icon": {
+                "type": "fontawesome",
+                "fontawesome": "fa fa-instagram"
+            },
+            "url": "https://www.instagram.com/hwj7818_ynz/",
+            "target": "blank"
+        },
+        {
+            "enable": true,
+            "name": "Twitter",
+            "icon": {
+                "type": "fontawesome",
+                "fontawesome": "fa-brands fa-x-twitter"
+            },
+            "url": "https://x.com/jerryis_strong",
+            "target": "blank"
+        },
+        {
+            "enable": true,
+            "name": "Github",
+            "icon": {
+                "type": "fontawesome",
+                "fontawesome": "fa-brands fa-github"
+            },
+            "url": "https://github.com/JerryIs-strong",
+            "target": "blank"
+        },
+        {
+            "enable": true,
+            "name": "Threads",
+            "icon": {
+                "type": "fontawesome",
+                "fontawesome": "fa-brands fa-threads"
+            },
+            "url": "https://www.threads.net/@hwj7818_ynz",
+            "target": "blank"
+        }
+    ],
+    "debug": false,
+    "plugins": {
+        "list": [
+            "dcount",
+            "announcement",
+            "hko_warning"
+        ]
+    }
+}
