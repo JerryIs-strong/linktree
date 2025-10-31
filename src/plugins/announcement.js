@@ -10,7 +10,6 @@ function showAnnouncement(AnnouncementData, noExpireDate = false) {
   const announcement_title = document.createElement("div");
   const announcement_content = document.createElement("div");
   const announcement_close = document.createElement("div");
-  const announcement_mask = document.getElementById("announcement_mask");
 
   announcement_title.className = "announcement-title";
   announcement_content.className = "announcement-content";
@@ -24,9 +23,6 @@ function showAnnouncement(AnnouncementData, noExpireDate = false) {
   announcement_close.innerHTML =
     '<span class="material-symbols-outlined"> close </span>';
   announcement_close.onclick = () => {
-    closeAnnouncement();
-  };
-  announcement_mask.onclick = () => {
     closeAnnouncement();
   };
 
@@ -55,7 +51,6 @@ function showAnnouncement(AnnouncementData, noExpireDate = false) {
         navigateTo(targetPage);
       } else if (buttonData.onclickAction.includes("link: ")) {
         const link = buttonData.onclickAction.split("link: ")[1];
-        closeAnnouncement();
         window.open(link, "_blank");
       }
     };
