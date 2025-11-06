@@ -45,12 +45,12 @@ function showAnnouncement(AnnouncementData, noExpireDate = false) {
     announcement_button.style.backgroundColor = AnnouncementData.button.color;
 
     announcement_button.onclick = (e) => {
-      if (buttonData.onclickAction.includes("page: ")) {
-        targetPage = buttonData.onclickAction.split("page: ")[1];
+      if (buttonData.url.includes("page: ")) {
+        targetPage = buttonData.url.split("page: ")[1];
         closeAnnouncement();
         navigateTo(targetPage);
-      } else if (buttonData.onclickAction.includes("link: ")) {
-        const link = buttonData.onclickAction.split("link: ")[1];
+      } else if (buttonData.url.includes("link: ")) {
+        const link = buttonData.url.split("link: ")[1];
         window.open(link, "_blank");
       }
     };

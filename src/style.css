@@ -561,18 +561,6 @@ nav .nav-item[n-hide="true"] {
         border-radius: 12px;
     }
 
-    nav .nav::after {
-        content: 'MENU';
-        position: absolute;
-        font-weight: bolder;
-        transform: rotate(90deg);
-        font-size: 70px;
-        bottom: 70px;
-        left: -50px;
-        opacity: 0.1;
-        z-index: -1;
-    }
-
     nav .nav-icon,
     .nav-toggle {
         display: block;
