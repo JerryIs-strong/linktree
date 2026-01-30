@@ -1,29 +1,15 @@
-[theme="classic"][dark="false"] {
-    --background-color: #ffffffa3;
-    --background-color-fill: #7c7c7c;
-    --font-color: #ffffff;
-    --font-secondary-color: #dadadacb;
-    --font-sign-color: #141414;
-    --theme-color: #383838;
-    --theme-background-color: #ebebeb96;
-    --btn-hover-color: #b6b6b6b0;
-    --announcement-font-color: #2c2c2c;
-    --loader-background-color: #555454;
-    --loader-color: #a3a3a3;
-}
-
-[theme="classic"][dark="true"] {
-    --background-color: #101010b0;
+[theme="classic"] {
+    --background-color: #1d1d1d;
     --background-color-fill: #101010;
     --font-color: #ffffff;
     --font-secondary-color: #dadadacb;
-    --font-hover-color: #000;
     --font-sign-color: #ffffff;
-    --mainBtn-color: #4040402b;
     --theme-color: #ffffff;
     --theme-background-color: #292a2b99;
     --btn-hover-color: #12121399;
     --announcement-font-color: #fff;
     --loader-background-color: #ffffff;
     --loader-color: #4d4e4e;
+    --theme-border-color: #4b99f1;
+    --theme-font-color: #4b99f1;
 }

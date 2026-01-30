@@ -2,7 +2,7 @@
     "announce": {
         "expireDate": "",
         "title": "📢 Announcement",
-        "content": "",
+        "content": "Recently, I'm updating and testing the new UI!",
         "button": false
     }
 }

@@ -1,5 +1,5 @@
 :root {
-    --global-blur: blur(20px);
+    --global-blur: blur(50px);
 }
 
 * {
@@ -24,8 +24,17 @@ a {
     height: 100%;
     width: 100%;
     position: absolute;
+    z-index: -2;
+}
+
+.background::before{
+    content: '';
+    width: 100%;
+    height: 100%;
+    background-color: var(--background-color);
+    z-index: -1;
+    position: absolute;
     opacity: 0.95;
-    filter: blur(10px);
 }
 
 .main {
@@ -63,19 +72,12 @@ a {
 
 .page-title {
     margin: 0 0 20px 0;
-    color: var(--font-color);
-    font-size: 25px;
+    color: var(--theme-font-color);
+    font-size: 22px;
     font-weight: 900;
     width: 100%;
     max-width: 650px;
-}
-
-.page-title::after{
-    content: '';
-    display: block;
-    width: 50px;
-    height: 5px;
-    background-color: var(--font-color);
+    font-family: "Press Start 2P", system-ui;
 }
 
 .img {
@@ -97,6 +99,7 @@ a {
     margin-bottom: 5px;
     color: var(--font-color);
     margin: 20px 15px 5px 15px;
+    font-family: "Tiny5", sans-serif;
 }
 
 .main .text h2 {
@@ -105,7 +108,7 @@ a {
     font-size: 15px;
     color: var(--font-secondary-color);
     margin-bottom: 10px;
-    font-family: "Noto Serif", serif;
+    font-family: "Give You Glory", cursive;
 }
 
 .mediaBtn {
@@ -138,7 +141,6 @@ a {
 }
 
 .mediaBtn .link-btn-box {
-    border-radius: 10px;
     padding: 28px 35px;
     width: 100%;
     max-width: 650px;
@@ -146,7 +148,7 @@ a {
     color: var(--theme-color);
     text-decoration: none;
     margin: 10px;
-    background-color: var(--theme-background-color);
+    background-color: transparent;
     backdrop-filter: var(--global-blur);
     -webkit-backdrop-filter: var(--global-blur);
     box-sizing: border-box;
@@ -154,6 +156,7 @@ a {
     align-items: center;
     flex-direction: row;
     justify-content: space-between;
+    border: 2px solid var(--theme-border-color);
 }
 
 .btn_wrapper {
@@ -237,11 +240,8 @@ a.MusicName:-webkit-any-link {
 }
 
 .dcount-card {
-    background-color: var(--theme-background-color);
     color: var(--theme-color);
-    padding: 30px 40px;
     margin: 10px;
-    border-radius: 10px;
     width: 250px;
     display: flex;
     flex-direction: column;
@@ -249,16 +249,16 @@ a.MusicName:-webkit-any-link {
     flex: 1 1 auto;
     backdrop-filter: var(--global-blur);
     -webkit-backdrop-filter: var(--global-blur);
+    border: 2px solid var(--theme-border-color);
 }
 
 .dcount-card-title {
     font-size: 20px;
     font-weight: bolder;
-    margin-bottom: 10px;
     width: 100%;
     text-align: center;
-    border-bottom: 1px solid var(--theme-color);
-    padding-bottom: 10px;
+    padding: 20px;
+    background-color: var(--theme-border-color);
 }
 
 .dcount-card[data-today="true"] {
@@ -278,24 +278,37 @@ a.MusicName:-webkit-any-link {
     color: #fff;
 }
 
+.dcount-card-day-count{
+    margin-top: 20px;
+}
+
+.dcount-card-start-day{
+    margin-bottom: 20px;
+}
+
 nav {
     position: fixed;
     width: 100%;
     display: flex;
     justify-content: center;
     z-index: 996;
+    align-items: center;
+    border-bottom: 2px solid var(--theme-border-color);
 }
 
 nav .nav {
+    width: 100%;
     display: flex;
-    background-color: var(--theme-background-color);
-    margin: 20px;
-    border-radius: 30px;
     padding: 0 10px;
     color: var(--theme-color);
     backdrop-filter: var(--global-blur);
     -webkit-backdrop-filter: var(--global-blur);
     transition: all 0.3s ease-in-out;
+    justify-content: flex-end;
+}
+
+nav .key{
+    height: 100%;
 }
 
 #nav-toolbar {
@@ -309,9 +322,8 @@ nav .nav>* {
 }
 
 nav .nav>*:hover {
-    background-color: var(--btn-hover-color);
+    background-color: var(--theme-border-color);
     padding: 5px 10px;
-    border-radius: 30px;
 }
 
 nav .nav-icon,
@@ -322,12 +334,7 @@ nav .nav-icon,
 nav #warning_sign {
     display: flex;
     align-items: center;
-    margin: 20px 14px;
-    border-radius: 30px;
     padding: 10px 20px;
-    backdrop-filter: var(--global-blur);
-    -webkit-backdrop-filter: var(--global-blur);
-    background-color: var(--theme-background-color);
 }
 
 nav #warning_sign img {
@@ -371,7 +378,7 @@ nav .nav-item[n-hide="true"] {
     left: 0;
     width: 100vw;
     height: 100vh;
-    background-color: var(--background-color);
+    background-color: #1d1d1d7e;
     backdrop-filter: var(--global-blur);
     -webkit-backdrop-filter: var(--global-blur);
     z-index: 997;
@@ -497,6 +504,7 @@ nav .nav-item[n-hide="true"] {
         align-items: center;
         transition: transform 0.3s ease-in-out;
         background-color: transparent;
+        border-bottom: none;
     }
 
     nav .nav {
@@ -520,11 +528,12 @@ nav .nav-item[n-hide="true"] {
 
     nav .key {
         display: flex;
-        background-color: var(--theme-background-color);
-        border-radius: 35px;
         margin: 10px 10px 0 0;
         backdrop-filter: var(--global-blur);
         -webkit-backdrop-filter: var(--global-blur);
+        border: 2px solid var(--theme-border-color);
+        border-bottom: none;
+        border-left: none;
     }
 
     nav #warning_sign img{
@@ -534,6 +543,7 @@ nav .nav-item[n-hide="true"] {
     .nav.open {
         max-height: 100%;
         transition: all 0.3s ease-in-out;
+        padding-bottom: 20px;
     }
 
     nav .nav-icon {
@@ -556,10 +566,6 @@ nav .nav-item[n-hide="true"] {
         display: flex;
         justify-content: center;
         align-items: center;
-    }
-
-    nav .nav>*:hover {
-        border-radius: 12px;
     }
 
     nav .nav-icon,
@@ -589,7 +595,7 @@ nav .nav-item[n-hide="true"] {
         color: var(--theme-color);
         font-size: 24px;
         cursor: pointer;
-        margin: 10px;
+        margin: 5px;
     }
 
     .nav-toggle.close-btn {
@@ -598,10 +604,6 @@ nav .nav-item[n-hide="true"] {
 
     nav .nav-item[n-hide="true"] {
         display: flex;
-    }
-
-    .page[p-name="We are"] iframe {
-        padding: 0 35px;
     }
 }
 

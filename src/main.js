@@ -115,7 +115,6 @@ function Profile(profile, music, display, SEO, titlesetting) {
     const { background } = display;
     const { language, description, google_verification } = SEO;
     const { music_data: musicSetting } = music;
-    const darkMode = window.matchMedia("(prefers-color-scheme: dark)").matches;
     const nameElement = document.getElementById('name');
 
     /* Basic HTML Elements */
@@ -134,8 +133,10 @@ function Profile(profile, music, display, SEO, titlesetting) {
 
     Music(music, musicSetting);
     Background(background.url);
-    Theme(darkMode);
     HolderIcon(icon);
+    document.querySelectorAll('.img-icon').forEach((img) => {
+        img.src = img.getAttribute('data-src');
+    }); 
 }
 
 function Music(music, musicSetting) {
@@ -174,15 +175,6 @@ function Background(backgroundUrl) {
         debug("本地壁紙設置錯誤", "warn");
         document.getElementById('background').remove();
     }
-}
-
-function Theme(darkMode) {
-    document.documentElement.setAttribute("dark", darkMode ? "true" : "false");
-    document.getElementById('dl-icon').innerHTML = darkMode ? `<span class="material-symbols-outlined">dark_mode</span>` : `<span class="material-symbols-outlined">light_mode</span>`;
-    document.getElementById('dl-state').innerText = darkMode ? "Dark Mode" : "Light Mode";
-    document.querySelectorAll('.img-icon').forEach((img) => {
-        img.src = darkMode ? img.getAttribute('data-dark-src') : img.getAttribute('data-light-src');
-    }); 
 }
 
 function HolderIcon(holderIcon) {
