@@ -1,8 +1,8 @@
 {
     "announce": {
-        "expireDate": "",
+        "expireDate": false,
         "title": "📢 Announcement",
-        "content": "Recently, I'm updating and testing the new UI!",
+        "content": "Welcome to my website! This website will never collect any of your data, so please feel free to browse.",
         "button": false
     }
 }

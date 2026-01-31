@@ -11,7 +11,7 @@
     },
     "SEO": {
         "description": "",
-        "language": "zh-TW",
+        "language": "zh-HK",
         "google_verification": false
     },
     "display": {
@@ -21,6 +21,25 @@
         "title": {
             "method": "greeting",
             "advanced_setting": {}
+        },
+        "nav":{
+            "external_link": [
+                {
+                    "name": "IDLE",
+                    "url": "https://www.instagram.com/i_dle_official/",
+                    "icon": "./src/img/1000009888_dark.webp"
+                },
+                {
+                    "name": "=Love",
+                    "url": "https://equal-love.jp/",
+                    "icon": "favorite"
+                },
+                {
+                    "name": "I: What's new",
+                    "url": "./update.txt",
+                    "icon": "app_badging"
+                }
+            ]
         },
         "share": {
             "enable": true,

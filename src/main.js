@@ -112,13 +112,12 @@ function greetUser(greet) {
 
 function Profile(profile, music, display, SEO, titlesetting) {
     const { icon, favicon } = profile;
-    const { background } = display;
+    const { background, nav } = display;
     const { language, description, google_verification } = SEO;
     const { music_data: musicSetting } = music;
-    const nameElement = document.getElementById('name');
 
     /* Basic HTML Elements */
-    document.documentElement.lang = language || 'zh-TW';
+    document.documentElement.lang = language || 'en';
     document.title = profile.website_name;
     document.getElementById('title').innerText = titlesetting.method === "greeting" ? greetUser(titlesetting.advanced_setting) : `HEY! ${profile.name}`;
     document.getElementById('description').innerText = profile.subtitle;
@@ -134,9 +133,7 @@ function Profile(profile, music, display, SEO, titlesetting) {
     Music(music, musicSetting);
     Background(background.url);
     HolderIcon(icon);
-    document.querySelectorAll('.img-icon').forEach((img) => {
-        img.src = img.getAttribute('data-src');
-    }); 
+    NavLink(nav.external_link);
 }
 
 function Music(music, musicSetting) {
@@ -162,9 +159,40 @@ function Music(music, musicSetting) {
         }
         sessionStorage.setItem('current-music', JSON.stringify(currentMusic));
     } else {
-        debug("音樂已禁用", "info")
+        debug("Music function is disabled", "info")
         document.getElementById('music').remove();
     }
+}
+
+function NavLink(links){
+    const navElement = document.getElementById("nav");
+    Object.entries(links).forEach(([linkDB]) => {
+        const link = links[linkDB];
+        const nav_elink_wrapper = document.createElement("div");
+        nav_elink_wrapper.classList.add('nav-item', 'nav-elink');
+        if (link.name.includes("I: ")) {
+            nav_elink_wrapper.innerText = link.name.split("I: ")[1];
+        } else {
+            nav_elink_wrapper.innerText = link.name + " 🔗";
+        }
+        if (link.icon) {
+            if (link.icon.includes("/")){
+                const nav_elink_icon = document.createElement("img");
+                nav_elink_icon.classList.add('nav-icon', 'img-icon');
+                nav_elink_icon.src = link.icon;
+                nav_elink_wrapper.appendChild(nav_elink_icon);
+            } else {
+                const nav_elink_icon = document.createElement("span");
+                nav_elink_icon.classList.add('material-symbols-outlined', 'nav-icon');
+                nav_elink_icon.innerText = link.icon;
+                nav_elink_wrapper.appendChild(nav_elink_icon);
+            }
+        }
+        nav_elink_wrapper.onclick = function() {
+            window.open(link.url, '_blank');
+        };
+        navElement.appendChild(nav_elink_wrapper)
+    });
 }
 
 function Background(backgroundUrl) {
@@ -172,7 +200,7 @@ function Background(backgroundUrl) {
     if (backgroundUrl.length > 0 && backgroundUrl.includes('/')) {
         backgroundElement.style.backgroundImage = `url(${backgroundUrl})`;
     } else {
-        debug("本地壁紙設置錯誤", "warn");
+        debug("Local wallpaper setting error", "warn");
         document.getElementById('background').remove();
     }
 }
@@ -182,7 +210,7 @@ function HolderIcon(holderIcon) {
     if (holderIcon.url) {
         imgElement.src = holderIcon.url;
     } else {
-        debug("頭像設置錯誤", "warn");
+        debug("Profile picture setting error", "warn");
         document.getElementById('img').remove();
     }
 }
@@ -199,7 +227,7 @@ function Links(linksetting) {
             }
         });
     } else {
-        debug("連結設置錯誤", "warn");
+        debug("Link settings error", "warn");
         linkGroup.remove();
     }
 }

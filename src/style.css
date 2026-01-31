@@ -354,6 +354,10 @@ nav .nav-item[n-hide="true"] {
     display: none;
 }
 
+.img-icon {
+    width: 18px;
+}
+
 .announcement_wrapper {
     position: absolute;
     top: 50%;
@@ -396,6 +400,7 @@ nav .nav-item[n-hide="true"] {
     font-size: 25px;
     font-weight: bolder;
     margin-bottom: 20px;
+    font-family: "Tiny5", sans-serif;
 }
 
 .announcement_wrapper img {
@@ -543,7 +548,7 @@ nav .nav-item[n-hide="true"] {
     .nav.open {
         max-height: 100%;
         transition: all 0.3s ease-in-out;
-        padding-bottom: 20px;
+        padding-bottom: 10px;
     }
 
     nav .nav-icon {
@@ -604,6 +609,10 @@ nav .nav-item[n-hide="true"] {
 
     nav .nav-item[n-hide="true"] {
         display: flex;
+    }
+
+    .nav-elink {
+        flex-direction: row-reverse;
     }
 }
 

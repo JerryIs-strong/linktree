@@ -1,6 +1,11 @@
 {
     "data": [
         {
+            "name": "2026 HKDSE",
+            "type": "DC",
+            "start_date": "2026-04-09"
+        },
+        {
             "name": "💜(G)I-DLE",
             "type": "DC", 
             "start_date": "2024-12-04"
