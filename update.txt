@@ -1,4 +1,7 @@
-2026/02/01 26.102.1_lite_beta
+2026/02/01 26.102.2_lite_beta
+1. Update algorithm of creating navigation button
+
+2026/01/31 26.102.1_lite_beta
 1. Update algorithm of creating navigation button
 2. Brand new design
 3. Fixed some logic errors

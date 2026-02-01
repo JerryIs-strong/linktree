@@ -133,7 +133,7 @@ function Profile(profile, music, display, SEO, titlesetting) {
     Music(music, musicSetting);
     Background(background.url);
     HolderIcon(icon);
-    NavLink(nav.external_link);
+    NavLink(nav);
 }
 
 function Music(music, musicSetting) {
@@ -164,34 +164,53 @@ function Music(music, musicSetting) {
     }
 }
 
-function NavLink(links){
+function NavLink(links) {
     const navElement = document.getElementById("nav");
-    Object.entries(links).forEach(([linkDB]) => {
-        const link = links[linkDB];
-        const nav_elink_wrapper = document.createElement("div");
-        nav_elink_wrapper.classList.add('nav-item', 'nav-elink');
-        if (link.name.includes("I: ")) {
-            nav_elink_wrapper.innerText = link.name.split("I: ")[1];
-        } else {
-            nav_elink_wrapper.innerText = link.name + " 🔗";
-        }
+    const pages = document.querySelectorAll('.page'); // Use 'const' to declare pages variable
+
+    // Create navigation links for internal pages
+    pages.forEach((page) => {
+        const pageName = page.getAttribute('p-name');
+        
+        const navLinkWrapper = document.createElement("div");
+        navLinkWrapper.classList.add('nav-item');
+        navLinkWrapper.innerText = pageName;
+
+        const navLinkIcon = document.createElement("span");
+        navLinkIcon.classList.add('material-symbols-outlined', 'nav-icon');
+        navLinkIcon.innerText = links.custome_page_icon[pageName] || '';
+        navLinkWrapper.appendChild(navLinkIcon);
+
+        navLinkWrapper.onclick = () => navigateTo(pageName); // Use arrow function for consistency
+        navElement.appendChild(navLinkWrapper);
+    });
+
+    // Create navigation links for external links
+    Object.entries(links.external_link).forEach(([linkDB, link]) => {
+        const navElinkWrapper = document.createElement("div");
+        navElinkWrapper.classList.add('nav-item', 'nav-elink');
+
+        navElinkWrapper.innerText = link.name.includes("I: ") 
+            ? link.name.split("I: ")[1] 
+            : `${link.name} 🔗`;
+
+        // Create icon for external link
         if (link.icon) {
-            if (link.icon.includes("/")){
-                const nav_elink_icon = document.createElement("img");
-                nav_elink_icon.classList.add('nav-icon', 'img-icon');
-                nav_elink_icon.src = link.icon;
-                nav_elink_wrapper.appendChild(nav_elink_icon);
+            let navElinkIcon;
+            if (link.icon.includes("/")) {
+                navElinkIcon = document.createElement("img");
+                navElinkIcon.classList.add('nav-icon', 'img-icon');
+                navElinkIcon.src = link.icon;
             } else {
-                const nav_elink_icon = document.createElement("span");
-                nav_elink_icon.classList.add('material-symbols-outlined', 'nav-icon');
-                nav_elink_icon.innerText = link.icon;
-                nav_elink_wrapper.appendChild(nav_elink_icon);
+                navElinkIcon = document.createElement("span");
+                navElinkIcon.classList.add('material-symbols-outlined', 'nav-icon');
+                navElinkIcon.innerText = link.icon;
             }
+            navElinkWrapper.appendChild(navElinkIcon);
         }
-        nav_elink_wrapper.onclick = function() {
-            window.open(link.url, '_blank');
-        };
-        navElement.appendChild(nav_elink_wrapper)
+
+        navElinkWrapper.onclick = () => window.open(link.url, '_blank'); // Use arrow function for consistency
+        navElement.appendChild(navElinkWrapper);
     });
 }
 

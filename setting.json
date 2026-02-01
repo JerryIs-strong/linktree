@@ -23,6 +23,11 @@
             "advanced_setting": {}
         },
         "nav":{
+            "custome_page_icon": {
+                "Home": "home",
+                "Links": "link",
+                "Day Counter": "event"
+            },
             "external_link": [
                 {
                     "name": "IDLE",

@@ -611,7 +611,7 @@ nav .nav-item[n-hide="true"] {
         display: flex;
     }
 
-    .nav-elink {
+    .nav-item {
         flex-direction: row-reverse;
     }
 }
