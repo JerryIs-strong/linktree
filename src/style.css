@@ -478,7 +478,15 @@ nav .nav-item[n-hide="true"] {
 /* Optimize for mobile */
 
 @media screen and (max-width: 750px) {
+    .main{
+        scroll-behavior: smooth;
+        scroll-snap-type: y mandatory;
+    }
 
+    .page{
+        scroll-snap-align: center;
+    }
+    
     .mediaBtn,
     .page-title {
         padding: 0 35px;

@@ -1,5 +1,6 @@
 2026/02/01 26.102.3_lite_beta
 1. New design for "Day Counter" on mobile devices
+2. Optimize user experience on mobile devices
 
 2026/02/01 26.102.2_lite_beta
 1. Update algorithm of creating navigation button
