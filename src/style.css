@@ -484,9 +484,45 @@ nav .nav-item[n-hide="true"] {
         padding: 0 35px;
     }
 
-    #dcount-container, .comments-frame {
+    #dcount-container {
         width: 100%;
-        padding: 0 35px;
+        padding: 0 calc(50% - 150px);
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+        gap: 1em;
+        overflow-x: auto;
+        scroll-behavior: smooth;
+        scroll-snap-type: x proximity;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    #dcount-container::-webkit-scrollbar {
+        display: none;
+    }
+
+    #dcount-container::scroll-button(right),  #dcount-container::scroll-button(left){
+        content: '>';
+        border: 2px solid var(--theme-border-color);
+        background-color: var(--theme-background-color);
+        color: var(--font-color);
+        padding: 10px 12px;
+        backdrop-filter: var(--global-blur);
+        cursor: pointer;
+        position: absolute;
+        right: 20px;
+        transform: translateY(150px);
+        width: 38px;
+    }
+
+    #dcount-container::scroll-button(left) {
+        content: '<';
+        left: 20px;
+        right: 0;
+    }
+
+    .dcount-card{
+        flex: 0 0 300px;
+        scroll-snap-align: center;
     }
 
     .page-indicator {
