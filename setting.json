@@ -53,18 +53,6 @@
                 "enable": true,
                 "music_data": [
                     {
-                        "name": "I Do",
-                        "artist": "(G)I-DLE",
-                        "album": "HEAT",
-                        "url": "https://music.youtube.com/watch?v=NH3hQTFLgR4"
-                    },
-                    {
-                        "name": "Klaxon",
-                        "artist": "(G)I-DLE",
-                        "album": "I SWAY",
-                        "url": "https://music.youtube.com/watch?v=-hUX3-eXmUE"
-                    },
-                    {
                         "name": "Neverland",
                         "artist": "(G)I-DLE",
                         "album": "I SWAY",
@@ -77,16 +65,16 @@
                         "url": "https://music.youtube.com/watch?v=docmg0oGpXY"
                     },
                     {
-                        "name": "Allergy",
-                        "artist": "(G)I-DLE",
-                        "album": "I feel",
-                        "url": "https://music.youtube.com/watch?v=Gcp87-ZegRA"
-                    },
-                    {
                         "name": "Really Like You",
                         "artist": "BABYMONSTER",
                         "album": "DRIP",
                         "url": "https://music.youtube.com/watch?v=yrfnj9Q54m4"
+                    },
+                    {
+                        "name": "君の第3ボタン",
+                        "artist": "=LOVE",
+                        "album": "呪って呪って",
+                        "url": "https://music.youtube.com/watch?v=hA0tpUnrD4w"
                     }
                 ]
             }

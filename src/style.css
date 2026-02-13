@@ -478,9 +478,17 @@ nav .nav-item[n-hide="true"] {
     animation: spin 2s linear infinite;
 }
 
-.loader_text{
-    font-family: "Gaegu", sans-serif;
-    font-size: 50px;
+.loader_text {
+    font-family: "Klee One", cursive;
+    font-size: 20px;
+    text-align: center;
+    margin: 0 10px;
+}
+
+.load {
+    font-size: 15px; 
+    opacity: 0.7;
+    margin: 10px;
 }
 
 
