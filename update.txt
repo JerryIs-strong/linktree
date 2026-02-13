@@ -1,3 +1,7 @@
+2026/02/01 26.102.4_lite_beta
+1. Update styling of "Day Counter"
+2. Happy Lunar New Year for all user!
+
 2026/02/01 26.102.3_lite_beta
 1. New design for "Day Counter" on mobile devices
 2. Optimize user experience on mobile devices

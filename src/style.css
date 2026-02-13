@@ -259,11 +259,11 @@ a.MusicName:-webkit-any-link {
     text-align: center;
     padding: 20px;
     background-color: var(--theme-border-color);
+    font-family: "Tiny5", sans-serif;
 }
 
 .dcount-card[data-today="true"] {
     order: -1;
-    flex: 1 1 100%;
     background-image: linear-gradient(45deg, #4413db70, #eb369969);
 }
 
@@ -278,12 +278,20 @@ a.MusicName:-webkit-any-link {
     color: #fff;
 }
 
-.dcount-card-day-count{
+.dcount-card-day-count, .dcount-card-start-day{
     margin-top: 20px;
+    font-family: 'led-font', serif;
+    font-size: 20px;
+}
+
+.dcount-card-day-count{
+    background-image: linear-gradient(transparent 48%, var(--theme-highlight-color) 52%);
+    padding: 0 5px;
 }
 
 .dcount-card-start-day{
     margin-bottom: 20px;
+    margin-top: 5px;
 }
 
 nav {
@@ -319,6 +327,7 @@ nav .nav>* {
     margin: 10px;
     cursor: pointer;
     padding: 5px 10px;
+    font-family: "Tiny5", sans-serif;
 }
 
 nav .nav>*:hover {
@@ -519,7 +528,9 @@ nav .nav-item[n-hide="true"] {
         position: absolute;
         right: 20px;
         transform: translateY(150px);
-        width: 38px;
+        width: 35px;
+        font-family: "Press Start 2P", system-ui;
+        text-align: center;
     }
 
     #dcount-container::scroll-button(left) {
