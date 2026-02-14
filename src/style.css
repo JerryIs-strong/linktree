@@ -480,15 +480,8 @@ nav .nav-item[n-hide="true"] {
 
 .loader_text {
     font-family: "Klee One", cursive;
-    font-size: 20px;
+    font-size: 30px;
     text-align: center;
-    margin: 0 10px;
-}
-
-.load {
-    font-size: 15px; 
-    opacity: 0.7;
-    margin: 10px;
 }
 
 
