@@ -12,6 +12,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (!display.blur) {
         document.body.style.setProperty('--global-blur', 'blur(0)');
+    } else {
+        document.body.style.setProperty('--global-blur', 'blur(50px)');
     }
 
     document.documentElement.setAttribute('theme', display.theme || 'classic');

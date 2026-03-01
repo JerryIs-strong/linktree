@@ -21,7 +21,7 @@ const fetchAndCompareVersion = async () => {
         };
 
         if (compareVersions(localVersion, cloudVersion)) {
-            styleInfo("New version available", text, "#b1a968", "#FFF");
+            styleInfo("[System] New version available", text, "#b1a968", "#FFF");
         }
     } catch (error) {
         console.error('Error fetching or parsing the version.txt:', error);

@@ -1,3 +1,6 @@
+2026/03/01 26.103.0_lite_beta
+1. Optimize modularization logic
+
 2026/02/01 26.102.4_lite_beta
 1. Update styling of "Day Counter"
 2. Happy Lunar New Year for all user!

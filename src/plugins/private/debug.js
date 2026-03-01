@@ -21,6 +21,6 @@ function debug(DebugMessage, action = 'info') {
     }
 }
 
-styleInfo("Version", version, "#7fa3e9", "auto");
+styleInfo("[System] Version", version, '#7fa3e9', "auto");
 LogState = debugInfo ? "Running" : "Disabled"; 
-styleInfo("Log Process:", LogState, `#d280e5`, "auto");
+styleInfo("[System] Log Process:", LogState, '#7fa3e9', "auto");

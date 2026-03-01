@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', async () => {
                 script.src = `./src/plugins/${pluginName}.js`;
                 document.body.appendChild(script);
             });
-            styleInfo("Installed plugins:", pluginsList, "#f39898", "auto");
+            styleInfo("[System] Installed plugins:", pluginsList, '#7fa3e9', "auto");
         }
     } catch (error) {
         console.error('Error fetching or parsing the setting.json file:', error);

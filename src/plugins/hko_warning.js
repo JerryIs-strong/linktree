@@ -1,3 +1,11 @@
+function init() {
+    var css_link = document.createElement('link');
+    css_link.rel = 'stylesheet';
+    css_link.href = 'src/data/style/hko_waning.css';
+    document.head.appendChild(css_link);
+    styleInfo("[Plugins] HKO weather warning:", "Resources initialized", '#98f3d8', "auto");
+}
+
 async function getData() {
     const url = 'https://data.weather.gov.hk/weatherAPI/opendata/weather.php?dataType=warnsum&lang=tc';
     try {
@@ -22,4 +30,6 @@ async function getData() {
         console.error(error.message);
     }
 }
+
+init();
 getData();

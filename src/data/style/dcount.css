@@ -1,0 +1,157 @@
+.dcount-progress{
+    background-color: #306639;
+    max-width: 44px;
+    padding: 2px 8px;
+    font-family: "Tiny5", sans-serif;
+    border-radius: 30px;
+    position: absolute;
+    bottom: 8px;
+    left: 5px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    overflow: hidden;
+    white-space: nowrap;
+    transition: max-width 0.3s ease-in-out;
+}
+
+.dcount-progress:hover {
+    max-width: 220px;
+}
+
+.dcount-progress-text {
+    display: block;
+    max-width: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    opacity: 0;
+    margin-left: 0;
+    transition: max-width 0.3s ease-in-out, opacity 0.2s ease-in-out, margin-left 0.2s ease-in-out;
+    font-family: "Tiny5", sans-serif;
+}
+
+.dcount-progress:hover > .dcount-progress-text {
+    max-width: 160px;
+    opacity: 1;
+    margin-left: 6px;
+}
+
+.dcount-progress-icon {
+    display: flex;
+    align-items: center;
+    flex: 0 0 auto;
+}
+
+.dcount-progress-icon span {
+    font-size: 12px;
+    white-space: nowrap;
+}
+
+#dcount-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 40%;
+    max-width: 650px;
+}
+
+.dcount-card {
+    color: var(--theme-color);
+    margin: 10px;
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1 1 auto;
+    backdrop-filter: var(--global-blur);
+    -webkit-backdrop-filter: var(--global-blur);
+    border: 2px solid var(--theme-border-color);
+}
+
+.dcount-card-title {
+    font-size: 20px;
+    font-weight: bolder;
+    width: 100%;
+    text-align: center;
+    padding: 20px;
+    background-color: var(--theme-border-color);
+    font-family: "Tiny5", sans-serif;
+}
+
+.dcount-card[data-today="true"] {
+    order: -1;
+    background-image: linear-gradient(45deg, #4413db70, #eb369969);
+}
+
+.dcount-card[data-today="true"]::after {
+    content: 'Today!';
+    position: absolute;
+    bottom: 5px;
+    right: 10px;
+    font-weight: 700;
+    opacity: 0.2;
+    font-size: 40px;
+    color: #fff;
+}
+
+.dcount-card-day-count, .dcount-card-start-day{
+    margin-top: 20px;
+    font-family: 'led-font', serif;
+    font-size: 20px;
+}
+
+.dcount-card-day-count{
+    background-image: linear-gradient(transparent 48%, var(--theme-highlight-color) 52%);
+    padding: 0 5px;
+}
+
+.dcount-card-start-day{
+    margin-bottom: 20px;
+    margin-top: 5px;
+}
+
+@media screen and (max-width: 750px) {
+    #dcount-container {
+        width: 100%;
+        padding: 0 calc(50% - 150px);
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+        gap: 1em;
+        overflow-x: auto;
+        scroll-behavior: smooth;
+        scroll-snap-type: x proximity;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    #dcount-container::-webkit-scrollbar {
+        display: none;
+    }
+
+    #dcount-container::scroll-button(right),  #dcount-container::scroll-button(left){
+        content: '>';
+        border: 2px solid var(--theme-border-color);
+        background-color: var(--theme-background-color);
+        color: var(--font-color);
+        padding: 10px 12px;
+        backdrop-filter: var(--global-blur);
+        cursor: pointer;
+        position: absolute;
+        right: 20px;
+        transform: translateY(-100px);
+        width: 35px;
+        font-family: "Press Start 2P", system-ui;
+        text-align: center;
+    }
+
+    #dcount-container::scroll-button(left) {
+        content: '<';
+        right: 80px;
+    }
+
+    .dcount-card{
+        flex: 0 0 300px;
+        scroll-snap-align: center;
+    }
+}

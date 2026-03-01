@@ -1,3 +1,11 @@
+function init() {
+    var css_link = document.createElement('link');
+    css_link.rel = 'stylesheet';
+    css_link.href = 'src/data/style/announcement.css';
+    document.head.appendChild(css_link);
+    styleInfo("[Plugins] Announcement:", "Resources initialized", '#98f3d8', "auto");
+}
+
 function closeAnnouncement() {
   const announcement_wrapper = document.querySelector(".announcement_wrapper");
   const announcement_mask = document.querySelector(".announcement_mask");
@@ -58,6 +66,7 @@ function showAnnouncement(AnnouncementData, noExpireDate = false) {
   }
 }
 
+init();
 fetch("./src/data/announcement.json")
   .then((response) => {
     if (!response.ok) {

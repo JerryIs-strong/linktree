@@ -1,3 +1,11 @@
+function init() {
+    var css_link = document.createElement('link');
+    css_link.rel = 'stylesheet';
+    css_link.href = 'src/data/style/dcount.css';
+    document.head.appendChild(css_link);
+    
+}
+
 function calculateDayCount(startDate, isAnnual) {
     const today = new Date();
     let eventDate;
@@ -21,7 +29,7 @@ function calculateDayCount(startDate, isAnnual) {
     return diffDays;
 }
 
-function createCard(name, startDay, dayCount) {
+function createCard(name, startDay, dayCount, isAnnual = false) {
     const card = document.createElement('div');
     card.className = 'dcount-card';
 
@@ -41,6 +49,13 @@ function createCard(name, startDay, dayCount) {
         dayCountElement.textContent = dayCount > 0 ? `D-${dayCount}` : `D+${Math.abs(dayCount)}`;
     }
     dayCountElement.className = 'dcount-card-day-count';
+
+    if (!isAnnual && dayCount < 0){
+        const tag = document.createElement('div');
+        tag.className = "dcount-progress";
+        tag.innerHTML = '<span class="material-symbols-outlined">progress_activity</span> In progress';
+        card.appendChild(tag)
+    }
 
     card.appendChild(title);
     card.appendChild(dayCountElement);
@@ -67,7 +82,9 @@ function renderDayCounts() {
             data.data.forEach(event => {
                 const isAnnual = event.type === 'Annually';
                 const dayCount = calculateDayCount(event.start_date, isAnnual);
-                const card = createCard(event.name, event.start_date, dayCount);
+                const card = createCard(event.name, event.start_date, dayCount, isAnnual);
+                console.log(isAnnual, dayCount);
+                
                 container.appendChild(card);
             });
         })
@@ -76,4 +93,5 @@ function renderDayCounts() {
         });
 }
 
+init();
 renderDayCounts();
