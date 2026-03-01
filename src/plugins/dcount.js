@@ -3,13 +3,12 @@ function init() {
     css_link.rel = 'stylesheet';
     css_link.href = 'src/data/style/dcount.css';
     document.head.appendChild(css_link);
-    
+    styleInfo("[Plugins] Day Counter:", "Resources initialized", '#98f3d8', "auto");
 }
 
 function calculateDayCount(startDate, isAnnual) {
     const today = new Date();
     let eventDate;
-
     if (isAnnual) {
         const [month, day] = startDate.split('-').map(Number);
         if (month < today.getMonth() + 1 || (month === today.getMonth() + 1 && day < today.getDate())) {
@@ -22,25 +21,20 @@ function calculateDayCount(startDate, isAnnual) {
         eventDate = new Date(startDate);
         eventDate.setHours(0, 0, 0, 0);
     }
-
     const diffTime = eventDate - today;
     const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
-
     return diffDays;
 }
 
 function createCard(name, startDay, dayCount, isAnnual = false) {
     const card = document.createElement('div');
     card.className = 'dcount-card';
-
     const startDayElement = document.createElement('div');
     startDayElement.textContent = startDay;
     startDayElement.className = 'dcount-card-start-day';
-
     const title = document.createElement('div');
     title.textContent = name;
     title.className = 'dcount-card-title';
-
     const dayCountElement = document.createElement('div');
     if (dayCount === 0) {
         dayCountElement.textContent = "Is Today!";
@@ -49,18 +43,22 @@ function createCard(name, startDay, dayCount, isAnnual = false) {
         dayCountElement.textContent = dayCount > 0 ? `D-${dayCount}` : `D+${Math.abs(dayCount)}`;
     }
     dayCountElement.className = 'dcount-card-day-count';
-
     if (!isAnnual && dayCount < 0){
         const tag = document.createElement('div');
         tag.className = "dcount-progress";
-        tag.innerHTML = '<span class="material-symbols-outlined">progress_activity</span> In progress';
+        tag_icon = document.createElement('div');
+        tag_icon.className = "dcount-progress-icon";
+        tag_icon.innerHTML = '<span class="material-symbols-outlined">progress_activity</span>';
+        tag.appendChild(tag_icon);
+        tag_text = document.createElement('div');
+        tag_text.className = "dcount-progress-text";
+        tag_text.textContent = ' In progress';
+        tag.appendChild(tag_text);
         card.appendChild(tag)
     }
-
     card.appendChild(title);
     card.appendChild(dayCountElement);
     card.appendChild(startDayElement);
-
     return card;
 }
 
@@ -70,7 +68,6 @@ function renderDayCounts() {
         console.error('Container element with id "dcount-container" not found in index.html');
         return;
     }
-
     fetch('./src/data/dcount.json')
         .then(response => {
             if (!response.ok) {
@@ -83,8 +80,6 @@ function renderDayCounts() {
                 const isAnnual = event.type === 'Annually';
                 const dayCount = calculateDayCount(event.start_date, isAnnual);
                 const card = createCard(event.name, event.start_date, dayCount, isAnnual);
-                console.log(isAnnual, dayCount);
-                
                 container.appendChild(card);
             });
         })
