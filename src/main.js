@@ -168,9 +168,8 @@ function Music(music, musicSetting) {
 
 function NavLink(links) {
     const navElement = document.getElementById("nav");
-    const pages = document.querySelectorAll('.page'); // Use 'const' to declare pages variable
+    const pages = document.querySelectorAll('.page');
 
-    // Create navigation links for internal pages
     pages.forEach((page) => {
         const pageName = page.getAttribute('p-name');
         
@@ -183,11 +182,10 @@ function NavLink(links) {
         navLinkIcon.innerText = links.custome_page_icon[pageName] || '';
         navLinkWrapper.appendChild(navLinkIcon);
 
-        navLinkWrapper.onclick = () => navigateTo(pageName); // Use arrow function for consistency
+        navLinkWrapper.onclick = () => navigateTo(pageName);
         navElement.appendChild(navLinkWrapper);
     });
 
-    // Create navigation links for external links
     Object.entries(links.external_link).forEach(([linkDB, link]) => {
         const navElinkWrapper = document.createElement("div");
         navElinkWrapper.classList.add('nav-item', 'nav-elink');
@@ -196,7 +194,6 @@ function NavLink(links) {
             ? link.name.split("I: ")[1] 
             : `${link.name} 🔗`;
 
-        // Create icon for external link
         if (link.icon) {
             let navElinkIcon;
             if (link.icon.includes("/")) {
