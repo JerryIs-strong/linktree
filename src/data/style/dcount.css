@@ -71,13 +71,13 @@
 }
 
 .dcount-card-title {
-    font-size: 20px;
+    font-size: 15px;
     font-weight: bolder;
     width: 100%;
     text-align: center;
     padding: 20px;
     background-color: var(--theme-border-color);
-    font-family: "Tiny5", sans-serif;
+    font-family: "cubic", sans-serif;
 }
 
 .dcount-card[data-today="true"] {

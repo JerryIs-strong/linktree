@@ -2,3 +2,13 @@
     font-family: led-font;
     src: url(./data/fonts/TickingTimebombBB.ttf) format("truetype");
 } 
+
+@font-face {
+    font-family: gothic;
+    src: url(./data/fonts/LXGWMarkerGothic-Regular.ttf) format("truetype");
+}
+
+@font-face {
+    font-family: cubic;
+    src: url(./data/fonts/Cubic_11.woff2) format("woff2");
+}

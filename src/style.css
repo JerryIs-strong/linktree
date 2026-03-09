@@ -95,7 +95,7 @@ a {
     margin-bottom: 5px;
     color: var(--font-color);
     margin: 20px 15px 5px 15px;
-    font-family: "Tiny5", sans-serif;
+    font-family: "cubic", sans-serif;
 }
 
 .main .text h2 {
@@ -104,7 +104,7 @@ a {
     font-size: 15px;
     color: var(--font-secondary-color);
     margin-bottom: 10px;
-    font-family: "Give You Glory", cursive;
+    font-family: "gothic", cursive;
 }
 
 .mediaBtn {
@@ -128,7 +128,7 @@ a {
 .link-title {
     flex: 1;
     text-align: center;
-    font-family: "Tiny5", sans-serif;
+    font-family: "gothic", sans-serif;
 }
 
 .mediaBtn .btnImage {
@@ -197,13 +197,13 @@ a {
 .MusicName {
     cursor: pointer;
     max-width: 70vw;
-    height: 23px;
     overflow: hidden;
     display: block;
     text-overflow: ellipsis;
     white-space: nowrap;
     text-decoration: none !important;
     color: var(--font-color) !important;
+    font-family: "cubic", sans-serif;
 }
 
 .musicNameWrapper {
@@ -259,7 +259,7 @@ nav .nav>* {
     margin: 10px;
     cursor: pointer;
     padding: 5px 10px;
-    font-family: "Tiny5", sans-serif;
+    font-family: "gothic", sans-serif;
 }
 
 nav .nav>*:hover {
@@ -303,7 +303,7 @@ nav .nav-item[n-hide="true"] {
 }
 
 .loader_text {
-    font-family: "Klee One", cursive;
+    font-family: "gothic", cursive;
     font-size: 30px;
     text-align: center;
 }
