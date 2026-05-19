@@ -61,34 +61,53 @@
     line-height: 1.5;
 }
 
+.external_link_dialog_message {
+    opacity: 0.8;
+}
+
+.external_link_dialog_url_wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-bottom: 20px;
+    width: 100%;
+    gap: 5px;
+}
+
 .external_link_dialog_wrapper .external_link_dialog_url {
     font-size: 13px;
     color: var(--accent);
-    margin-bottom: 15px;
     padding: 10px 15px;
-    background-color: rgba(152, 243, 216, 0.1);
-    border-radius: 10px;
+    background-color: #58a6ff1a;
+    border-radius: 10px 5px 5px 10px;
     word-break: break-all;
     max-height: 80px;
     overflow-y: auto;
+    align-content: center;
 }
 
-.external_link_dialog_wrapper .external_link_dialog_security {
-    font-size: 13px;
-    margin-bottom: 20px;
-    padding: 8px 12px;
-    border-radius: 8px;
-    font-weight: 600;
+.external_link_dialog_wrapper .external_link_dialog_url_actions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
 }
 
-.external_link_dialog_security.secure {
-    background-color: rgba(110, 175, 145, 0.2);
-    color: #6eaf91;
-}
-
-.external_link_dialog_security.insecure {
-    background-color: rgba(229, 192, 123, 0.2);
-    color: #e5c07b;
+.external_link_dialog_btn_virustotal {
+    background-color: transparent;
+    color: var(--accent);
+    border: none;
+    padding: 5px;
+    font-size: 20px;
+    min-width: auto;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+    background-color: #58a6ff1a;
+    border-radius: 5px 10px 10px 5px !important;
 }
 
 .external_link_dialog_wrapper .external_link_dialog_buttons {
@@ -106,7 +125,6 @@
     border: none;
     transition: all 0.3s ease;
     font-size: 14px;
-    min-width: 120px;
 }
 
 .external_link_dialog_btn_confirm {
@@ -122,6 +140,21 @@
     background-color: transparent;
     color: var(--announcement-font-color);
     border: 2px solid var(--announcement-font-color);
+}
+
+@media screen and (max-width: 750px) {
+    .external_link_dialog_url_wrapper{
+        flex-direction: column;
+    }
+
+    .external_link_dialog_btn_virustotal{
+        width: 100%;
+        border-radius: 30px !important;
+    }
+
+    .external_link_dialog_wrapper .external_link_dialog_url{
+        border-radius: 10px !important;
+    }
 }
 
 @keyframes confirmDialogIn {

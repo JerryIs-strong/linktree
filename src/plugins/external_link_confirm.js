@@ -19,33 +19,15 @@ function closeConfirmDialog() {
     }
 }
 
-function getSecurityHints(url) {
-    try {
-        const linkUrl = new URL(url);
-        const protocol = linkUrl.protocol;
-        const isSecure = protocol === 'https:';
-        
-        return {
-            isSecure: isSecure,
-            protocol: protocol.replace(':', '').toUpperCase(),
-            hint: isSecure ? '✓ Secure connection' : '⚠ Insecure connection'
-        };
-    } catch (e) {
-        return {
-            isSecure: false,
-            protocol: 'UNKNOWN',
-            hint: '⚠ Unable to verify'
-        };
-    }
-}
-
 function showConfirmDialog(url) {
     const dialog_mask = document.createElement("div");
     const dialog_wrapper = document.createElement("div");
     const dialog_title = document.createElement("div");
     const dialog_message = document.createElement("div");
+    const dialog_url_wrapper = document.createElement("div");
     const dialog_url = document.createElement("div");
-    const dialog_security = document.createElement("div");
+    const dialog_url_actions = document.createElement("div");
+    const btn_virustotal = document.createElement("button");
     const dialog_buttons = document.createElement("div");
     const btn_confirm = document.createElement("button");
     const btn_cancel = document.createElement("button");
@@ -55,23 +37,30 @@ function showConfirmDialog(url) {
     dialog_wrapper.className = "external_link_dialog_wrapper";
     dialog_title.className = "external_link_dialog_title";
     dialog_message.className = "external_link_dialog_message";
+    dialog_url_wrapper.className = "external_link_dialog_url_wrapper";
     dialog_url.className = "external_link_dialog_url";
-    dialog_security.className = "external_link_dialog_security";
+    dialog_url_actions.className = "external_link_dialog_url_actions";
+    btn_virustotal.className = "external_link_dialog_btn external_link_dialog_btn_virustotal";
     dialog_buttons.className = "external_link_dialog_buttons";
     btn_confirm.className = "external_link_dialog_btn external_link_dialog_btn_confirm";
     btn_cancel.className = "external_link_dialog_btn external_link_dialog_btn_cancel";
     dialog_close.className = "external_link_dialog_close";
-
-    const securityInfo = getSecurityHints(url);
     
-    dialog_title.innerText = "Open External Link";
-    dialog_message.innerText = "You are about to leave this website. Are you sure you want to continue?";
+    dialog_title.innerText = "You are about to leave this site";
+    dialog_message.innerText = "Are you sure you want to continue?";
     dialog_url.innerText = url;
-    dialog_security.innerText = `${securityInfo.hint} (${securityInfo.protocol})`;
-    dialog_security.className = securityInfo.isSecure ? "external_link_dialog_security secure" : "external_link_dialog_security insecure";
+    btn_virustotal.innerHTML = '<span class="material-symbols-outlined">shield</span>';
+    btn_virustotal.title = "Check on VirusTotal";
     btn_confirm.innerText = "Continue";
     btn_cancel.innerText = "Cancel";
     dialog_close.innerHTML = '<span class="material-symbols-outlined">close</span>';
+
+    btn_virustotal.onclick = () => {
+        const virusTotalUrl = 'https://www.virustotal.com/gui/search?query=' + encodeURIComponent(url);
+        window.skipExternalLinkCheck = true;
+        window.open(virusTotalUrl, "_blank");
+        window.skipExternalLinkCheck = false;
+    };
 
     btn_confirm.onclick = () => {
         window.skipExternalLinkCheck = true;
@@ -88,13 +77,17 @@ function showConfirmDialog(url) {
         closeConfirmDialog();
     };
 
+    dialog_url_actions.appendChild(btn_virustotal);
+
     dialog_buttons.appendChild(btn_confirm);
     dialog_buttons.appendChild(btn_cancel);
 
+    dialog_url_wrapper.appendChild(dialog_url);
+    dialog_url_wrapper.appendChild(dialog_url_actions);
+
     dialog_wrapper.appendChild(dialog_title);
     dialog_wrapper.appendChild(dialog_message);
-    dialog_wrapper.appendChild(dialog_url);
-    dialog_wrapper.appendChild(dialog_security);
+    dialog_wrapper.appendChild(dialog_url_wrapper);
     dialog_wrapper.appendChild(dialog_buttons);
     dialog_wrapper.appendChild(dialog_close);
 
