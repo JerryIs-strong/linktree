@@ -143,17 +143,13 @@
 }
 
 @media screen and (max-width: 750px) {
-    .external_link_dialog_url_wrapper{
-        flex-direction: column;
-    }
-
-    .external_link_dialog_btn_virustotal{
-        width: 100%;
-        border-radius: 30px !important;
-    }
-
     .external_link_dialog_wrapper .external_link_dialog_url{
-        border-radius: 10px !important;
+        max-width: 270px;
+        text-overflow: ellipsis;
+    }
+
+    .external_link_dialog_wrapper .external_link_dialog_url span{
+        text-wrap: nowrap;
     }
 }
 

@@ -48,7 +48,7 @@ function showConfirmDialog(url) {
     
     dialog_title.innerText = "You are about to leave this site";
     dialog_message.innerText = "Are you sure you want to continue?";
-    dialog_url.innerText = url;
+    dialog_url.appendChild(document.createElement("span")).innerText = url;
     btn_virustotal.innerHTML = '<span class="material-symbols-outlined">shield</span>';
     btn_virustotal.title = "Check on VirusTotal";
     btn_confirm.innerText = "Continue";
