@@ -86,9 +86,15 @@
     </div>
     <div class="announcement_wrapper" id="announcement_wrapper"></div>
     <div class="announcement_mask" id="announcement_mask"></div>
-    <div class="preloader" id="preloader">
-        <div class="preloader-inner">
-            <p class="loader_text">(#_<-)</p>
+    <div class="preloader" id="preloader" aria-live="polite">
+        <div class="preloader-progress">
+            <div class="loader-status">
+                <span id="loader-status-text">Loading</span>
+                <span id="loader-percent">0%</span>
+            </div>
+            <div class="loader-bar">
+                <div class="loader-bar-fill" id="loader-bar-fill"></div>
+            </div>
         </div>
     </div>
     <!--Important plugins-->

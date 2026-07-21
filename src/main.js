@@ -18,13 +18,45 @@ document.addEventListener('DOMContentLoaded', () => {
 
     document.documentElement.setAttribute('theme', display.theme || 'classic');
 
+    const preloader = document.getElementById('preloader');
+    const loaderStatusText = document.getElementById('loader-status-text');
+    const loaderPercentText = document.getElementById('loader-percent');
+    const loaderBarFill = document.getElementById('loader-bar-fill');
+    const loaderSteps = [
+        'Establishing protocol',
+        'Synchronizing resources',
+        'Initializing interface',
+        'Preparing experience'
+    ];
+
+    let loaderProgress = 6;
+    let loaderStepIndex = 0;
+    let loaderInterval = null;
+
+    const updateLoaderUI = () => {
+        const step = loaderSteps[Math.min(loaderStepIndex, loaderSteps.length - 1)];
+        loaderStatusText.textContent = step;
+        loaderProgress = Math.min(100, loaderProgress + Math.floor(Math.random() * 18) + 7);
+        loaderPercentText.textContent = `${loaderProgress}%`;
+        loaderBarFill.style.width = `${loaderProgress}%`;
+        loaderStepIndex += 1;
+    };
+
+    loaderInterval = setInterval(updateLoaderUI, 250);
+
     setTimeout(() => {
-        document.getElementById('preloader').style.animation = "fadeOut 0.8s cubic-bezier(0.75, 0.15, 0.16, 0.99) forwards";
+        if (loaderInterval) {
+            clearInterval(loaderInterval);
+        }
+        loaderStatusText.textContent = 'Resources synchronized';
+        loaderPercentText.textContent = '100%';
+        loaderBarFill.style.width = '100%';
+        preloader.classList.add('preloader--hidden');
         document.getElementById('background').style.animation = "bgFadeIn 1.9s cubic-bezier(0.25, 0.04, 0, 0.89) forwards";
         setTimeout(() => {
-            document.getElementById('preloader').remove();
-        }, 1000);
-    }, 1500);
+            preloader.remove();
+        }, 700);
+    }, 1800);
 
     const pages = document.querySelectorAll('.page');
     const observer = new IntersectionObserver(
